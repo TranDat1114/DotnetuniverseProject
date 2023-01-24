@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - DotNetUniverse</title>
+    <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand:wght@500&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            /* font-family: 'Quicksand', sans-serif; */
+        }
+
+        body {
+            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
+            box-shadow: inset 0 0 5rem rgba(0, 0, 0, .9);
+        }
+
+        .text-content {
+            max-width: 73ch;
+            line-height: 150%;
+        }
+
+        .overlay-1 {
+            max-width: 100vw;
+            height: 80vh;
+            max-height: 720px;
+            object-fit: cover;
+            object-position: bottom right;
+            z-index: -1;
+        }
+
+        .content {
+            height: 500px;
+        }
+
+        .heading-banner {
+            font-size: 64px;
+            line-height: 62px;
+            font-weight: 700;
+        }
+
+        p {
+            text-shadow: 1px 1px 2px #333;
+        }
+
+        .content-title {
+            height: 8rem;
+        }
+
+        .content-topic {
+            font-size: 0.7rem;
+        }
+
+        .content-content {
+            font-size: 0.7rem;
+        }
+
+        .author {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body data-bs-theme="dark" id="home">
+    <div id="navbarDotnet">
+    </div>
+    <main class="container-fluid">
+        <div class="row position-relative">
+            <img class=" overlay-1 position-absolute top-0" src="../assets/banner.png" alt="banner">
+        </div>
+        <div class="container">
+            <div class="row overlay-1">
+                <div class="m-auto">
+                    <p class="h5 text-wrap text-capitalize">Write, Share, Connect, Study and happy lunar new year on</p>
+                    <p class="h1 text-uppercase text-wrap heading-banner">DotNet Universe</p>
+                    <a class="btn-outline-light btn  text-decoration-none" href="../screen/Login.html">
+                        Join Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <p class="h4 text-capitalize">Most popular</p>
+                </div>
+                <br>
+                <div class="row g-3">
+                    <div class="col-lg-6 col-sm-127">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-5 col-lg-4">
+                                    <img class="object-fit-cover w-100" height="250" src="../assets/Library.jpg"
+                                        alt="baiviet">
+                                </div>
+                                <div class="col-sm-12 col-md-7 col-lg-8">
+                                    <div class="container">
+                                        <div class="row">
+                                            <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                    href="#">Khoa
+                                                    học -
+                                                    Công
+                                                    nghệ</a>
+                                                |
+                                                <em class="content-topic">3 phút đọc</em>
+                                            </p>
+                                            <div class="content-title">
+                                                <a class="h5 text-decoration-none" href="#">3 cuốn sách gối đầu giường
+                                                    nếu
+                                                    bạn
+                                                    muốn thành
+                                                    thạo SQL
+                                                </a>
+                                                <p class="content-content">Đọc sách được xem là cách tốt nhất để tập
+                                                    trung
+                                                    và
+                                                    thư...</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img class="object-fit-cover rounded-circle author"
+                                                                src="https://images.spiderum.com/sp-avatar/c04305404b0911ed96af779465d662a5.jpeg"
+                                                                alt="author">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <a href="#" class="content-topic text-decoration-none">
+                                                                Ngô Vinh
+                                                                Data
+                                                                Coach</a>
+                                                            <p class="content-topic">30 tháng 11 2022</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="row text-center">
+                                                        <div class="col-4 p-0">
+                                                            <i class="fa-solid fa-chevron-up"></i>
+                                                            <p class="content-topic">6</p>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <i class="fa-solid fa-eye"></i>
+                                                            <p class="content-topic">822</p>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <i class="fa-solid fa-message"></i>
+                                                            <p class="content-topic">0</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-5 col-lg-4">
+                                    <img class="object-fit-cover w-100" height="250" src="../assets/moon.png"
+                                        alt="baiviet">
+                                </div>
+                                <div class="col-sm-12 col-md-7 col-lg-8">
+                                    <div class="container">
+
+                                        <div class="row">
+                                            <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                    href="#">Phát triển bản thân</a>
+                                                |
+                                                <em class="content-topic">9 phút đọc</em>
+                                            </p>
+                                            <div class="content-title">
+                                                <a class="h5 text-decoration-none" href="#">
+                                                    Nhật ký của một lập trình ziên zà...
+                                                </a>
+                                                <p class="content-content">Đọc sách được xem là cách tốt nhất để tập
+                                                    trung
+                                                    và
+                                                    thư...</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img class="object-fit-cover rounded-circle author"
+                                                                src="https://i.ibb.co/NW7CCfv/avatar.jpg" alt="author">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <a href="#" class="content-topic text-decoration-none">
+                                                                Trần Phú Đạt</a>
+                                                            <p class="content-topic">24 tháng 1 2022</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="row text-center">
+                                                        <div class="col-4 p-0">
+                                                            <i class="fa-solid fa-chevron-up"></i>
+                                                            <p class="content-topic">6</p>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <i class="fa-solid fa-eye"></i>
+                                                            <p class="content-topic">822</p>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <i class="fa-solid fa-message"></i>
+                                                            <p class="content-topic">0</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <p class="h4 text-capitalize">DotNet-Universe video</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <p class="h4 text-capitalize">Trending in month</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <p class="h4 text-capitalize">DotNet-Universe Topic</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <!-- <p class="h4 text-capitalize">vũ trụ dành riêng cho bạn</p> -->
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active text-capitalize" aria-current="page" href="#">For you
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-capitalize" href="#">highly appreciated</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </main>
+    <hr>
+    <div class="container">
+        <div id="footerDotnet">
+        </div>
+    </div>
+    <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+
+</html>

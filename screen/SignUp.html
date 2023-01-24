@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - DotNetUniverse</title>
+    <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand:wght@500&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            /* font-family: 'Quicksand', sans-serif; */
+        }
+
+        body {
+            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
+            box-shadow: inset 0 0 5rem rgba(0, 0, 0, .9);
+        }
+
+        .text-content {
+            max-width: 73ch;
+            line-height: 150%;
+        }
+
+        .login {
+            height: 90vh;
+        }
+
+        .logo {
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body data-bs-theme="dark" id="signup">
+    <div id="navbarDotnet">
+    </div>
+
+    <main class="container">
+        <div class="login text-center">
+            <img class="logo mb-3" src="../assets/logo.svg" alt="logo">
+            <div class="row">
+                <div class="col-sm-1 col-md-2 col-lg-4">
+                </div>
+                <div class="col-sm-10 col-md-8 col-lg-4">
+                    <div class="row">
+                        <div class="mb-3">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control text-dark" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Sign up by your email</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-md-2 col-lg-4">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3">
+                    <!-- <a class="btn-link" href="#">Thư xác nhận sẽ được gửi vào hòm thư của bạn?</a> -->
+                    <p class="h6" href="#">A confirmation email will be sent to your email</p>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-warning text-capitalize" type="button" value="Send it to me">
+                </div>
+                <p>Have an account yet? <a href="#">Login now</a></p>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <div class="container">
+        <div id="footerDotnet">
+        </div>
+    </div>
+    <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+
+</html>
