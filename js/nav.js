@@ -60,10 +60,10 @@ let myNav = `<nav class="navbar navbar-expand-lg ">
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="../screen/AboutUs.html#about-us">vi - Tiếng việt</a>
+                            <a class="dropdown-item" href="#">vi - Tiếng việt</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="../screen/AboutUs.html#our-misson">en - English</a>
+                            <a class="dropdown-item" href="#">en - English</a>
                         </li>
                     </ul>
             </li>
