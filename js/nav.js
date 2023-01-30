@@ -23,7 +23,7 @@ let myNav = `<nav class="navbar navbar-expand-lg">
         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbar">
+    <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-2">
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="../screen/Home.html#home"><i
@@ -44,7 +44,7 @@ let myNav = `<nav class="navbar navbar-expand-lg">
             </li>
         </ul>
     </div>
-    <div class="collapse navbar-collapse justify-content-end" id="navbar">
+    <div class="collapse navbar-collapse justify-content-end">
         <ul class="navbar-nav gap-2">
             <li class="nav-item">
                 <a class="btn-outline-light btn text-decoration-none" href="../screen/Login.html#login">

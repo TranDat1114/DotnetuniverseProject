@@ -31,7 +31,7 @@ let myFooter = `
                         <input id="useremail" type="text" class="form-control text-dark"
                             placeholder="Your email address">
                         <label for="useremail" class="visually-hidden">Your name</label>
-                        <input id="useremail" type="text" class="form-control text-dark" placeholder="Your name">
+                        <input id="username" type="text" class="form-control text-dark" placeholder="Your name">
                         <button class="btn btn-warning" type="button">Subscribe</button>
                     </div>
 
