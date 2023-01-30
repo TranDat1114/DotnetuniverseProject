@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - DotNetUniverse</title>
+    <title>Sign Up - DotNetUniverse</title>
     <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/stylesToAll.css">
@@ -71,6 +71,18 @@
     </div>
     <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
     <script src="../js/nav.js"></script>
+    <script>
+        const searchbar = document.querySelector('#searchbar-nav')
+        const nav = document.querySelector('#normal-nav')
+        function toSearchBar() {
+            nav.classList.add('visually-hidden')
+            searchbar.classList.remove('visually-hidden')
+        }
+        function backNav() {
+            searchbar.classList.add('visually-hidden')
+            nav.classList.remove('visually-hidden')
+        }
+    </script>
     <script src="../js/footer.js"></script>
 </body>
 
