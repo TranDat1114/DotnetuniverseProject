@@ -25,6 +25,7 @@
 <body data-bs-theme="dark" id="home">
     <!-- <div id="navbarDotnet">
     </div> -->
+
     <nav class="navbar navbar-expand-lg">
         <div class="container visually-hidden mt-3" id="searchbar-nav">
             <div class="row w-100 text-center">
@@ -78,22 +79,25 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
-                            <a href="#" class="dropdown-item disabled">
-                                <i class="fa-solid fa-language "></i>
-                            </a>
+                            <a class="dropdown-item" href="#"> Xem trang cá nhân</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">vi - Tiếng việt</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">en - English</a>
+                            <a class="dropdown-item" href="#"><i class="fa-solid fa-scroll"></i> Bài viết của tôi</a>
                         </li>
                         <hr>
                         <li>
-                            <a class="dropdown-item" href="#"><i class="fa-solid fa-sun"></i> Giao diện - Sáng</a>
+                            <a class="dropdown-item" href="#"><i class="fa-solid fa-boxes-packing"></i> Bản nháp</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#"><i class="fa-solid fa-moon"></i> Giao diện - Tối</a>
+                            <a class="dropdown-item" href="#"><i class="fa-solid fa-bookmark"></i> Bài viết đã lưu</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"><i class="fa-solid fa-gears"></i> Tùy chỉnh</a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Đăng
+                                xuất</a>
                         </li>
                     </ul>
                 </div>
@@ -166,29 +170,32 @@
                         <div class="dropdown">
 
                             <img class="rounded-circle dropdown" data-bs-toggle="dropdown" aria-expanded="false"
-                                src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="50" alt="user-picture">
+                                src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32" alt="user-picture">
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#" class="dropdown-item disabled">
-                                        <i class="fa-solid fa-language "></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">vi - Tiếng việt</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">en - English</a>
+                                    <a class="dropdown-item" href="#">Xem trang cá nhân</a>
                                 </li>
                                 <hr>
                                 <li>
-                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-sun"></i> Giao diện -
-                                        Sáng</a>
+                                    <a class="dropdown-item" href="#">Bài viết của tôi</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-moon"></i> Giao diện -
-                                        Tối</a>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-sun"></i> Bản nháp</a>
                                 </li>
-
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-solid fa-moon"></i>
+                                        Bài viết đã lưu</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-solid fa-moon"></i> Tùy chỉnh</a>
+                                </li>
+                                <hr>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-solid fa-moon"></i> Đăng xuất</a>
+                                </li>
                             </ul>
                         </div>
 
@@ -207,10 +214,15 @@
             </nav>
         </div>
         <div class="container-fluid">
+            <div id="wallpaper">
+                <img class="object-fit-cover img-fluid w-100" src="../assets/fpt-poly-3.jpg" alt="wallpaper">
+            </div>
             <div class="row">
-                <div id="wallpaper">
-                    <img class="object-fit-cover img-fluid w-100" src="../assets/fpt-poly-3.jpg" alt="wallpaper">
+                <div class="col-3">
+                    <img class="rounded-circle w-100" src="https://i.ibb.co/NW7CCfv/avatar.jpg" alt="avatar">
+
                 </div>
+                <div class="col-9"></div>
             </div>
         </div>
         <div class="container">
@@ -219,6 +231,27 @@
     <hr>
     <div class="container">
         <div id="footerDotnet">
+        </div>
+    </div>
+    <!-- Toast -->
+    <div class="position-sticky top-0 start-0 end-0 bottom-0">
+        <div class="toast-container bottom-0 end-0 p-3">
+            <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="../assets/logo.svg" height="32" class="rounded-circle me-2" alt="...">
+                    <strong class="me-auto">DotNetUniverse</strong>
+                    <small class="text-muted">Just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <p class="h5">
+                        Xin chào Trần Phú Đạt
+                    </p>
+                    <p class="h6">
+                        Chúc bạn một ngày tốt lành!!
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
