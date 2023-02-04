@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài viết - DotNetUniverse</title>
+    <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/stylesToAll.css">
+    <style>
+        #wallpaper>img {
+            object-position: center;
+            height: 350px;
+        }
+
+        .bell-infor>p,
+        .bell-infor>a {
+            font-size: smaller;
+        }
+
+        .user-avatar {
+            margin-top: -50px;
+        }
+
+        .author {
+            width: 150px;
+            height: 150px;
+        }
+
+        .max-img-size {
+            max-height: 400px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body data-bs-theme="dark" id="home">
+    <!-- <div id="navbarDotnet">
+    </div> -->
+    <div class="progress sticky-top" role="progressbar" aria-label="Warning example" aria-valuenow="75"
+        aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
+        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" id="progress-bar"
+            style="width: 0%">
+        </div>
+    </div>
+    <header id="blog-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container visually-hidden mt-3" id="searchbar-nav">
+                <div class="row w-100 text-center">
+                    <div class="col-2">
+                        <button onclick="backNav()" class="btn btn-outline-warning"><i
+                                class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                    <div class="col-8">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-outline-warning"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="normal-nav">
+                <a class="navbar-brand d-none d-lg-block" href="#"><img class="rounded-circle" height="50"
+                        src="../assets/logo.svg" alt="logo">
+                    NetUniverse</a>
+                <a class="navbar-brand d-lg-none" href="../screen/Home.html"><img class="rounded-circle" height="50"
+                        src="../assets/logo.svg" alt="logo"></a>
+                <div class="btn-group">
+                    <div class="d-lg-none">
+                        <button class="btn btn-outline-warning"><i class="fa-solid fa-pen"></i> Viết bài</button>
+                        <button class="btn text-white position-relative" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-bell">
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
+                                </span>
+                            </i>
+                        </button>
+                        <div class=" dropdown-menu dropdown-menu-end min-vw-100 text-center">
+                            <div class="dropdown-item">Thông báo</div>
+                            <div class="dropdown-item bell-infor">
+                                <p>
+                                    <a href="#">Trần Phú Đạt</a>
+                                    đã bình luận về bài viết của bạn
+                                </p>
+                                <hr>
+                                <p>
+                                    <a href="#">Bài viết của bạn</a> đã đạt 999 like
+                                </p>
+
+                            </div>
+                            <div class="dropdown-item">Xem thêm</div>
+                        </div>
+                        <button class="btn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="rounded-circle" src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32"
+                                alt="user-picture">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="#"> Xem trang cá nhân</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="fa-solid fa-scroll"></i> Bài viết của
+                                    tôi</a>
+                            </li>
+                            <hr>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="fa-solid fa-boxes-packing"></i> Bản nháp</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="fa-solid fa-bookmark"></i> Bài viết đã
+                                    lưu</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="fa-solid fa-gears"></i> Tùy chỉnh</a>
+                            </li>
+                            <hr>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Đăng
+                                    xuất</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav me-2">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../screen/Home.html#home"><i
+                                    class="fa-solid fa-house"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-clipboard-question"></i> FAQs</a>
+                        </li>
+                        <li class="nav-item dropdown position-relative">
+                            <a class="nav-link dropdown-toggle" href="../screen/AboutUs.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-address-card"></i>
+                                About Us</a>
+                            <ul class="dropdown-menu position-absolute top-100 start-0">
+                                <li><a class="dropdown-item" href="../screen/AboutUs.html#about-us">Our Information</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../screen/AboutUs.html#our-misson">Our Mission</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../screen/AboutUs.html#community">Our Community</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav gap-3">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-warning" onclick="toSearchBar()"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-warning"><i class="fa-solid fa-pen"></i> Viết bài</button>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+
+                                <button class="btn text-white position-relative" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">
+                                    <i class="fa-solid fa-bell">
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
+                                        </span>
+                                    </i>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <img class="rounded-circle dropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                                    src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32" alt="user-picture">
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Xem trang cá nhân</a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Bài viết của tôi</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#"><i class="fa-solid fa-sun"></i> Bản nháp</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-moon"></i>
+                                            Bài viết đã lưu</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-moon"></i> Tùy chỉnh</a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-moon"></i> Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./Home.html#home">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="./Home.html#home">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Những lỗi giao tiếp cơ bản</li>
+                </ol>
+            </nav>
+            <hr>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="container">
+                        <p><a class=" btn-link text-uppercase text-decoration-none" href="#">Quan điểm -
+                                Tranh
+                                luận</a>
+                            |
+                            <em class="">6 phút đọc</em>
+                        </p>
+                        <div class="content-title">
+                            <a class="h1 text-decoration-none" href="#">Làm gì khi
+                                người khác tổn
+                                thương mình?
+                            </a>
+                            <p class="content-content">Dạo gần đây mình trở nên nhạy
+                                cảm hơn bình
+                                thường. Đặc biệt là khi nghe những lời phán xét, chê
+                                bai vô ý tứ của
+                                người khác. Tại sao...</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="row">
+                                    <div class="col-6 col-lg-6">
+                                        <img loading="lazy" class="img-thumbnail object-fit-cover rounded-circle author"
+                                            src="https://images.spiderum.com/sp-avatar/20396b2096ab11eba08adf903d8ec612.jpg"
+                                            alt="author">
+                                    </div>
+                                    <div class="col-6 col-lg-6">
+                                        <div class="container text-center">
+                                            <div class="row">
+                                                <a href="#" class="col-12 h4 text-info text-decoration-none">
+                                                    Mục đồng</a>
+                                                <!-- <button class="btn btn-outline-primary col-12 col-md-6">Follow</button> -->
+                                            </div>
+                                            <p class="">15 tháng 4 2020</p>
+                                            <div class="row justify-content-between">
+                                                <div class="col-4 p-0" data-bs-toggle="tooltip" data-bs-title="Up vote">
+                                                    <a href="#">
+                                                        <i class="fa-solid fa-chevron-up"></i>
+                                                    </a>
+                                                    <p class="">6</p>
+                                                </div>
+                                                <div class="col-4 p-0" data-bs-toggle="tooltip" data-bs-title="View">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                    <p class="">822</p>
+                                                </div>
+                                                <div class="col-4 p-0" data-bs-toggle="tooltip" data-bs-title="Comment">
+                                                    <a href="#">
+                                                        <i class="fa-solid fa-message"></i>
+                                                    </a>
+                                                    <p class="">0</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-8">
+                                <div class="row">
+                                    <div class="col-6"></div>
+                                    <div class="col-6">
+                                        <button class="btn btn-outline-danger">Báo cáo người dùng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content here -->
+        <div class="container" id="blog-content-here">
+            <hr>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-2"></div>
+                <div class="col-12 col-lg-8">
+                    <div class="inner-content">
+                        <div class="m-3">
+                            <img class="w-100 max-img-size"
+                                src="https://images.spiderum.com/sp-images/94813e707f2f11eaa9dcb3364a58500c.jpg"
+                                alt="logo">
+                        </div>
+                        <p> Dạo gần đây mình trở nên nhạy cảm hơn bình thường. Đặc biệt là khi nghe những lời phán
+                            xét, chê bai
+                            vô ý tứ của người khác.
+                        </p>
+                        <p>
+                            Tại sao mình gọi là "vô ý tứ"?
+                        </p>
+                        <p>
+                            Bởi mình biết họ đều là những người bạn tốt của mình. Họ từng giúp mình nhiều điều và mình
+                            rất biết
+                            ơn
+                            vì điều đó. Nhưng đôi lúc, vì họ không đủ tinh tế để hiểu mình (có ai là hiểu nổi mình,
+                            ngoài chính
+                            mình
+                            đâu chứ) nên họ lỡ buông lời không hay, đụng chạm đến những nỗi niềm bên trong.
+                        </p>
+                        <p>
+                            Mình cũng đã từng là người như thế.
+                        </p>
+                        <p>
+                            Khi có những đối tượng "easy target", mình đã buông lời chọc ghẹo. Trong thâm tâm, mình nghĩ
+                            đó chỉ
+                            là
+                            một trò đùa và nó còn giúp mình và đối phương kết nối thân thiết hơn. Mình chưa bao giờ có ý
+                            nghĩ sẽ
+                            cố
+                            ý làm tổn thương ai cả.
+                        </p>
+                        <p>
+                            Thế nhưng... biết đâu bất ngờ.
+                        </p>
+                        <p>
+                            Khi mình bất đắc dĩ trở thành "nạn nhân" của những trò đùa vô thưởng vô phạt ấy, mình lại
+                            cảm thấy
+                            khó
+                            chịu vô cùng.
+                        </p>
+                        <p>
+                            Mình khó chịu vì đa số nó là những lời dìm hàng người nghe. Lấy người nghe ra làm trò đùa để
+                            mua
+                            vui.
+                            Mình khó chịu vì đa số nó là những lời vô cùng chủ quan. Người nói bằng những giới hạn của
+                            trí tuệ,
+                            đã
+                            nói như thể họ hiểu mình lắm.
+                        </p>
+                        <p>
+                            Mình khó chịu vì đa số nó là những lời kết luận từ quá khứ. Họ đã từng nhìn thấy những thất
+                            bại của
+                            mình
+                            trong quá khứ và đem nó ra để dán nhãn cho mình.
+                        </p>
+                        <p>
+                            Hóa ra khi trở thành người nghe, mình mới biết nó không hề vui tí nào. Thậm chí đa phần còn
+                            có tính
+                            sát
+                            thương, công kích.
+                        </p>
+                        <p>
+                            Bởi vậy qua đó mình tự nhủ với lòng, sau này có nói chuyện với ai cũng sẽ nỗ lực ý tứ hơn để
+                            không
+                            phạm
+                            phải những sai lầm khiến cho xa cách lòng người như thế.
+                        </p>
+                        <p>
+                            Mình thường nói với người yêu: "Chất lượng mối quan hệ đến từ nỗ lực xây dựng của cả 2
+                            chiều".
+                            Đối với bạn bè cũng thế. Bởi vậy không thể nào mình chỉ có thể đổ lỗi cho đối phương để rồi
+                            hờn
+                            trách,
+                            lạnh nhạt và mất dần mối quan hệ này được.
+                        </p>
+                        <p>
+                            <strong>Về phía người nghe, mình có thể làm gì để mối quan hệ có thể hàn gắn lại với
+                                nhau?</strong>
+                        </p>
+                        <p>
+                            Theo mình, đó là cần sự phản hồi từ người nghe. Vì đa số người nói ra những lời
+                            bông-đùa-nhưng-có-gai ấy
+                            thường không nhận thức được là họ làm mình buồn khổ.
+                        </p>
+                        <p>
+                            Nên mình cần báo động để họ biết, nhận ra và điều chỉnh.
+                        </p>
+                        <div class="m-3">
+                            <img class="w-100 max-img-size"
+                                src="https://images.spiderum.com/sp-images/2496f4307f2d11eaa6b667281624340a.jpg" alt="">
+                        </div>
+                        <p>
+
+                            Trong quyển "How to love", thiền sư Thích Nhất Hạnh có chia sẻ một "phương thuốc" chữa lành
+                            mang tên
+                            Asking for help.
+                        </p>
+
+                        <p>
+                            "Khi bạn đau khổ, bạn thường muốn đi vào phòng, đóng cửa và khóc. Thậm chí khi người làm tổn
+                            thương
+                            cố
+                            gắng tiếp cận, bạn thường vẫn còn giận dữ mà né tránh.
+                        </p>
+                        <p>
+                            Nhưng để làm nhẹ đi niềm đau này. bạn phải đi đến gặp người làm bạn tổn thương và nhờ sự
+                            giúp đỡ.
+                            Thành
+                            thật với bản thân 100%. Hãy mở lời và nói bằng cả con tim và sự tập trung của bạn rằng bạn
+                            đang đau
+                            khổ
+                            và bạn cần hỗ trợ.
+                        </p>
+                        <p>
+                            Nếu bạn quá khó khăn để bình tĩnh nói, bạn có thể viết một tờ giấy note và đặt vào nơi người
+                            ấy sẽ
+                            nhìn
+                            thấy.
+                        </p>
+                        <p>
+                            Sau đây là 3 câu nói có thể giúp:
+                        </p>
+                        <ul>
+                            <li>
+                                1. "Bạn ơi, tôi đang đau khổ, tôi đang giận dữ, và tôi mong bạn biết nó."
+                            </li>
+                            <li>
+                                2. "Tôi đang làm điều tốt nhất có thể." Điều này có nghĩa bạn đang thực tập chánh niệm
+                                trong
+                                từng hơi
+                                thở và hành động, và quan trọng là bạn đang cố gắng ngăn lại những hành động hoặc lời
+                                nói có thể
+                                phát ra
+                                từ sự giận dữ.
+                            </li>
+                            <li>
+                                3. "Làm ơn giúp đỡ tôi vượt qua nỗi niềm này."
+                            </li>
+                        </ul>
+                        <hr class="border border-warning">
+                        <p>
+                            Mình nghĩ, đa phần chúng ta gặp khó để thực hành bài tập này. Bởi xu hướng tâm lý sẽ thấy họ
+                            đã làm
+                            tổn
+                            thương mình thì mình không xả giận đã là may rồi, cớ sao lại cần sự giúp đỡ.
+                        </p>
+                        <p>
+                            Cái tôi của một "nạn nhân" luôn vùng vẫy, kiêu ngạo và cố gắng khư khư giữ lấy ranh giới
+                            phân biệt
+                            như
+                            thế.
+                        </p>
+                        <p>
+                            Hoặc, một cách khác, có thể cái tôi ấy đã vốn sợ hãi sự tổn thương nên càng không dám phơi
+                            bày đi
+                            vết
+                            thương bên trong lòng ra.
+                        </p>
+                        <p>
+                            Vì biết đâu được, người ta liệu có thể phán xét và tấn công mình nữa hay không?
+                        </p>
+                        <p>
+                            Thực ra, như mình nói, với vai trò là từng là người "gây hại", mình luôn biết rằng thực tâm
+                            mình
+                            hoàn
+                            toàn không có ý đồ gì xấu xa cả đâu. Cho nên, nếu khi mình nhận được phản hồi từ đối phương
+                            rằng bạn
+                            ấy
+                            buồn, bạn ấy không vui khi nghe những lời đó thì mình sẽ hoàn toàn xin lỗi ngay và cố gắng
+                            để xoa
+                            dịu
+                            bạn ấy.
+                        </p>
+                        <p>
+                            Chúng ta nhiều lúc mải mê với trò đùa của mình mà không lường trước tác hại của nó. Vì mê mờ
+                            mà ta
+                            mới
+                            vô tình làm đau nhau. Nếu có thực tập sự tỉnh thức thường xuyên, mình tin sẽ không ai muốn
+                            làm phiền
+                            lòng người khác cả.
+                        </p>
+                        <p>
+                            Cho nên, mình nghĩ rất cần lắm sự chủ động từ đôi bên. Đặc biệt là người "bị hại". Sẽ không
+                            dễ để có
+                            thể
+                            làm được việc này dễ dàng.
+                        </p>
+                        <blockquote class="blockquote border-start border-warning p-4 border-3">
+                            <em>
+                                Bản thân mình dù rất tâm đắc với lời dạy của Thầy Thích Nhất Hạnh. Nhưng đến khi đụng
+                                chuyện thì
+                                phải nói là khó vô cùng.
+                                Mình phải nỗ lực từng chút một. Đầu tiên là hít thở để tĩnh lặng cho bản thân. Sau là
+                                sắp xếp
+                                lời lẽ để phản hồi cho phù hợp - mình thường chọn kênh giao tiếp qua con chữ vì rất ngại
+                                mở
+                                miệng nói những chuyện này.
+                                Có nhiều lúc, khi đã viết xong và gửi cho đối phương, mình hồi hộp vô cùng. Mình thấy
+                                được rất
+                                nhiều nỗi sợ bị phán xét dâng trào lên. Người mình thì thậm chí còn run rẩy, nổi cả da
+                                gà.
+                                Nhưng khi từng bước từng bước nhận được câu trả lời và sự thấu hiểu đôi bên, mình mới có
+                                được
+                                trạng thái nhẹ nhàng, bình an và hạnh phúc vô cùng.
+                            </em>
+                        </blockquote>
+                        <p>
+                            Một lý do nữa để bạn áp dụng bài thực hành "Asking for help".
+                        </p>
+                        <p>
+
+                            Khi bạn và đối phương đã thấu hiểu nhau hơn nhờ nói ra nỗi lòng, bạn cũng đồng thời thông
+                            báo cho họ biết ranh giới của chính bạn. Nó như một cái vòng an toàn để người khác không xâm
+                            phạm đến. Bạn chắc hẳn mong muốn điều này, phải không?
+                        </p>
+                        <p>
+                            Khi có được thông tin này, đối phương sẽ có ý có tứ hơn mỗi khi giao tiếp với bạn. Họ sẽ ý
+                            thức hơn trong mỗi lời nói để không phạm phải sai lầm.
+                        </p>
+                        <p>
+                            Và mình tin, chính bản thân họ cũng sẽ rất vui vì được bạn cung cấp cho thông tin quý giá
+                            này đấy. Vì thực lòng chẳng ai muốn "tạo nghiệp" với người khác cả, đúng không!
+                        </p>
+                        <p>
+                            Mình cũng xin lưu ý luôn, đây không phải là cầu xin hay bản thân đứng ở thế dưới.
+                            Đối với mình, một mối quan hệ chất lượng luôn phải là mối quan hệ hàng ngang, không có cao
+                            thấp kẻ trên người dưới. Người tổn thương không phải là người chiếu dưới và người lầm lỡ
+                            không phải là người chiếu trên.
+                        </p>
+                        <p>
+                            Vả lại, một mối quan hệ luôn là kết quả của sự hai chiều, qua lại với nhau. Nó cần sự chung
+                            tay và vun đắp của cả 2 bên. Nếu chỉ có một bên bồi và một bên phá thì bạn cũng sớm hiểu và
+                            lựa chọn dừng lại ở đây được rồi. Càng rất xứng đáng và thích hợp để kết thúc nó.
+                        </p>
+                        <p>
+
+                            Bởi vậy, nếu bạn chẳng may rơi vào trường hợp cảm thấy bị "công kích" vì lời nói của đối
+                            phương, khiến cho bạn phiền lòng, đau khổ thì bạn hãy thử trải nghiệm thực hành phương cách
+                            Sư Ông chia sẻ.
+                        </p>
+                        <p>
+                            Chúc bạn và mình sẽ bình an, vững chãi và có được dũng khí để yêu cầu giúp đỡ mỗi khi đụng
+                            chuyện nhé!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8"></div>
+                <div class="" id="other-content"></div>
+            </div>
+
+        </div>
+    </main>
+    <hr>
+    <div class="container">
+        <div id="footerDotnet">
+        </div>
+    </div>
+    <!-- Toast -->
+    <div class="position-sticky top-0 start-0 end-0 bottom-0">
+        <div class="toast-container bottom-0 end-0 p-3">
+            <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="../assets/logo.svg" height="32" class="rounded-circle me-2" alt="...">
+                    <strong class="me-auto">DotNetUniverse</strong>
+                    <small class="text-muted">Just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <p class="h5">
+                        Xin chào Trần Phú Đạt
+                    </p>
+                    <p class="h6">
+                        Chúc bạn một ngày tốt lành!!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Thông báo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Thông báo ngày hôm nay</p>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                        viết</strong> của bạn đạt 999
+                    like</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> đã trả lời bình
+                    luận của bạn</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> và 40 người khác đã
+                    like bình luận của bạn</a>
+            </div>
+            <br>
+            <p>Thông báo ngày hôm qua</p>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                        viết</strong> của bạn đạt 999
+                    like</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> đã trả lời bình
+                    luận của bạn</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> và 40 người khác đã
+                    like bình luận của bạn</a>
+            </div>
+            <br>
+            <p>Thông báo ngày 2/3/2023</p>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                        viết</strong> của bạn đạt 999
+                    like</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> đã trả lời bình
+                    luận của bạn</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> và 40 người khác đã
+                    like bình luận của bạn</a>
+            </div>
+            <br>
+            <p>Thông báo ngày 1/3/2023</p>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                        viết</strong> của bạn đạt 999
+                    like</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> đã trả lời bình
+                    luận của bạn</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> và 40 người khác đã
+                    like bình luận của bạn</a>
+            </div>
+            <br>
+            <p>Thông báo ngày 29/2/2023</p>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                        viết</strong> của bạn đạt 999
+                    like</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> đã trả lời bình
+                    luận của bạn</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong
+                        class="text-success">HuyHuynh</strong> và 40 người khác đã
+                    like bình luận của bạn</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../js/nav.js"></script> -->
+    <script src="../js/footer.js"></script>
+    <script src="../js/toSearchBar.js"></script>
+
+    <script>
+        let processScroll = () => {
+            let scrollPercent = (window.pageYOffset / (document.body.querySelector('#blog-content-here').offsetHeight - (window.innerHeight - (document.body.querySelector('#footerDotnet').offsetHeight + document.body.querySelector('#other-content').offsetHeight))) * 100)
+            document.getElementById("progress-bar").style.width = scrollPercent + '%';
+            console.log(scrollPercent)
+        }
+        document.addEventListener('scroll', processScroll);
+    </script>
+
+</body>
+
+<!-- https://duykhang.com/2022/business-analyst/nguyen-tac-invest-cho-user-story/ -->
