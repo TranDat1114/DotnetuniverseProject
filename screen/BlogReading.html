@@ -36,7 +36,7 @@
     </style>
 </head>
 
-<body data-bs-theme="dark" id="home">
+<body data-bs-theme="dark" id="blog-reading">
     <!-- <div id="navbarDotnet">
     </div> -->
     <div class="progress sticky-top" role="progressbar" aria-label="Warning example" aria-valuenow="75"
@@ -182,7 +182,7 @@
                                     src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32" alt="user-picture">
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="#">Xem trang cá nhân</a>
+                                        <a class="dropdown-item" href="./Profile.html#">Xem trang cá nhân</a>
                                     </li>
                                     <hr>
                                     <li>
@@ -554,8 +554,9 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-12 col-lg-8"></div>
-                <div class="" id="other-content"></div>
+                <div class="col-12 col-lg-2"> </div>
+                <hr>
+                <div class="min-vh-100" id="other-content"></div>
             </div>
 
         </div>
@@ -667,7 +668,7 @@
 
     <script>
         let processScroll = () => {
-            let scrollPercent = (window.pageYOffset / (document.body.querySelector('#blog-content-here').offsetHeight - (window.innerHeight - (document.body.querySelector('#footerDotnet').offsetHeight + document.body.querySelector('#other-content').offsetHeight))) * 100)
+            let scrollPercent = (window.pageYOffset / (document.body.querySelector('#blog-content-here').offsetHeight - (window.innerHeight - (document.body.querySelector('#footerDotnet').offsetHeight - document.body.querySelector('#other-content').offsetHeight))) * 100)
             document.getElementById("progress-bar").style.width = scrollPercent + '%';
             console.log(scrollPercent)
         }

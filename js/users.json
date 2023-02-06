@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "userName": "Trần Phú Đạt",
+            "password": "jackandy249",
+            "email": "jackandy249@gmail.com",
+            "blog": 79,
+            "follower": 29,
+            "following": 12,
+            "description": "Để có nhiều bạn bè, ta chỉ cần tốt bụng; nhưng để có nhiều kẻ thù, phải cần nhiều trí tuệ."
+        },
+        {
+            "userName": "Trần Hoàng",
+            "password": "datpro249",
+            "email": "datpro249@gmail.com",
+            "blog": 19,
+            "follower": 99,
+            "following": 12,
+            "description": "Sống trên đời đừng tin bố con thằng nào cả, kể cả tau."
+        },
+        {
+            "userName": "Khôi Ngô",
+            "password": "khoingo",
+            "email": "khoaingo249@gmail.com",
+            "blog": 29,
+            "follower": 69,
+            "following": 12,
+            "description": "Ôi đàn bà là những niềm đau, ôi đàn bà làm tim ta rỉ máu."
+        },
+        {
+            "userName": "Tuấn Tú",
+            "password": "tuantu",
+            "email": "tuantu249@gmail.com",
+            "blog": 69,
+            "follower": 79,
+            "following": 12,
+            "description": "Tình chỉ đẹp khi còn dang dỡ, cưới nhau rồi tình bổng thương đau."
+        }
+    ]
+}
