@@ -666,14 +666,7 @@
     <script src="../js/footer.js"></script>
     <script src="../js/toSearchBar.js"></script>
 
-    <script>
-        let processScroll = () => {
-            let scrollPercent = (window.pageYOffset / (document.body.querySelector('#blog-content-here').offsetHeight - (window.innerHeight - (document.body.querySelector('#footerDotnet').offsetHeight - document.body.querySelector('#other-content').offsetHeight))) * 100)
-            document.getElementById("progress-bar").style.width = scrollPercent + '%';
-            console.log(scrollPercent)
-        }
-        document.addEventListener('scroll', processScroll);
-    </script>
+    <script src="../js/scrollProgress.js"></script>
 
 </body>
 
