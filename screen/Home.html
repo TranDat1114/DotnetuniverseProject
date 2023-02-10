@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/stylesToAll.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <style>
         .text-shadow-contract {
             text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
@@ -61,7 +62,7 @@
     </style>
 </head>
 
-<body data-bs-theme="dark" id="home">
+<body data-bs-theme="dark" id="home" ng-app="myApp">
     <div id="navbarDotnet">
     </div>
     <main class="container-fluid">
@@ -646,6 +647,29 @@
         <div id="footerDotnet">
         </div>
     </div>
+
+    <!-- Toast -->
+    <div class="position-sticky top-0 start-0 end-0 bottom-0">
+        <div class="toast-container bottom-0 end-0 p-3">
+            <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="../assets/logo.svg" height="32" class="rounded-circle me-2" alt="...">
+                    <strong class="me-auto">DotNetUniverse</strong>
+                    <small class="text-muted">Just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <p class="h5">
+                        Xin chào Trần Phú Đạt
+                    </p>
+                    <p class="h6">
+                        Chúc bạn một ngày tốt lành!!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- add lottiefiles -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- add tooltip -->
@@ -659,7 +683,6 @@
     </script>
     <script src="../js/nav.js"></script>
     <script src="../js/footer.js"></script>
-    <script src="../js/toSearchBar.js"></script>
 
 </body>
 
