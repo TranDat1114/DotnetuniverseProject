@@ -100,7 +100,7 @@ let myNavBeforeLogin = `<nav class="navbar navbar-expand-lg" ng-controller="navB
                     <div class="col-lg-6 col-12">
                         <label for="" class="form-label">Read time</label>
                         <select class="form-select" name="" id="">
-                            <option ng-repeat="readtime in listReadTime">{{readtime}}</option>
+                            <option ng-repeat="readtime in listReadTime" value={{readtime.value}}>{{readtime.content}}</option>
                         </select>
                     </div>
                 </div>
@@ -117,37 +117,17 @@ let myNavBeforeLogin = `<nav class="navbar navbar-expand-lg" ng-controller="navB
 const nav = document.querySelector('#navbarDotnet')
 nav.innerHTML = myNavBeforeLogin
 
-const listTopic = [
-    "Sách",
-    "Khoa học - Công nghệ",
-    "Thể thao",
-    "Quan điểm - Tranh luận",
-    "Yêu",
-    "Lịch sử",
-    "Game", "Sáng tác",
-    "Phát triển bản thân",
-    "Âm nhạc",
-    "Tâm lý học",
-    "Du lịch",
-    "Nhiếp ảnh",
-    "Thời trang",
-    "Phim ảnh"
-]
-
-const listReadTime = [
-    "Dưới 3 phút",
-    "3 phút - 7 phút",
-    "7 phút - 15 phút",
-    "15 phút - 30 phút",
-    "Trên 30 phút",
-]
-
 var app = angular.module('myApp', []);
-app.controller('navBar', function ($scope) {
-    $scope.listReadTime = listReadTime;
+app.controller('navBar', function ($scope, $http) {
+    $scope.listReadTime = [],
+        $http.get("../js/Data.json").then((response) => {
+            $scope.listReadTime = response.data.ListReadTime;
+        })
 });
 
-app.controller('topic', ($scope) => {
-    $scope.listTopic = listTopic;
-
-})
+app.controller('topic', ($scope, $http) => {
+    $scope.listTopic = [];
+    $http.get("../js/Data.json").then((response) => {
+        $scope.listTopic = response.data.Topics;
+    })
+});

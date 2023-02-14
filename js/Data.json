@@ -1,43 +1,202 @@
 {
+    "ListReadTime": [
+        {
+            "value": 3,
+            "content": "Dưới 3 phút"
+        },
+        {
+            "value": 7,
+            "content": "3 phút - 7 phút"
+        },
+        {
+            "value": 15,
+            "content": "7 phút - 15 phút"
+        },
+        {
+            "value": 20,
+            "content": "15 phút - 20 phút"
+        },
+        {
+            "value": 30,
+            "content": "20 phút - 30 phút"
+        },
+        {
+            "value": 31,
+            "content": "Trên 30 phút"
+        }
+    ],
+    "Topics": [
+        "Sách",
+        "Khoa học - Công nghệ",
+        "Thể thao",
+        "Quan điểm - Tranh luận",
+        "Yêu",
+        "Lịch sử",
+        "Game",
+        "Sáng tác",
+        "Phát triển bản thân",
+        "Âm nhạc",
+        "Tâm lý học",
+        "Du lịch",
+        "Nhiếp ảnh",
+        "Thời trang",
+        "Phim ảnh",
+        "THINKING OUT LOUD"
+    ],
     "Blogs": [
+        {
+            "img": "https://images.spiderum.com/sp-thumbnails/5ea50fc0aae211edaaa07193a04d9216.jpg",
+            "topic": "Phim ảnh",
+            "blogName": "Những bộ phim tình cảm cho Valentine một mình",
+            "readingTime": "5 phút đọc",
+            "asContent": "Phim tình cảm nhẹ nhàng lúc đầu nặng nề lúc sau cho Valentine",
+            "authorImg": "https://images.spiderum.com/sp-xs-avatar/772a611031ae11ed96f41b9a40d422d9.jpeg",
+            "authorName": "QQuânn",
+            "upLoadDate": "12 tháng 2 2023",
+            "upVote": 22,
+            "seen": 100,
+            "cmt": 12,
+            "forYou": 95
+        },
+        {
+            "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F1c%2Fde%2F8a%2F1cde8a39fff1618cb91b76a5b1614ce8.jpg&f=1&nofb=1&ipt=3e2811e3cee345a7a590394b6754563710d7cf227b1f5cbf5798d5d6581d1dbb&ipo=images",
+            "topic": "Lịch sử",
+            "blogName": "Edison, Tesla và cú Scam 50k đô",
+            "readingTime": "9 phút đọc",
+            "asContent": "59 năm sau, nhà phát minh thiên tài ấy qua đời trong cô đơn và nợ nần, bất chấp việc có cho mình hơn 300 sáng chế khác nhau",
+            "authorImg": "https://images.spiderum.com/sp-xs-avatar/a0d1ce20071711ed83a82bc6df79ac6d.jpeg",
+            "authorName": "Minh HD",
+            "upLoadDate": "1 tháng 2 2022",
+            "upVote": 200,
+            "seen": 678,
+            "cmt": 69,
+            "forYou": 90
+        },
+        {
+            "img": "https://images.spiderum.com/sp-thumbnails/0c6907e0abdf11edb3f1ebd891fc9d64.jpg",
+            "topic": "THINKING OUT LOUD",
+            "blogName": "Tự gieo cho ta DUYÊN LÀNH",
+            "readingTime": "5 phút đọc",
+            "asContent": "How to Định nghĩa chính mình?",
+            "authorImg": "https://images.spiderum.com/sp-xs-avatar/6bb11de09fb511edb7828777aabe29bb.jpeg",
+            "authorName": "đừng tin knhi",
+            "upLoadDate": "14 tháng 2 2023",
+            "upVote": 30,
+            "seen": 1000,
+            "cmt": 2,
+            "forYou": 80
+        },
+        {
+            "img": "https://images.spiderum.com/sp-thumbnails/0df6cc50aaf911ed88ac05995baf6606.png",
+            "topic": "Lịch sử",
+            "blogName": "Valentine- Ngày Lễ Tình Yêu Và Một Số Điều Thú Vị Mà Bạn Cần Biết",
+            "readingTime": "9 phút đọc",
+            "asContent": "Valentine là một dịp quan trọng trong tháng 2 này đặc biệt với những cặp đôi đang yêu nhau, tuy nhiên liệu bạn đã",
+            "authorImg": "https://images.spiderum.com/sp-avatar/45296200a21e11eaa8864fd957d9a3f4.jpg",
+            "authorName": "xuongrong",
+            "upLoadDate": "13 tháng 2 2022",
+            "upVote": 234,
+            "seen": 1222,
+            "cmt": 96,
+            "forYou": 100
+        },
+        {
+            "img": "https://images.spiderum.com/sp-thumbnails/deec38b0ab5b11ed8919abd421f2b240.jpg",
+            "topic": "Lịch sử",
+            "blogName": "Cuộc đời Tần Thủy Hoàng - 'Đệ nhất bạo chúa' hay vĩ nhân vượt thời?",
+            "readingTime": "49 phút đọc",
+            "asContent": "Về cuộc đời của Tần Thủy Hoàng Doanh Chính - vị Hoàng đế đầu tiên của Trung Hoa",
+            "authorImg": "https://images.spiderum.com/sp-xs-avatar/0a73bd5043f111edbf64b7ea2877ad2e.jpeg",
+            "authorName": "Hải Stark",
+            "upLoadDate": "13 tháng 2 2023",
+            "upVote": 20,
+            "seen": 50,
+            "cmt": 1,
+            "forYou": 50
+        },
+        {
+            "img": "https://images.spiderum.com/sp-thumbnails/1a3f2430ac2011ed943be36fcb99a418.png",
+            "topic": "Sách",
+            "blogName": "Một vài cuốn sách về tình yêu",
+            "readingTime": "7 phút đọc",
+            "asContent": "Sách và những mảng màu của tình yêu",
+            "authorImg": "https://images.spiderum.com/sp-avatar/45296200a21e11eaa8864fd957d9a3f4.jpg",
+            "authorName": "IamSuSu",
+            "upLoadDate": "13 tháng 2 2023",
+            "upVote": 50,
+            "seen": 765,
+            "cmt": 32,
+            "forYou": 95
+        },
         {
             "img": "https://images.spiderum.com/sp-images/94813e707f2f11eaa9dcb3364a58500c.jpg",
             "topic": "Quan điểm - Tranh luận",
             "blogName": "Làm gì khi người khác tổn thương mình?",
             "readingTime": "6 phút đọc",
-            "asContent": "Dạo gần đây mình trở nên nhạy cảm hơn bình thường. Đặc biệt là khi nghe những lời phán xét, chê bai vô ý tứ của người khác. Tại sao...",
+            "asContent": "Dạo gần đây mình trở nên nhạy cảm hơn bình thường. Đặc biệt là khi nghe những lời phán xét, chê bai vô ý tứ của người khác. Tại sao",
             "authorImg": "https://images.spiderum.com/sp-avatar/20396b2096ab11eba08adf903d8ec612.jpg",
             "authorName": "Mục đồng",
             "upLoadDate": "15 tháng 4 2020",
             "upVote": 234,
             "seen": 969,
-            "cmt": 100
+            "cmt": 20,
+            "forYou": 60
         },
         {
-            "img": "../assets/Library.jpg",
-            "topic": "Khoa học - Công nghệ",
-            "blogName": "3 cuốn sách gối đầu giường nếu bạn muốn thành thạo SQL",
-            "readingTime": "3 phút đọc",
-            "asContent": "Đọc sách được xem là cách tốt nhất để tập trung và thư...",
-            "authorImg": "https://images.spiderum.com/sp-avatar/c04305404b0911ed96af779465d662a5.jpeg",
-            "authorName": "Ngô Vinh Data Coach",
-            "upLoadDate": "30 tháng 11 2022",
-            "upVote": 234,
-            "seen": 909,
-            "cmt": 100
-        },
-        {
-            "img": "../assets/moon.png",
-            "topic": "Phát triển bản thân",
-            "blogName": "Nhật ký của một lập trình ziên zà...",
+            "img": "https://images.spiderum.com/sp-thumbnails/fc78db30a24711ed88f825e53e4a8f3b.png",
+            "topic": "Quan điểm - Tranh luận",
+            "blogName": "Tính triết học của (kiểu người ) Doomer, thuyết hư vô, Friedrich Nietzsche, Arthur Schopenhauer và Albert Camus.",
             "readingTime": "9 phút đọc",
-            "asContent": "Đọc sách được xem là cách tốt nhất để tập trung và thư...",
-            "authorImg": "https://i.ibb.co/NW7CCfv/avatar.jpg",
-            "authorName": "Trần Phú Đạt",
-            "upLoadDate": "30 tháng 11 2022",
+            "asContent": "Trong khoảng thời gian vài năm trở lại đây",
+            "authorImg": "https://images.spiderum.com/sp-avatar/45296200a21e11eaa8864fd957d9a3f4.jpg",
+            "authorName": "ravendel",
+            "upLoadDate": "1 tháng 2 2022",
             "upVote": 234,
             "seen": 822,
-            "cmt": 100
+            "cmt": 96,
+            "forYou": 70
+        },
+        {
+            "img": "https://images.spiderum.com/sp-thumbnails/6ac1a590aabd11ed9098a759e5581f7a.jpg",
+            "topic": "Phim ảnh",
+            "blogName": "The Fabelmans (2022) - Khi điện ảnh là phương thuốc chữa lành.",
+            "readingTime": "6 phút đọc",
+            "asContent": "Trong lễ trao giải Quả Cầu Vàng vào ngày 11/1 vừa qua, The Fabelmans (2022) của đạo diễn Steven Spielberg đã",
+            "authorImg": "https://images.spiderum.com/sp-xs-avatar/f493de106b1511ed92a29b9dd4c0ac86.jpeg",
+            "authorName": "Việt Anh Phạm",
+            "upLoadDate": "12 tháng 2 2023",
+            "upVote": 53,
+            "seen": 822,
+            "cmt": 22,
+            "forYou": 80
+        },
+        {
+            "img": "https://images.spiderum.com/sp-images/4df8682042e511e99eacb3a642f191c8.png",
+            "topic": "Âm nhạc",
+            "blogName": "Jazz cho một tâm hồn Lãng Mạn",
+            "readingTime": "3 phút đọc",
+            "asContent": "Từ thuở xa xưa đến nay, âm nhạc luôn là một món ăn tinh thần không thể thiếu của hầu hết mọi người. Từ già đến trẻ, từ nam đến nữ",
+            "authorImg": "https://images.spiderum.com/sp-xs-avatar/344c20f042e111e98c21038c08181742.jpg",
+            "authorName": "Trung Hiệp",
+            "upLoadDate": "30 tháng 11 2019",
+            "upVote": 234,
+            "seen": 2009,
+            "cmt": 89,
+            "forYou": 80
+        },
+        {
+            "img": "https://images.spiderum.com/sp-thumbnails/6ee659f0c06611eca0b9f7950e100164.jpg",
+            "topic": "Âm nhạc",
+            "blogName": "ÂM NHẠC CÓ ẢNH HƯỞNG THẾ NÀO ĐẾN HIỆU SUẤT LÀM VIỆC?",
+            "readingTime": "8 phút đọc",
+            "asContent": "Khi nghe nhạc phù hợp với bản thân thì hiệu suất làm việc",
+            "authorImg": "https://images.spiderum.com/sp-xs-avatar/2389ff00f7f311e8ad5b2bd8dc0f8c6b.jpg",
+            "authorName": "Đức Nhân",
+            "upLoadDate": "20 tháng 4 2022",
+            "upVote": 278,
+            "seen": 1243,
+            "cmt": 234,
+            "forYou": 100
         }
     ]
 }
