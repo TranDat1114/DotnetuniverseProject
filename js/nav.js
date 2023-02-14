@@ -1,6 +1,6 @@
 let myNavBeforeLogin = `<nav class="navbar navbar-expand-lg" ng-controller="navBar">
 <div class="container" id="normal-nav">
-    <a class="navbar-brand d-none d-lg-block" href="#"><img class="rounded-circle" height="50"
+    <a class="navbar-brand d-none d-lg-block" href="../screen/Home.html#home"><img class="rounded-circle" height="50"
             src="../assets/logo.svg" alt="logo">
         NetUniverse</a>
     <a class="navbar-brand d-lg-none" href="#"><img class="rounded-circle" height="50" src="../assets/logo.svg"
@@ -20,7 +20,7 @@ let myNavBeforeLogin = `<nav class="navbar navbar-expand-lg" ng-controller="navB
                         class="fa-solid fa-house"></i> Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa-solid fa-clipboard-question"></i> FAQs</a>
+                <a class="nav-link" href="../screen/FAQs.html"><i class="fa-solid fa-clipboard-question"></i> FAQs</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="../screen/AboutUs.html" role="button"
@@ -91,7 +91,7 @@ let myNavBeforeLogin = `<nav class="navbar navbar-expand-lg" ng-controller="navB
                         <label for="" class="form-label">Search</label>
                         <input class="form-control" type="text" placeholder="Search">
                     </div>
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-6 col-12" ng-controller="topic">
                         <label for="" class="form-label">Topic</label>
                         <select class="form-select" name="" id="">
                             <option ng-repeat="item in listTopic">{{item}}</option>
@@ -144,6 +144,10 @@ const listReadTime = [
 
 var app = angular.module('myApp', []);
 app.controller('navBar', function ($scope) {
-    $scope.listTopic = listTopic;
     $scope.listReadTime = listReadTime;
 });
+
+app.controller('topic', ($scope) => {
+    $scope.listTopic = listTopic;
+
+})

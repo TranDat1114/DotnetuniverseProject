@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/stylesToAll.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
     <style>
         #wallpaper>img {
             object-position: center;
@@ -23,177 +25,8 @@
 </head>
 
 <body data-bs-theme="dark" id="user-profile">
-    <!-- <div id="navbarDotnet">
-    </div> -->
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container visually-hidden mt-3" id="searchbar-nav">
-                <div class="row w-100 text-center">
-                    <div class="col-2">
-                        <button onclick="backNav()" class="btn btn-outline-warning"><i
-                                class="fa-solid fa-arrow-left"></i></button>
-                    </div>
-                    <div class="col-8">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    </div>
-                    <div class="col-2">
-                        <button class="btn btn-outline-warning"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="container" id="normal-nav">
-                <a class="navbar-brand d-none d-lg-block" href="#"><img class="rounded-circle" height="50"
-                        src="../assets/logo.svg" alt="logo">
-                    NetUniverse</a>
-                <a class="navbar-brand d-lg-none" href="../screen/Home.html"><img class="rounded-circle" height="50"
-                        src="../assets/logo.svg" alt="logo"></a>
-                <div class="btn-group">
-                    <div class="d-lg-none">
-                        <button class="btn btn-outline-warning"><i class="fa-solid fa-pen"></i> Viết bài</button>
-                        <button class="btn text-white position-relative" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="fa-solid fa-bell">
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
-                                </span>
-                            </i>
-                        </button>
-                        <div class=" dropdown-menu dropdown-menu-end min-vw-100 text-center">
-                            <div class="dropdown-item">Thông báo</div>
-                            <div class="dropdown-item bell-infor">
-                                <p>
-                                    <a href="#">Trần Phú Đạt</a>
-                                    đã bình luận về bài viết của bạn
-                                </p>
-                                <hr>
-                                <p>
-                                    <a href="#">Bài viết của bạn</a> đã đạt 999 like
-                                </p>
-
-                            </div>
-                            <div class="dropdown-item">Xem thêm</div>
-                        </div>
-                        <button class="btn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="rounded-circle" src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32"
-                                alt="user-picture">
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a class="dropdown-item" href="./Profile.html#user-profile"> Xem trang cá nhân</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-scroll"></i> Bài viết của
-                                    tôi</a>
-                            </li>
-                            <hr>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-boxes-packing"></i> Bản nháp</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-bookmark"></i> Bài viết đã
-                                    lưu</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-gears"></i> Tùy chỉnh</a>
-                            </li>
-                            <hr>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Đăng
-                                    xuất</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav me-2">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../screen/Home.html#home"><i
-                                    class="fa-solid fa-house"></i> Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-clipboard-question"></i> FAQs</a>
-                        </li>
-                        <li class="nav-item dropdown position-relative">
-                            <a class="nav-link dropdown-toggle" href="../screen/AboutUs.html" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-address-card"></i>
-                                About Us</a>
-                            <ul class="dropdown-menu position-absolute top-100 start-0">
-                                <li><a class="dropdown-item" href="../screen/AboutUs.html#about-us">Our Information</a>
-                                </li>
-                                <li><a class="dropdown-item" href="../screen/AboutUs.html#our-misson">Our Mission</a>
-                                </li>
-                                <li><a class="dropdown-item" href="../screen/AboutUs.html#community">Our Community</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <hr>
-                </div>
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav gap-3">
-                        <li class="nav-item">
-                            <button class="btn btn-outline-warning" onclick="toSearchBar()"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-outline-warning"><i class="fa-solid fa-pen"></i> Viết bài</button>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-
-                                <button class="btn text-white position-relative" type="button"
-                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                    aria-controls="offcanvasRight">
-                                    <i class="fa-solid fa-bell">
-                                        <span
-                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
-                                        </span>
-                                    </i>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-
-                                <img class="rounded-circle dropdown" data-bs-toggle="dropdown" aria-expanded="false"
-                                    src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32" alt="user-picture">
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#">Xem trang cá nhân</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a class="dropdown-item" href="#">Bài viết của tôi</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#"><i class="fa-solid fa-sun"></i> Bản nháp</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-moon"></i>
-                                            Bài viết đã lưu</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-moon"></i> Tùy chỉnh</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-moon"></i> Đăng xuất</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="navbarDotnet">
+    </div>
     <main>
         <div class="container">
             <nav aria-label="breadcrumb">
@@ -629,24 +462,11 @@
     </div>
 
     <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="../js/nav.js"></script> -->
+    <script src="../js/nav.js"></script>
     <script src="../js/footer.js"></script>
-    <script src="../js/toSearchBar.js"></script>
 
     <script>
-        let processScroll = () => {
-            let docElem = document.documentElement,
-                docBody = document.body,
-                scrollTop = docElem['scrollTop'] || docBody['scrollTop'],
-                scrollBottom = (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight,
-                scrollPercent = scrollTop / scrollBottom * 100 + '%';
 
-            console.log(scrollTop + ' / ' + scrollBottom + ' / ' + scrollPercent);
-
-            document.getElementById("progress-bar").style.width = scrollPercent;
-        }
-
-        document.addEventListener('scroll', processScroll);
     </script>
 
 </body>
