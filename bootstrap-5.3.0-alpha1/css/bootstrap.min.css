@@ -92,7 +92,7 @@
     --bs-tertiary-color-rgb: 33, 37, 41;
     --bs-tertiary-bg: #f8f9fa;
     --bs-tertiary-bg-rgb: 248, 249, 250;
-    --bs-body-bg: #fff;
+    --bs-body-bg: #eee;
     --bs-body-bg-rgb: 255, 255, 255;
     --bs-link-color: #0d6efd;
     --bs-link-color-rgb: 13, 110, 253;
@@ -130,11 +130,11 @@
 [data-bs-theme=dark] {
     --bs-body-color: #adb5bd;
     --bs-body-color-rgb: 173, 181, 189;
-    --bs-body-bg: #212529;
+    --bs-body-bg: #333;
     --bs-body-bg-rgb: 33, 37, 41;
     --bs-emphasis-color: #f8f9fa;
     --bs-emphasis-color-rgb: 248, 249, 250;
-    --bs-secondary-color: rgba(173, 181, 189, 0.75);
+    --bs-secondary-color: rgba(120, 126, 131, 0.75);
     --bs-secondary-color-rgb: 173, 181, 189;
     --bs-secondary-bg: #343a40;
     --bs-secondary-bg-rgb: 52, 58, 64;
