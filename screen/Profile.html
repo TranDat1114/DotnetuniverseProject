@@ -1,640 +1,431 @@
-<!DOCTYPE html>
-<html lang="en">
+<main>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="./Home.html#home">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Profile</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="wallpaper">
+                <img class="object-fit-cover img-fluid w-100" src="../assets/fpt-poly-3.jpg" alt="wallpaper">
+            </div>
+        </div>
+    </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - DotNetUniverse</title>
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/stylesToAll.css">
-
-</head>
-
-<body data-bs-theme="dark" id="user-profile">
-    <!-- <div id="navbarDotnet">
-    </div> -->
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container visually-hidden mt-3" id="searchbar-nav">
-                <div class="row w-100 text-center">
-                    <div class="col-2">
-                        <button class="btn btn-outline-warning"><i class="fa-solid fa-arrow-left"></i></button>
-                    </div>
-                    <div class="col-8">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    </div>
-                    <div class="col-2">
-                        <button class="btn btn-outline-warning"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <div class="container">
+        <div class="row justify-content-evenly">
+            <div class="col-2 d-sm-none"></div>
+            <div class="col-8 col-md-3 col-lg-2">
+                <div class="row">
+                    <div class="col-auto">
+                        <img class="user-avatar rounded-circle img-thumbnail" src="https://i.ibb.co/NW7CCfv/avatar.jpg"
+                            alt="avatar">
                     </div>
                 </div>
-            </div>
-            <div class="container" id="normal-nav">
-                <a class="navbar-brand d-none d-lg-block" href="#"><img class="rounded-circle" height="50"
-                        src="../assets/logo.svg" alt="logo">
-                    NetUniverse</a>
-                <a class="navbar-brand d-lg-none" href="../screen/Home.html"><img class="rounded-circle" height="50"
-                        src="../assets/logo.svg" alt="logo"></a>
-                <div class="btn-group">
-                    <div class="d-lg-none">
-                        <button class="btn btn-outline-warning"><i class="fa-solid fa-pen"></i> Viết bài</button>
-                        <button class="btn text-white position-relative" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="fa-solid fa-bell">
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
-                                </span>
-                            </i>
-                        </button>
-                        <div class=" dropdown-menu dropdown-menu-end min-vw-100 text-center">
-                            <div class="dropdown-item">Thông báo</div>
-                            <div class="dropdown-item bell-infor">
-                                <p>
-                                    <a href="#">Trần Phú Đạt</a>
-                                    đã bình luận về bài viết của bạn
-                                </p>
-                                <hr>
-                                <p>
-                                    <a href="#">Bài viết của bạn</a> đã đạt 999 like
-                                </p>
-
-                            </div>
-                            <div class="dropdown-item">Xem thêm</div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <p class="h4">Trần Phú Đạt</p>
                         </div>
-                        <button class="btn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="rounded-circle" src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32"
-                                alt="user-picture">
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a class="dropdown-item" href="./Profile.html#user-profile"> Xem trang cá nhân</a>
+                    </div>
+                    <br>
+                    <div class="col-12">
+                        <div class="row justify-content-center">
+                            <button class="btn btn-outline-primary">Following</button>
+                        </div>
+                        <hr>
+                        <div class="row justify-content-between">
+                            <div class="col-auto">99</div>
+                            <div class="col-auto">Blog</div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="col-auto">99</div>
+                            <div class="col-auto">Follower</div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="col-auto">99</div>
+                            <div class="col-auto">Following</div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            Để có nhiều bạn bè, ta chỉ cần tốt bụng; nhưng để có nhiều kẻ thù, phải cần nhiều trí
+                            tuệ.
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-2 d-sm-none"></div>
+            <div class="col-12 col-md-9 col-lg-10">
+                <br>
+                <div class="card">
+                    <div class="card-header">
+                        <p class="card-title h5">Your Universe</p>
+                        <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#blog">
+                                    Bài viết
+                                </a>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-scroll"></i> Bài viết của
-                                    tôi</a>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#readlist">
+                                    Danh sách
+                                </a>
                             </li>
-                            <hr>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-boxes-packing"></i> Bản nháp</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-bookmark"></i> Bài viết đã
-                                    lưu</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-gears"></i> Tùy chỉnh</a>
-                            </li>
-                            <hr>
-                            <li>
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Đăng
-                                    xuất</a>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#saved">
+                                    Đã lưu
+                                </a>
                             </li>
                         </ul>
                     </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav me-2">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../screen/Home.html#home"><i
-                                    class="fa-solid fa-house"></i> Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-clipboard-question"></i> FAQs</a>
-                        </li>
-                        <li class="nav-item dropdown position-relative">
-                            <a class="nav-link dropdown-toggle" href="../screen/AboutUs.html" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-address-card"></i>
-                                About Us</a>
-                            <ul class="dropdown-menu position-absolute top-100 start-0">
-                                <li><a class="dropdown-item" href="../screen/AboutUs.html#about-us">Our Information</a>
-                                </li>
-                                <li><a class="dropdown-item" href="../screen/AboutUs.html#our-misson">Our Mission</a>
-                                </li>
-                                <li><a class="dropdown-item" href="../screen/AboutUs.html#community">Our Community</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <hr>
-                </div>
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav gap-3">
-                        <li class="nav-item">
-                            <button class="btn btn-outline-warning" onclick="toSearchBar()"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-outline-warning"><i class="fa-solid fa-pen"></i> Viết bài</button>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-
-                                <button class="btn text-white position-relative" type="button"
-                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                    aria-controls="offcanvasRight">
-                                    <i class="fa-solid fa-bell">
-                                        <span
-                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
-                                        </span>
-                                    </i>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-
-                                <img class="rounded-circle dropdown" data-bs-toggle="dropdown" aria-expanded="false"
-                                    src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32" alt="user-picture">
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#">Xem trang cá nhân</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a class="dropdown-item" href="#">Bài viết của tôi</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#"><i class="fa-solid fa-sun"></i> Bản nháp</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-moon"></i>
-                                            Bài viết đã lưu</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-moon"></i> Tùy chỉnh</a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-moon"></i> Đăng xuất</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./Home.html#home">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
-                </ol>
-            </nav>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12" id="wallpaper">
-                    <img class="object-fit-cover img-fluid w-100" src="../assets/fpt-poly-3.jpg" alt="wallpaper">
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row justify-content-evenly">
-                <div class="col-2 d-sm-none"></div>
-                <div class="col-8 col-md-3 col-lg-2">
-                    <div class="row">
-                        <div class="col-auto">
-                            <img class="user-avatar rounded-circle img-thumbnail"
-                                src="https://i.ibb.co/NW7CCfv/avatar.jpg" alt="avatar">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="text-center">
-                                <p class="h4">Trần Phú Đạt</p>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="col-12">
-                            <div class="row justify-content-center">
-                                <button class="btn btn-outline-primary">Following</button>
-                            </div>
-                            <hr>
-                            <div class="row justify-content-between">
-                                <div class="col-auto">99</div>
-                                <div class="col-auto">Blog</div>
-                            </div>
-                            <div class="row justify-content-between">
-                                <div class="col-auto">99</div>
-                                <div class="col-auto">Follower</div>
-                            </div>
-                            <div class="row justify-content-between">
-                                <div class="col-auto">99</div>
-                                <div class="col-auto">Following</div>
-                            </div>
-
-                            <hr>
+                    <div class="card-body tab-content">
+                        <div class="tab-pane active" id="blog">
                             <div class="row">
-                                Để có nhiều bạn bè, ta chỉ cần tốt bụng; nhưng để có nhiều kẻ thù, phải cần nhiều trí
-                                tuệ.
+                                <div class="col-12 col-md-3">
+                                    <select class="form-select bg-dark" aria-label="Default select example">
+                                        <option selected>Lọc</option>
+                                        <option value="1">Theo thời gian</option>
+                                        <option value="2">Theo độ nổi tiếng</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row g-3">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5 col-lg-4">
+                                                <img loading="lazy" class="object-fit-cover w-100" height="250"
+                                                    src="../assets/moon.png" alt="baiviet">
+                                            </div>
+                                            <div class="col-sm-12 col-md-7 col-lg-8">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                                href="#">Phát triển bản thân</a>
+                                                            |
+                                                            <em class="content-topic">9 phút đọc</em>
+                                                        </p>
+                                                        <div class="content-title">
+                                                            <a class="h5 text-decoration-none" href="#">
+                                                                Nhật ký của một lập trình ziên zà...
+                                                            </a>
+                                                            <p class="content-content">Đọc sách được xem là cách tốt
+                                                                nhất để tập
+                                                                trung
+                                                                và
+                                                                thư...</p>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-8">
+                                                                <div class="row">
+                                                                    <div class="col-3">
+                                                                        <img loading="lazy"
+                                                                            class="object-fit-cover rounded-circle authorHome"
+                                                                            src="https://i.ibb.co/NW7CCfv/avatar.jpg"
+                                                                            alt="author">
+                                                                    </div>
+                                                                    <div class="col-9">
+                                                                        <a href="#"
+                                                                            class="content-topic text-decoration-none">
+                                                                            Trần Phú Đạt</a>
+                                                                        <p class="content-topic">24 tháng 1 2022</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="row text-center">
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Up vote">
+                                                                        <i class="fa-solid fa-chevron-up"></i>
+                                                                        <p class="content-topic">6</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="View">
+                                                                        <i class="fa-solid fa-eye"></i>
+                                                                        <p class="content-topic">822</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Comment">
+                                                                        <i class="fa-solid fa-message"></i>
+                                                                        <p class="content-topic">0</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5 col-lg-4">
+                                                <a href="./BlogReading.html">
+                                                    <img loading="lazy" class="object-fit-cover w-100" height="250"
+                                                        src="../assets/Library.jpg" alt="baiviet">
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-12 col-md-7 col-lg-8">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                                href="#">Khoa
+                                                                học -
+                                                                Công
+                                                                nghệ</a>
+                                                            |
+                                                            <em class="content-topic">3 phút đọc</em>
+                                                        </p>
+                                                        <div class="content-title">
+                                                            <a class="h5 text-decoration-none"
+                                                                href="./BlogReading.html">3 cuốn sách
+                                                                gối đầu giường
+                                                                nếu
+                                                                bạn
+                                                                muốn thành
+                                                                thạo SQL
+                                                            </a>
+                                                            <p class="content-content">Đọc sách được xem là cách tốt
+                                                                nhất để tập
+                                                                trung
+                                                                và
+                                                                thư...</p>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-8">
+                                                                <div class="row">
+                                                                    <div class="col-3">
+                                                                        <img loading="lazy"
+                                                                            class="object-fit-cover rounded-circle authorHome"
+                                                                            src="https://images.spiderum.com/sp-avatar/c04305404b0911ed96af779465d662a5.jpeg"
+                                                                            alt="author">
+                                                                    </div>
+                                                                    <div class="col-9">
+                                                                        <a href="#"
+                                                                            class="content-topic text-decoration-none">
+                                                                            Ngô Vinh
+                                                                            Data
+                                                                            Coach</a>
+                                                                        <p class="content-topic">30 tháng 11 2022
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="row text-center">
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Up vote">
+                                                                        <i class="fa-solid fa-chevron-up"></i>
+                                                                        <p class="content-topic">6</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="View">
+                                                                        <i class="fa-solid fa-eye"></i>
+                                                                        <p class="content-topic">822</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Comment">
+                                                                        <i class="fa-solid fa-message"></i>
+                                                                        <p class="content-topic">0</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5 col-lg-4">
+                                                <img loading="lazy" class="object-fit-cover w-100" height="250"
+                                                    src="https://images.spiderum.com/sp-images/94813e707f2f11eaa9dcb3364a58500c.jpg"
+                                                    alt="baiviet">
+                                            </div>
+                                            <div class="col-sm-12 col-md-7 col-lg-8">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                                href="#">Quan điểm - Tranh luận</a>
+                                                            |
+                                                            <em class="content-topic">6 phút đọc</em>
+                                                        </p>
+                                                        <div class="content-title">
+                                                            <a class="h5 text-decoration-none" href="#">Làm gì khi
+                                                                người khác tổn
+                                                                thương mình?
+                                                            </a>
+                                                            <p class="content-content">Dạo gần đây mình trở nên nhạy
+                                                                cảm hơn bình
+                                                                thường. Đặc biệt là khi nghe những lời phán xét, chê
+                                                                bai vô ý tứ của
+                                                                người khác. Tại sao...</p>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-8">
+                                                                <div class="row">
+                                                                    <div class="col-3">
+                                                                        <img loading="lazy"
+                                                                            class="object-fit-cover rounded-circle authorHome"
+                                                                            src="https://images.spiderum.com/sp-avatar/20396b2096ab11eba08adf903d8ec612.jpg"
+                                                                            alt="author">
+                                                                    </div>
+                                                                    <div class="col-9">
+                                                                        <a href="#"
+                                                                            class="content-topic text-decoration-none">
+                                                                            Mục đồng</a>
+                                                                        <p class="content-topic">15 tháng 4 2020</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="row text-center">
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Up vote">
+                                                                        <i class="fa-solid fa-chevron-up"></i>
+                                                                        <p class="content-topic">6</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="View">
+                                                                        <i class="fa-solid fa-eye"></i>
+                                                                        <p class="content-topic">822</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Comment">
+                                                                        <i class="fa-solid fa-message"></i>
+                                                                        <p class="content-topic">0</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <hr>
-                    </div>
-                </div>
-                <div class="col-2 d-sm-none"></div>
-                <div class="col-12 col-md-9 col-lg-10">
-                    <br>
-                    <div class="card">
-                        <div class="card-header">
-                            <p class="card-title h5">Your Universe</p>
-                            <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#blog">
-                                        Bài viết
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#readlist">
-                                        Danh sách
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#saved">
-                                        Đã lưu
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="tab-pane" id="readlist">
+                            <div class="row justify-content-between">
+                                <div class="col-10">
+                                    <p class="h2">
+                                        You had nothing here :_(
+                                    </p>
+                                </div>
+                                <div class="col-2"><button class="btn btn-success">Tạo danh sách</button></div>
+                            </div>
                         </div>
-                        <div class="card-body tab-content">
-                            <div class="tab-pane active" id="blog">
-                                <div class="row">
-                                    <div class="col-12 col-md-3">
-                                        <select class="form-select bg-dark" aria-label="Default select example">
-                                            <option selected>Lọc</option>
-                                            <option value="1">Theo thời gian</option>
-                                            <option value="2">Theo độ nổi tiếng</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row g-3">
-                                    <div class="col-sm-12">
-                                        <div class="card">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-5 col-lg-4">
-                                                    <img loading="lazy" class="object-fit-cover w-100" height="250"
-                                                        src="../assets/moon.png" alt="baiviet">
-                                                </div>
-                                                <div class="col-sm-12 col-md-7 col-lg-8">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <p><a class="content-topic btn-link text-uppercase text-decoration-none"
-                                                                    href="#">Phát triển bản thân</a>
-                                                                |
-                                                                <em class="content-topic">9 phút đọc</em>
-                                                            </p>
-                                                            <div class="content-title">
-                                                                <a class="h5 text-decoration-none" href="#">
-                                                                    Nhật ký của một lập trình ziên zà...
-                                                                </a>
-                                                                <p class="content-content">Đọc sách được xem là cách tốt
-                                                                    nhất để tập
-                                                                    trung
-                                                                    và
-                                                                    thư...</p>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-8">
-                                                                    <div class="row">
-                                                                        <div class="col-3">
-                                                                            <img loading="lazy"
-                                                                                class="object-fit-cover rounded-circle authorHome"
-                                                                                src="https://i.ibb.co/NW7CCfv/avatar.jpg"
-                                                                                alt="author">
-                                                                        </div>
-                                                                        <div class="col-9">
-                                                                            <a href="#"
-                                                                                class="content-topic text-decoration-none">
-                                                                                Trần Phú Đạt</a>
-                                                                            <p class="content-topic">24 tháng 1 2022</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-4">
-                                                                    <div class="row text-center">
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="Up vote">
-                                                                            <i class="fa-solid fa-chevron-up"></i>
-                                                                            <p class="content-topic">6</p>
-                                                                        </div>
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="View">
-                                                                            <i class="fa-solid fa-eye"></i>
-                                                                            <p class="content-topic">822</p>
-                                                                        </div>
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="Comment">
-                                                                            <i class="fa-solid fa-message"></i>
-                                                                            <p class="content-topic">0</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="card">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-5 col-lg-4">
-                                                    <a href="./BlogReading.html">
-                                                        <img loading="lazy" class="object-fit-cover w-100" height="250"
-                                                            src="../assets/Library.jpg" alt="baiviet">
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-12 col-md-7 col-lg-8">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <p><a class="content-topic btn-link text-uppercase text-decoration-none"
-                                                                    href="#">Khoa
-                                                                    học -
-                                                                    Công
-                                                                    nghệ</a>
-                                                                |
-                                                                <em class="content-topic">3 phút đọc</em>
-                                                            </p>
-                                                            <div class="content-title">
-                                                                <a class="h5 text-decoration-none"
-                                                                    href="./BlogReading.html">3 cuốn sách
-                                                                    gối đầu giường
-                                                                    nếu
-                                                                    bạn
-                                                                    muốn thành
-                                                                    thạo SQL
-                                                                </a>
-                                                                <p class="content-content">Đọc sách được xem là cách tốt
-                                                                    nhất để tập
-                                                                    trung
-                                                                    và
-                                                                    thư...</p>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-8">
-                                                                    <div class="row">
-                                                                        <div class="col-3">
-                                                                            <img loading="lazy"
-                                                                                class="object-fit-cover rounded-circle authorHome"
-                                                                                src="https://images.spiderum.com/sp-avatar/c04305404b0911ed96af779465d662a5.jpeg"
-                                                                                alt="author">
-                                                                        </div>
-                                                                        <div class="col-9">
-                                                                            <a href="#"
-                                                                                class="content-topic text-decoration-none">
-                                                                                Ngô Vinh
-                                                                                Data
-                                                                                Coach</a>
-                                                                            <p class="content-topic">30 tháng 11 2022
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-4">
-                                                                    <div class="row text-center">
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="Up vote">
-                                                                            <i class="fa-solid fa-chevron-up"></i>
-                                                                            <p class="content-topic">6</p>
-                                                                        </div>
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="View">
-                                                                            <i class="fa-solid fa-eye"></i>
-                                                                            <p class="content-topic">822</p>
-                                                                        </div>
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="Comment">
-                                                                            <i class="fa-solid fa-message"></i>
-                                                                            <p class="content-topic">0</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="card">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-5 col-lg-4">
-                                                    <img loading="lazy" class="object-fit-cover w-100" height="250"
-                                                        src="https://images.spiderum.com/sp-images/94813e707f2f11eaa9dcb3364a58500c.jpg"
-                                                        alt="baiviet">
-                                                </div>
-                                                <div class="col-sm-12 col-md-7 col-lg-8">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <p><a class="content-topic btn-link text-uppercase text-decoration-none"
-                                                                    href="#">Quan điểm - Tranh luận</a>
-                                                                |
-                                                                <em class="content-topic">6 phút đọc</em>
-                                                            </p>
-                                                            <div class="content-title">
-                                                                <a class="h5 text-decoration-none" href="#">Làm gì khi
-                                                                    người khác tổn
-                                                                    thương mình?
-                                                                </a>
-                                                                <p class="content-content">Dạo gần đây mình trở nên nhạy
-                                                                    cảm hơn bình
-                                                                    thường. Đặc biệt là khi nghe những lời phán xét, chê
-                                                                    bai vô ý tứ của
-                                                                    người khác. Tại sao...</p>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-8">
-                                                                    <div class="row">
-                                                                        <div class="col-3">
-                                                                            <img loading="lazy"
-                                                                                class="object-fit-cover rounded-circle authorHome"
-                                                                                src="https://images.spiderum.com/sp-avatar/20396b2096ab11eba08adf903d8ec612.jpg"
-                                                                                alt="author">
-                                                                        </div>
-                                                                        <div class="col-9">
-                                                                            <a href="#"
-                                                                                class="content-topic text-decoration-none">
-                                                                                Mục đồng</a>
-                                                                            <p class="content-topic">15 tháng 4 2020</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-4">
-                                                                    <div class="row text-center">
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="Up vote">
-                                                                            <i class="fa-solid fa-chevron-up"></i>
-                                                                            <p class="content-topic">6</p>
-                                                                        </div>
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="View">
-                                                                            <i class="fa-solid fa-eye"></i>
-                                                                            <p class="content-topic">822</p>
-                                                                        </div>
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="Comment">
-                                                                            <i class="fa-solid fa-message"></i>
-                                                                            <p class="content-topic">0</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="readlist">
-                                <div class="row justify-content-between">
-                                    <div class="col-10">
-                                        <p class="h2">
-                                            You had nothing here :_(
-                                        </p>
-                                    </div>
-                                    <div class="col-2"><button class="btn btn-success">Tạo danh sách</button></div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="saved">
-                                <p class="h2">You had nothing here :_(</p>
-                            </div>
+                        <div class="tab-pane" id="saved">
+                            <p class="h2">You had nothing here :_(</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
-    <hr>
-    <div class="container">
-        <div id="footerDotnet">
-        </div>
     </div>
-    <!-- Toast -->
-    <div class="position-sticky top-0 start-0 end-0 bottom-0">
-        <div class="toast-container bottom-0 end-0 p-3">
-            <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    <img src="../assets/logo.svg" height="32" class="rounded-circle me-2" alt="...">
-                    <strong class="me-auto">DotNetUniverse</strong>
-                    <small class="text-muted">Just now</small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    <p class="h5">
-                        Xin chào Trần Phú Đạt
-                    </p>
-                    <p class="h6">
-                        Chúc bạn một ngày tốt lành!!
-                    </p>
-                </div>
+</main>
+<!-- Toast -->
+<div class="position-sticky top-0 start-0 end-0 bottom-0">
+    <div class="toast-container bottom-0 end-0 p-3">
+        <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="../assets/logo.svg" height="32" class="rounded-circle me-2" alt="...">
+                <strong class="me-auto">DotNetUniverse</strong>
+                <small class="text-muted">Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <p class="h5">
+                    Xin chào Trần Phú Đạt
+                </p>
+                <p class="h6">
+                    Chúc bạn một ngày tốt lành!!
+                </p>
             </div>
         </div>
     </div>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Thông báo</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Thông báo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p>Thông báo ngày hôm nay</p>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                    viết</strong> của bạn đạt 999
+                like</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
+                trả lời bình
+                luận của bạn</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
+                40 người khác đã
+                like bình luận của bạn</a>
         </div>
-        <div class="offcanvas-body">
-            <p>Thông báo ngày hôm nay</p>
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                        viết</strong> của bạn đạt 999
-                    like</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> đã trả lời bình
-                    luận của bạn</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> và 40 người khác đã
-                    like bình luận của bạn</a>
-            </div>
-            <br>
-            <p>Thông báo ngày hôm qua</p>
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                        viết</strong> của bạn đạt 999
-                    like</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> đã trả lời bình
-                    luận của bạn</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> và 40 người khác đã
-                    like bình luận của bạn</a>
-            </div>
-            <br>
-            <p>Thông báo ngày 2/3/2023</p>
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                        viết</strong> của bạn đạt 999
-                    like</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> đã trả lời bình
-                    luận của bạn</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> và 40 người khác đã
-                    like bình luận của bạn</a>
-            </div>
-            <br>
-            <p>Thông báo ngày 1/3/2023</p>
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                        viết</strong> của bạn đạt 999
-                    like</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> đã trả lời bình
-                    luận của bạn</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> và 40 người khác đã
-                    like bình luận của bạn</a>
-            </div>
-            <br>
-            <p>Thông báo ngày 29/2/2023</p>
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                        viết</strong> của bạn đạt 999
-                    like</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> đã trả lời bình
-                    luận của bạn</a>
-                <a href="#" class="list-group-item list-group-item-action"><strong
-                        class="text-success">HuyHuynh</strong> và 40 người khác đã
-                    like bình luận của bạn</a>
-            </div>
+        <br>
+        <p>Thông báo ngày hôm qua</p>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                    viết</strong> của bạn đạt 999
+                like</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
+                trả lời bình
+                luận của bạn</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
+                40 người khác đã
+                like bình luận của bạn</a>
+        </div>
+        <br>
+        <p>Thông báo ngày 2/3/2023</p>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                    viết</strong> của bạn đạt 999
+                like</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
+                trả lời bình
+                luận của bạn</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
+                40 người khác đã
+                like bình luận của bạn</a>
+        </div>
+        <br>
+        <p>Thông báo ngày 1/3/2023</p>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                    viết</strong> của bạn đạt 999
+                like</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
+                trả lời bình
+                luận của bạn</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
+                40 người khác đã
+                like bình luận của bạn</a>
+        </div>
+        <br>
+        <p>Thông báo ngày 29/2/2023</p>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
+                    viết</strong> của bạn đạt 999
+                like</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
+                trả lời bình
+                luận của bạn</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
+                40 người khác đã
+                like bình luận của bạn</a>
         </div>
     </div>
-
-    <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="../js/nav.js"></script> -->
-    <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script>
-    <script src="../js/footer.js"></script>
-    <script src="../js/toSearchBar.js"></script>
-
-
-    <script>
-
-    </script>
-
-</body>
-
-<!-- https://duykhang.com/2022/business-analyst/nguyen-tac-invest-cho-user-story/ -->
+</div>
