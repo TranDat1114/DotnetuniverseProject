@@ -22,128 +22,202 @@
 
 <body ng-app="myApp" ng-controller="allElement" data-bs-theme="{{themes.theme}}">
     <div>
-        <nav class="navbar navbar-expand-lg" ng-controller="navBar">
-            <div class="container" id="normal-nav">
-                <a class="navbar-brand d-none d-lg-block" href="#!home#Home"><img class="rounded-circle" height="50"
-                        src="../assets/logo.svg" alt="logo">
-                    NetUniverse</a>
-                <a class="navbar-brand d-lg-none" href="#!home#Home"><img class="rounded-circle" height="50"
-                        src="../assets/logo.svg" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav me-2">
-                        <li class="nav-item d-lg-none">
-                            <button class="w-25 btn btn-outline-warning" data-bs-toggle="modal" type="button"
-                                data-bs-target="#search-modal"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#!home#Home"><i class="fa-solid fa-house"></i>
-                                Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!faqs"><i class="fa-solid fa-clipboard-question"></i>
-                                FAQs</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#!aboutus#about-us" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-address-card"></i>
-                                About Us</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#!aboutus#about-us">Our Information</a></li>
-                                <li><a class="dropdown-item" href="#!aboutus#our-misson">Our Mission</a></li>
-                                <li><a class="dropdown-item" href="#!aboutus#community">Our Community</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav gap-2">
-                        <li class="nav-item">
-                            <a class="btn-warning btn text-decoration-none" href="#!login#login">
-                                Login</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="btn-warning btn text-decoration-none" href="#!signup#signup">
-                                Sign up</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-outline-warning" data-bs-toggle="modal" type="button"
-                                data-bs-target="#search-modal"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </li>
-                        <li class="nav-item dropdown dropstart">
-                            <button class="btn btn-outline-warning" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false"><i class="fa-solid fa-gear"></i></button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#" class="dropdown-item disabled">
-                                        <i class="fa-solid fa-language "></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <button class="dropdown-item" href="#">vi - Tiếng việt</button>
-                                    <button class="dropdown-item" href="#">en - English</button>
-                                </li>
-                                <li>
-                                    <hr>
-                                </li>
-                                <li>
-                                    <button ng-click="changeTheme()" class="dropdown-item">
-                                        <em ng-show="themes.content">
-                                            <i class="fa-solid fa-sun"></i>
-                                            Giao diện - Sáng
-                                        </em>
-                                        <em ng-hide="themes.content">
-                                            <i class="fa-solid fa-moon"></i>
-                                            Giao diện - Tối
-                                        </em>
+        <header>
+            <nav class="navbar navbar-expand-lg" ng-controller="navBar">
+                <div class="container" id="normal-nav">
+                    <a class="navbar-brand d-none d-lg-block" href="#!home#Home"><img class="rounded-circle" height="50"
+                            src="../assets/logo.svg" alt="logo">
+                        NetUniverse</a>
+                    <a class="navbar-brand d-lg-none" href="#!home#Home"><img class="rounded-circle" height="50"
+                            src="../assets/logo.svg" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav me-2">
+                            <li class="nav-item d-lg-none">
+                                <button class="w-25 btn btn-outline-warning" data-bs-toggle="modal" type="button"
+                                    data-bs-target="#search-modal" title="open-search-modal"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#!home#Home"><i
+                                        class="fa-solid fa-house"></i>
+                                    Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!faqs"><i class="fa-solid fa-clipboard-question"></i>
+                                    FAQs</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#!aboutus#about-us" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"><i
+                                        class="fa-solid fa-address-card"></i>
+                                    About Us</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#!aboutus#about-us">Our Information</a></li>
+                                    <li><a class="dropdown-item" href="#!aboutus#our-misson">Our Mission</a></li>
+                                    <li><a class="dropdown-item" href="#!aboutus#community">Our Community</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end"
+                        ng-class="{'visually-hidden': isLoginNow}">
+                        <ul class="navbar-nav gap-2">
+                            <li class="nav-item">
+                                <a class="btn-warning btn text-decoration-none" href="#!login#login">
+                                    Login</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="btn-warning btn text-decoration-none" href="#!signup#signup">
+                                    Sign up</a>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn btn-outline-warning" data-bs-toggle="modal" type="button"
+                                    data-bs-target="#search-modal" title="open-search-modal"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </li>
+                            <li class="nav-item dropdown dropstart">
+                                <button class="btn btn-outline-warning" title="popup-profile" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"><i
+                                        class="fa-solid fa-gear"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#" class="dropdown-item disabled" title="dropdown">
+                                            <i class="fa-solid fa-language "></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" href="#">vi - Tiếng việt</button>
+                                        <button class="dropdown-item" href="#">en - English</button>
+                                    </li>
+                                    <li>
+                                        <hr>
+                                    </li>
+                                    <li>
+                                        <button ng-click="changeTheme()" class="dropdown-item">
+                                            <em ng-show="themes.content">
+                                                <i class="fa-solid fa-sun"></i>
+                                                Giao diện - Sáng
+                                            </em>
+                                            <em ng-hide="themes.content">
+                                                <i class="fa-solid fa-moon"></i>
+                                                Giao diện - Tối
+                                            </em>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end"
+                        ng-class="{'visually-hidden': !isLoginNow}">
+                        <ul class="navbar-nav gap-3">
+                            <li class="nav-item">
+                                <button class="btn btn-outline-warning" data-bs-toggle="modal" type="button"
+                                    data-bs-target="#search-modal" title="open-search-modal"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn btn-outline-warning"><i class="fa-solid fa-pen"></i> Viết
+                                    bài</button>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn text-white position-relative" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                        aria-controls="offcanvasRight">
+                                        <i class="fa-solid fa-bell">
+                                            <span
+                                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
+                                            </span>
+                                        </i>
                                     </button>
-                                </li>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
 
-                            </ul>
-                        </li>
-                    </ul>
+                                    <img class="rounded-circle dropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                                        src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32" alt="user-picture">
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#">Xem trang cá nhân</a>
+                                        </li>
+                                        <li>
+                                            <hr>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Bài viết của tôi</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-sun"></i> Bản
+                                                nháp</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fa-solid fa-moon"></i>
+                                                Bài viết đã lưu</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fa-solid fa-moon"></i> Tùy chỉnh</a>
+                                        </li>
+                                        <li>
+                                            <hr>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fa-solid fa-moon"></i> Đăng xuất</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="search-modal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Search</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-12">
-                                    <label for="" class="form-label">Search</label>
-                                    <input class="form-control" type="text" placeholder="Search">
-                                </div>
-                                <div class="col-lg-6 col-12" ng-controller="topic">
-                                    <label for="" class="form-label">Topic</label>
-                                    <select class="form-select" name="" id="">
-                                        <option ng-repeat="item in listTopic">{{item}}</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <label for="" class="form-label">Read time</label>
-                                    <select class="form-select" name="" id="">
-                                        <option ng-repeat="readtime in listReadTime" value={{readtime.value}}>
-                                            {{readtime.content}}</option>
-                                    </select>
+                <!-- Modal -->
+                <div class="modal fade" id="search-modal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Search</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-12">
+                                        <label for="" class="form-label">Search</label>
+                                        <input class="form-control" type="text" placeholder="Search">
+                                    </div>
+                                    <div class="col-lg-6 col-12" ng-controller="topic">
+                                        <label for="" class="form-label">Topic</label>
+                                        <select class="form-select" name="" title="topic">
+                                            <option ng-repeat="item in listTopic">{{item}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <label for="" class="form-label">Read time</label>
+                                        <select class="form-select" name="" title="read-time">
+                                            <option ng-repeat="readtime in listReadTime" value={{readtime.value}}>
+                                                {{readtime.content}}</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-warning">Tìm kiếm</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-warning">Tìm kiếm</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
+
         <div ng-view id="Home">
 
         </div>
@@ -252,7 +326,6 @@
             $scope.themes = {
                 "theme": "dark", "content": false
             };
-            $scope.language = "vn";
             $scope.changeTheme = () => {
                 if ($scope.themes.theme === "light") {
                     $scope.themes.theme = "dark";
@@ -264,6 +337,9 @@
             }
         })
         app.controller('navBar', function ($scope, $http) {
+            $scope.language = "vn";
+            $scope.isLoginNow = true;
+
             $scope.listReadTime = [],
                 $http.get("../js/Data.json").then((response) => {
                     $scope.listReadTime = response.data.ListReadTime;
