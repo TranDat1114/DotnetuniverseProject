@@ -1,237 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-    <title>About Us - DotNetUniverse</title>
-    <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/stylesToAll.css">
-    <style>
-        .text-shadow-contract {
-            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
-        }
-
-        .text-content {
-            max-width: 73ch;
-            line-height: 150%;
-        }
-
-        .overlay-1 {
-            max-width: 100vw;
-            height: 80vh;
-            max-height: 720px;
-            object-fit: cover;
-            object-position: center;
-            z-index: -1;
-        }
-
-        .fpoly-pic {
-            height: 400px;
-            object-position: bottom;
-        }
-
-        .dotnet-color {
-            text-shadow: rgb(0, 0, 0) 1px 0 5px;
-            color: #6200ff;
-        }
-
-        .fpoly-color {
-            text-shadow: rgb(0, 0, 0) 1px 0 10px;
-            color: #fd7e14;
-        }
-
-        .text-big {
-            font-size: 32px;
-        }
-
-        .img-web {
-            width: 500px;
-            height: 250px;
-            object-position: top center;
-        }
-    </style>
-</head>
-
-<body data-bs-theme="dark" id="about-us" ng-angular="">
-    <div id="navbarDotnet">
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./Home.html#home">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">About Us</li>
+        </ol>
+    </nav>
+</div>
+<main class="container-fluid">
+    <div class="position-relative row">
+        <video class="overlay-1 opacity-75 position-absolute top-0"
+            src="../assets/Person Working on an Apple MacBook.mp4" autoplay="true" loop>
+        </video>
+        <div class="container">
+            <div class="row overlay-1 align-items-center text-center">
+                <div class="m-auto">
+                    <p class="h1 text-uppercase text-wrap">DotNet Universe</p>
+                    <p class="h3 text-wrap">.Net Universe FPT Polytechnic community supporting personal
+                        development for
+                        the youth
+                        in FPT Polytechnic and Vietnam</p>
+                    <a class="btn-outline-warning btn text-white text-decoration-none" href="#our-misson">
+                        Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./Home.html#home">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">About Us</li>
-            </ol>
-        </nav>
-    </div>
-    <main class="container-fluid">
-        <div class="position-relative row">
-            <video class="overlay-1 opacity-75 position-absolute top-0"
-                src="../assets/Person Working on an Apple MacBook.mp4" autoplay="true" loop>
-            </video>
-            <div class="container">
-                <div class="row overlay-1 align-items-center text-center">
-                    <div class="m-auto">
-                        <p class="h1 text-uppercase text-wrap">DotNet Universe</p>
-                        <p class="h4 text-wrap">.Net Universe FPT Polytechnic community supporting personal
-                            development for
-                            the youth
-                            in FPT Polytechnic and Vietnam</p>
-                        <a class="btn-outline-warning btn text-white text-decoration-none" href="#our-misson">
-                            Learn
-                            More</a>
+    <hr>
+    <div class="container" id="our-misson">
+        <div class="row">
+            <div class="col-12">
+                <em class="text-capitalize">We're DotNet Universe</em>
+                <p class="h2 text-capitalize">Our Mission</p>
+                <br>
+                <div class="row">
+                    <img class="img-fluid col-12 col-sm-5 align-middle object-fit-cover rounded-5" height="100"
+                        src="../assets/group.jpg" alt="Us">
+                    <p class="h4 col-12 col-sm-7 text-content text-wrap mt-md-0 mt-5">
+                        We want to build a learning club where everyone can share knowledge, experience and areas of
+                        study
+                        within and outside of the discipline. Let's develop ourselves together and build an active
+                        learning
+                        community.
+                    </p>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <em class="text-capitalize">We're DotNet Universe</em>
+                        <p class="h2 text-capitalize">Our Support</p>
+                        <br>
+                        <div class="row">
+                            <p class="h4 col-12 col-sm-8 col-md-7 text-content text-wrap mb-5 mb-md-0">
+                                Support skills, self-study experiences, new technology trends, programming
+                                experiences,
+                                emotions and psychology for youth in FPT Polytechnic
+                            </p>
+                            <img class="img-fluid col-12 col-sm-4 col-md-5 align-middle object-fit-cover rounded-5"
+                                src="../assets/ok.jpg" alt="Library">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="container" id="our-misson">
-            <div class="row">
-                <div class="col-12">
-                    <em class="text-capitalize">We're DotNet Universe</em>
-                    <p class="h2 text-capitalize">Our Mission</p>
-                    <br>
-                    <div class="row">
-                        <img class="img-fluid col-12 col-sm-5 align-middle object-fit-cover rounded-5" height="100"
-                            src="../assets/group.jpg" alt="Us">
-                        <p class="h4 col-12 col-sm-7 text-content text-wrap mt-md-0 mt-5">
-                            We want to build a learning club where everyone can share knowledge, experience and areas of
-                            study
-                            within and outside of the discipline. Let's develop ourselves together and build an active
-                            learning
-                            community.
+    </div>
+    <hr>
+    <div class="container" id="community">
+        <div class="row">
+            <div class="col-12">
+                <em class="text-capitalize">We're DotNet Universe</em>
+                <p class="h2 text-capitalize">Community</p>
+                <div class="row g-3">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="row">
+                            <img class="img-fluid col-12 img-web align-middle object-fit-cover rounded-5"
+                                src="../assets/website.png" alt="website">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                        <p class="h4 col-12 text-content text-wrap mt-sm-0 mt-0">
+                        <ul>
+                            <li>
+                                <a class="link text-decoration-none" href="https://www.facebook.com/clbnetuniverse/"
+                                    target="_blank">Facebook
+                                    pages</a>
+                                with more than 800 followers and likes
+                            </li>
+                            <li>
+                                <a class="link text-decoration-none"
+                                    href="https://www.facebook.com/groups/1000608340819356" target="_blank">Facebook
+                                    group</a> with 30+ new articles daily
+                            </li>
+                            <li>
+                                <a class="link text-decoration-none" href="https://www.youtube.com/@dotnetuniversefpoly"
+                                    target="_blank">Youtube</a>
+                                with 20+ video every month
+                            </li>
+                        </ul>
                         </p>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-12">
-                            <em class="text-capitalize">We're DotNet Universe</em>
-                            <p class="h2 text-capitalize">Our Support</p>
-                            <br>
-                            <div class="row">
-                                <p class="h4 col-12 col-sm-8 col-md-7 text-content text-wrap mb-5 mb-md-0">
-                                    Support skills, self-study experiences, new technology trends, programming
-                                    experiences,
-                                    emotions and psychology for youth in FPT Polytechnic
-                                </p>
-                                <img class="img-fluid col-12 col-sm-4 col-md-5 align-middle object-fit-cover rounded-5"
-                                    src="../assets/ok.jpg" alt="Library">
-                            </div>
+                </div>
+                <hr>
+                <em class="text-capitalize">We're DotNet Universe</em>
+                <p class="h2 text-capitalize">Study group</p>
+                <div class="row">
+                    <div id="carousel-fpoly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel-fpoly" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carousel-fpoly" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
                         </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="../assets/fpt-poly.jpg"
+                                    class="d-block w-100 object-fit-cover img-fluid rounded-3 fpoly-pic" loading="lazy"
+                                    alt="fpt-poly">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+                                    <div class="row"><strong
+                                            class="dotnet-color text-uppercase text-big col-sm-12 col-lg-6">DotNet-Universe</strong>
+                                        <strong
+                                            class="fpoly-color text-uppercase text-big col-sm-12 col-lg-6">FPT-Polytechnic</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="../assets/fpt-poly-3.jpg"
+                                    class="d-block w-100 object-fit-cover img-fluid rounded-3 fpoly-pic" loading="lazy"
+                                    alt="fpt-poly">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+                                    <figure class="h4">
+                                        <blockquote class="blockquote">
+                                            <p class="h5 d-md-none d-lg-block">"We know that we know nothing <br>
+                                                but
+                                                we trying to know
+                                                more
+                                                day by day!"</p>
+                                            <p class="h2 fpoly-color text-uppercase fw-bold">The Universe From
+                                                Nothing</p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-fpoly"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-fpoly"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12">
                     </div>
                 </div>
             </div>
-        </div>
-        <hr>
-        <div class="container" id="community">
-            <div class="row">
-                <div class="col-12">
-                    <em class="text-capitalize">We're DotNet Universe</em>
-                    <p class="h2 text-capitalize">Community</p>
-                    <div class="row g-3">
-                        <div class="col-sm-12 col-md-5">
-                            <div class="row">
-                                <img class="img-fluid col-12 img-web align-middle object-fit-cover rounded-5"
-                                    src="../assets/website.png" alt="website">
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-7">
-                            <p class="h4 col-12 text-content text-wrap mt-sm-0 mt-0">
-                            <ul>
-                                <li>
-                                    <a class="link text-decoration-none" href="https://www.facebook.com/clbnetuniverse/"
-                                        target="_blank">Facebook
-                                        pages</a>
-                                    with more than 800 followers and likes
-                                </li>
-                                <li>
-                                    <a class="link text-decoration-none"
-                                        href="https://www.facebook.com/groups/1000608340819356" target="_blank">Facebook
-                                        group</a> with 30+ new articles daily
-                                </li>
-                                <li>
-                                    <a class="link text-decoration-none"
-                                        href="https://www.youtube.com/@dotnetuniversefpoly" target="_blank">Youtube</a>
-                                    with 20+ video every month
-                                </li>
-                            </ul>
-                            </p>
-                        </div>
-                    </div>
-                    <hr>
-                    <em class="text-capitalize">We're DotNet Universe</em>
-                    <p class="h2 text-capitalize">Study group</p>
-                    <div class="row">
-                        <div id="carousel-fpoly" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carousel-fpoly" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carousel-fpoly" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="5000">
-                                    <img src="../assets/fpt-poly.jpg"
-                                        class="d-block w-100 object-fit-cover img-fluid rounded-3 fpoly-pic"
-                                        loading="lazy" alt="fpt-poly">
-                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
-                                        <div class="row"><strong
-                                                class="dotnet-color text-uppercase text-big col-sm-12 col-lg-6">DotNet-Universe</strong>
-                                            <strong
-                                                class="fpoly-color text-uppercase text-big col-sm-12 col-lg-6">FPT-Polytechnic</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-bs-interval="5000">
-                                    <img src="../assets/fpt-poly-3.jpg"
-                                        class="d-block w-100 object-fit-cover img-fluid rounded-3 fpoly-pic"
-                                        loading="lazy" alt="fpt-poly">
-                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
-                                        <figure class="h4">
-                                            <blockquote class="blockquote">
-                                                <p class="h5 d-md-none d-lg-block">"We know that we know nothing <br>
-                                                    but
-                                                    we trying to know
-                                                    more
-                                                    day by day!"</p>
-                                                <p class="h2 fpoly-color text-uppercase fw-bold">The Universe From
-                                                    Nothing</p>
-                                            </blockquote>
-                                        </figure>
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-fpoly"
-                                    data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-fpoly"
-                                    data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <hr>
-    <div class="container">
-        <div id="footerDotnet">
         </div>
     </div>
-    <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/nav.js"></script>
-    <script src="../js/footer.js"></script>
-    <script src="../js/toSearchBar.js"></script>
-
-</body>
-
-</html>
+</main>

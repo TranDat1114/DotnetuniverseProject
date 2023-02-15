@@ -1,0 +1,9 @@
+.authorBlogReading {
+    width: 150px;
+    height: 150px;
+}
+
+.max-img-size {
+    max-height: 400px;
+    object-fit: contain;
+}
