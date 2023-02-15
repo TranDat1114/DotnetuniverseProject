@@ -351,7 +351,7 @@
         })
         app.controller('navBar', function ($scope, $http) {
             $scope.language = "vn";
-            $scope.isLoginNow = true;
+            $scope.isLoginNow = false;
 
             $scope.listReadTime = [],
                 $http.get("../js/Data.json").then((response) => {
