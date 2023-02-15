@@ -1,148 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <title>Home - DotNetUniverse</title>
-    <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/stylesToAll.css">
-    <style>
-        .text-shadow-contract {
-            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
-        }
-
-        .text-content {
-            max-width: 73ch;
-            line-height: 150%;
-        }
-
-        .overlay-1 {
-            max-width: 100vw;
-            height: 85vh;
-            /* max-height: 720px; */
-            object-fit: cover;
-            object-position: bottom right;
-            z-index: -1;
-        }
-
-        .content {
-            height: 500px;
-        }
-
-        .heading-banner {
-            font-size: 64px;
-            line-height: 62px;
-            font-weight: 700;
-        }
-
-        p {
-            text-shadow: 1px 1px 2px #333;
-        }
-
-        .content-title {
-            height: 8rem;
-        }
-
-        .content-topic {
-            font-size: 0.75rem;
-        }
-
-        .content-content {
-            font-size: 0.8rem;
-        }
-
-        .author {
-            width: 50px;
-            height: 50px;
-        }
-    </style>
-</head>
-
-<body data-bs-theme="dark" id="home" ng-App="myApp">
-    <div id="navbarDotnet">
+<main class="container-fluid">
+    <div class="row position-relative">
+        <img class=" overlay-1 position-absolute top-0" src="../assets/banner.png" alt="banner">
     </div>
-    <main class="container-fluid">
-        <div class="row position-relative">
-            <img class=" overlay-1 position-absolute top-0" src="../assets/banner.png" alt="banner">
-        </div>
-        <div class="container">
-            <div class="row overlay-1">
-                <div class="m-auto">
-                    <p class="h5 text-wrap text-capitalize">Write, Share, Connect, Study and happy lunar new year on</p>
-                    <p class="h1 text-uppercase text-wrap heading-banner">DotNet Universe</p>
-                    <a class="bg-warning btn  text-decoration-none" href="../screen/Login.html">
-                        Join Now</a>
-                </div>
+    <div class="container">
+        <div class="row overlay-1">
+            <div class="m-auto">
+                <p class="h5 more-gray text-wrap text-capitalize">Write, Share, Connect, Study and happy lunar new year
+                    on</p>
+                <p class="h1 more-gray text-uppercase text-wrap heading-banner">DotNet Universe</p>
+                <a class="bg-warning btn  text-decoration-none" href="../screen/Login.html">
+                    Join Now</a>
             </div>
         </div>
-        <div class="container">
-            <hr>
-            <div class="row">
-                <div class="col-12">
-                    <p class="h4 text-capitalize">Most popular</p>
-                </div>
-                <br>
-                <div ng-controller="BlogReading">
-                    <div class="row g-3">
-                        <div class="col-lg-6 col-sm-12"
-                            ng-repeat="item in BlogReadings | startFrom:currentPage*pageSize | limitTo:pageSize">
-                            <div class=" card">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-5 col-lg-4">
+    </div>
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <p class="h4 text-capitalize">Most popular</p>
+            </div>
+            <br>
+            <div ng-controller="BlogReading">
+                <div class="row g-3">
+                    <div class="col-lg-6 col-sm-12"
+                        ng-repeat="item in BlogReadings | startFrom:currentPage*pageSize | limitTo:pageSize">
+                        <div class=" card">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-5 col-lg-4">
+                                    <a href="#!BlogReading#blogReadingContent">
                                         <img loading="lazy" class="object-fit-cover w-100" height="250"
                                             src="{{item.img}}" alt="blog">
-                                    </div>
-                                    <div class="col-sm-12 col-md-7 col-lg-8">
-                                        <div class="container">
+                                    </a>
+                                </div>
+                                <div class="col-sm-12 col-md-7 col-lg-8">
+                                    <div class="container">
+                                        <div class="row">
+                                            <p>
+                                                <a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                    href="#">{{item.topic}}</a>
+                                                |
+                                                <em class="content-topic">{{item.readingTime}}</em>
+                                            </p>
+                                            <div class="content-title">
+                                                <a class="h5 text-decoration-none" href="#">
+                                                    {{item.blogName}}
+                                                </a>
+                                                <p class="content-content">{{item.asContent}}...</p>
+                                            </div>
                                             <div class="row">
-                                                <p>
-                                                    <a class="content-topic btn-link text-uppercase text-decoration-none"
-                                                        href="#">{{item.topic}}</a>
-                                                    |
-                                                    <em class="content-topic">{{item.readingTime}}</em>
-                                                </p>
-                                                <div class="content-title">
-                                                    <a class="h5 text-decoration-none" href="#">
-                                                        {{item.blogName}}
-                                                    </a>
-                                                    <p class="content-content">{{item.asContent}}...</p>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-8">
-                                                        <div class="row">
-                                                            <div class="col-3">
-                                                                <img loading="lazy"
-                                                                    class="object-fit-cover rounded-circle author"
-                                                                    src="{{item.authorImg}}" alt="author">
-                                                            </div>
-                                                            <div class="col-9">
-                                                                <a href="#"
-                                                                    class="content-topic text-decoration-none">{{item.authorName}}</a>
-                                                                <p class="content-topic">{{item.upLoadDate}}</p>
-                                                            </div>
+                                                <div class="col-8">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <img loading="lazy"
+                                                                class="object-fit-cover rounded-circle authorHome"
+                                                                src="{{item.authorImg}}" alt="author">
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <a href="#"
+                                                                class="content-topic text-decoration-none">{{item.authorName}}</a>
+                                                            <p class="content-topic">{{item.upLoadDate}}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
-                                                        <div class="row text-center">
-                                                            <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                data-bs-title="Up vote">
-                                                                <i class="fa-solid fa-chevron-up"></i>
-                                                                <p class="content-topic">{{item.upVote}}</p>
-                                                            </div>
-                                                            <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                data-bs-title="View">
-                                                                <i class="fa-solid fa-eye"></i>
-                                                                <p class="content-topic">{{item.seen}}</p>
-                                                            </div>
-                                                            <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                data-bs-title="Comment">
-                                                                <i class="fa-solid fa-message"></i>
-                                                                <p class="content-topic">{{item.cmt}}</p>
-                                                            </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="row text-center">
+                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                            data-bs-title="Up vote">
+                                                            <i class="fa-solid fa-chevron-up"></i>
+                                                            <p class="content-topic">{{item.upVote}}</p>
+                                                        </div>
+                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                            data-bs-title="View">
+                                                            <i class="fa-solid fa-eye"></i>
+                                                            <p class="content-topic">{{item.seen}}</p>
+                                                        </div>
+                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                            data-bs-title="Comment">
+                                                            <i class="fa-solid fa-message"></i>
+                                                            <p class="content-topic">{{item.cmt}}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -153,181 +88,180 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="m-2">
-                    <div class="row justify-content-center">
-                        <div class="col-auto">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <button class="btn page-link" ng-click="currentPage=0"
-                                            ng-disabled="currentPage == 0">
-                                            <i class="fa-solid fa-angles-left"></i>
-                                        </button>
-                                    </li>
-                                    <li class="page-item">
-                                        <button class="btn page-link" ng-click="currentPage=currentPage-1"
-                                            ng-disabled="currentPage == 0">
-                                            <i class="fa-solid fa-angle-left"></i>
-                                        </button>
-                                    </li>
-                                    <li class="page-item">
-                                        <button class="btn page-link" ng-click="currentPage=currentPage+1"
-                                            ng-disabled="currentPage >= BlogReadings.length/pageSize - 1">
-                                            <i class="fa-solid fa-angle-right"></i>
-                                        </button>
-                                    </li>
-                                    <li class="page-item">
-                                        <button class="btn page-link"
-                                            ng-click="currentPage=BlogReadings.length/pageSize - 1"
-                                            ng-disabled="currentPage >= BlogReadings.length/pageSize - 1">
-                                            <i class="fa-solid fa-angles-right"></i>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                </div>
+                <hr class="m-2">
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <button class="btn page-link" title="to-page-0" ng-click="currentPage=0"
+                                        ng-disabled="currentPage == 0">
+                                        <i class="fa-solid fa-angles-left"></i>
+                                    </button>
+                                </li>
+                                <li class="page-item">
+                                    <button title="prev-page" class="btn page-link" ng-click="currentPage=currentPage-1"
+                                        ng-disabled="currentPage == 0">
+                                        <i class="fa-solid fa-angle-left"></i>
+                                    </button>
+                                </li>
+                                <li class="page-item">
+                                    <button title="next-page" class="btn page-link" ng-click="currentPage=currentPage+1"
+                                        ng-disabled="currentPage >= BlogReadings.length/pageSize - 1">
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </button>
+                                </li>
+                                <li class="page-item">
+                                    <button title="to-last-page" class="btn page-link"
+                                        ng-click="currentPage=BlogReadings.length/pageSize - 1"
+                                        ng-disabled="currentPage >= BlogReadings.length/pageSize - 1">
+                                        <i class="fa-solid fa-angles-right"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
-            <!-- <hr>
+        </div>
+        <!-- <hr>
             <div class="row">
                 <div class="col-12">
                     <p class="h4 text-capitalize">DotNet-Universe video</p>
                 </div>
             </div> -->
-            <hr>
-            <div class="row">
-                <div class="col-12">
-                    <p class="h4 text-capitalize">Trending in month</p>
-                </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <p class="h4 text-capitalize">Trending in month</p>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-12">
-                    <p class="h4 text-capitalize">DotNet-Universe Topic</p>
-                </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <p class="h4 text-capitalize">DotNet-Universe Topic</p>
             </div>
-            <hr>
-            <div class="row g-5 flex-lg-row-reverse">
-                <div class="col-sm-12 col-lg-4">
-                    <p class="card-title h5">Topic</p>
-                    <hr>
-                    <div class="container" ng-controller="topic">
-                        <div class="row gap-3 row-cols-auto">
-                            <a href="#" class="btn btn-outline-warning" ng-repeat="topic in listTopic">{{topic}}</a>
-                        </div>
+        </div>
+        <hr>
+        <div class="row g-5 flex-lg-row-reverse">
+            <div class="col-sm-12 col-lg-4">
+                <p class="card-title h5">Topic</p>
+                <hr>
+                <div class="container" ng-controller="topic">
+                    <div class="row gap-3 row-cols-auto">
+                        <a href="#" class="btn btn-outline-warning " ng-repeat="topic in listTopic">{{topic}}</a>
                     </div>
-                    <hr>
-                    <div class="container">
-                        <div class="row">
-                            <div class="card">
-                                <div class="card-header">
-                                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_25cc2s.json"
-                                        mode="bounce" background="transparent" speed="1"
-                                        style="width: 300px; height: 300px;" loop autoplay></lottie-player>
-                                    <p class="h3 text-center">Most <strong class="text-warning h3">prominent
-                                        </strong>blog you
-                                        shouldn't
-                                        miss!</p>
+                </div>
+                <hr>
+                <div class="container">
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-header">
+                                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_25cc2s.json"
+                                    mode="bounce" background="transparent" speed="1"
+                                    style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                                <p class="h3 text-center">Most <strong class="text-warning h3">prominent
+                                    </strong>blog you
+                                    shouldn't
+                                    miss!</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="h6">Subscribe today to get news helpful information every weekend</p>
+                                <div class=" mb-3">
+                                    <label for="form-control">Your email address</label>
+                                    <input type="email" class="form-control  text-dark" id="floatingInput"
+                                        placeholder="gia.han@example.com">
                                 </div>
-                                <div class="card-body">
-                                    <p class="h6">Subscribe today to get news helpful information every weekend</p>
-                                    <div class=" mb-3">
-                                        <label for="form-control">Your email address</label>
-                                        <input type="email" class="form-control  text-dark" id="floatingInput"
-                                            placeholder="gia.han@example.com">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="floatingPassword">What can we call you?</label>
-                                        <input type="text" class="form-control text-dark" id="floatingPassword"
-                                            placeholder="Nguyễn Huỳnh Gia Hân?">
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <button class="btn bg-warning">Subscribe</button>
+                                <div class="mb-3">
+                                    <label for="floatingPassword">What can we call you?</label>
+                                    <input type="text" class="form-control text-dark" id="floatingPassword"
+                                        placeholder="Nguyễn Huỳnh Gia Hân?">
                                 </div>
                             </div>
+                            <div class="card-footer">
+                                <button class="btn bg-warning">Subscribe</button>
+                            </div>
                         </div>
-                        <hr>
-
                     </div>
+                    <hr>
+
                 </div>
-                <div class="col-sm-12 col-lg-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <p class="card-title h5">For your Universe</p>
-                            <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="true" data-bs-toggle="tab"
-                                        href="#foryou">For
-                                        you</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#highlyappreciated">Highly
-                                        vote</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-body tab-content">
-                            <div class="tab-pane active" id="foryou">
-                                <div class="row g-3" ng-controller="BlogReading">
-                                    <div class="col-sm-12" ng-repeat="item in BlogReadings | orderBy : ' -forYou' ">
-                                        <div class="card">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-5 col-lg-4">
-                                                    <img loading="lazy" class="object-fit-cover w-100" height="250"
-                                                        src="{{item.img}}" alt="baiviet">
-                                                </div>
-                                                <div class="col-sm-12 col-md-7 col-lg-8">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <p><a class="content-topic btn-link text-uppercase text-decoration-none"
-                                                                    href="#">{{item.topic}}</a>
-                                                                |
-                                                                <em class="content-topic">{{item.readingTime}}</em>
+            </div>
+            <div class="col-sm-12 col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="card-title h5">For your Universe</p>
+                        <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#foryou">For
+                                    you</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#highlyappreciated">Highly
+                                    vote</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body tab-content">
+                        <div class="tab-pane active" id="foryou">
+                            <div class="row g-3" ng-controller="BlogReading">
+                                <div class="col-sm-12" ng-repeat="item in BlogReadings | orderBy : ' -forYou' ">
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5 col-lg-4">
+                                                <img loading="lazy" class="object-fit-cover w-100" height="250"
+                                                    src="{{item.img}}" alt="baiviet">
+                                            </div>
+                                            <div class="col-sm-12 col-md-7 col-lg-8">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                                href="#">{{item.topic}}</a>
+                                                            |
+                                                            <em class="content-topic">{{item.readingTime}}</em>
+                                                        </p>
+                                                        <div class="content-title">
+                                                            <a class="h5 text-decoration-none" href="#">
+                                                                {{item.blogName}}
+                                                            </a>
+                                                            <p class="content-content">
+                                                                {{item.asContent}}
                                                             </p>
-                                                            <div class="content-title">
-                                                                <a class="h5 text-decoration-none" href="#">
-                                                                    {{item.blogName}}
-                                                                </a>
-                                                                <p class="content-content">
-                                                                    {{item.asContent}}
-                                                                </p>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-8">
-                                                                    <div class="row">
-                                                                        <div class="col-3">
-                                                                            <img loading="lazy"
-                                                                                class="object-fit-cover rounded-circle author"
-                                                                                src="{{item.authorImg}}" alt="author">
-                                                                        </div>
-                                                                        <div class="col-9">
-                                                                            <a href="#"
-                                                                                class="content-topic text-decoration-none">
-                                                                                {{item.authorName}}</a>
-                                                                            <p class="content-topic">{{item.upLoadDate}}
-                                                                            </p>
-                                                                        </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-8">
+                                                                <div class="row">
+                                                                    <div class="col-3">
+                                                                        <img loading="lazy"
+                                                                            class="object-fit-cover rounded-circle authorHome"
+                                                                            src="{{item.authorImg}}" alt="author">
+                                                                    </div>
+                                                                    <div class="col-9">
+                                                                        <a href="#"
+                                                                            class="content-topic text-decoration-none">
+                                                                            {{item.authorName}}</a>
+                                                                        <p class="content-topic">{{item.upLoadDate}}
+                                                                        </p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-4">
-                                                                    <div class="row text-center">
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="Up vote">
-                                                                            <i class="fa-solid fa-chevron-up"></i>
-                                                                            <p class="content-topic">{{item.upVote}}</p>
-                                                                        </div>
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="View">
-                                                                            <i class="fa-solid fa-eye"></i>
-                                                                            <p class="content-topic">{{item.seen}}</p>
-                                                                        </div>
-                                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                            data-bs-title="Comment">
-                                                                            <i class="fa-solid fa-message"></i>
-                                                                            <p class="content-topic">{{item.cmt}}</p>
-                                                                        </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="row text-center">
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Up vote">
+                                                                        <i class="fa-solid fa-chevron-up"></i>
+                                                                        <p class="content-topic">{{item.upVote}}</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="View">
+                                                                        <i class="fa-solid fa-eye"></i>
+                                                                        <p class="content-topic">{{item.seen}}</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Comment">
+                                                                        <i class="fa-solid fa-message"></i>
+                                                                        <p class="content-topic">{{item.cmt}}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -339,72 +273,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="highlyappreciated">
-                                <p class=" card-text">Change Static Network settings.</p>
-                            </div>
+                        </div>
+                        <div class="tab-pane" id="highlyappreciated">
+                            <p class=" card-text">Change Static Network settings.</p>
                         </div>
                     </div>
                 </div>
             </div>
-    </main>
-    <hr>
-    <div class="container">
-        <div id="footerDotnet">
         </div>
-    </div>
-
-    <!-- Toast -->
-    <div class="position-sticky top-0 start-0 end-0 bottom-0">
-        <div class="toast-container bottom-0 end-0 p-3">
-            <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    <img src="../assets/logo.svg" height="32" class="rounded-circle me-2" alt="...">
-                    <strong class="me-auto">DotNetUniverse</strong>
-                    <small class="text-muted">Just now</small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    <p class="h5">
-                        Xin chào Trần Phú Đạt
-                    </p>
-                    <p class="h6">
-                        Chúc bạn một ngày tốt lành!!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- add lottiefiles -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- add tooltip -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-
-    <!-- tooltip -->
-    <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script>
-    <script src="../js/nav.js"></script>
-    <script src="../js/footer.js"></script>
-
-    <script>
-        app.controller('BlogReading', function ($scope, $http) {
-            $scope.BlogReadings = [];
-            $http.get("../js/Data.json").then((response) => {
-                $scope.BlogReadings = response.data.Blogs;
-            })
-            $scope.pageSize = 4;
-            $scope.currentPage = 0;
-        });
-        app.filter('startFrom', function () {
-            return function (input, start) {
-                start = +start; //parse to int
-                return input.slice(start);
-            }
-        });
-    </script>
-</body>
-
-</html>
+</main>

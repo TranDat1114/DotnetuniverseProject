@@ -1,103 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - DotNetUniverse</title>
-    <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/stylesToAll.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <style>
-        .text-shadow-contract {
-            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
-        }
-
-        .text-content {
-            max-width: 73ch;
-            line-height: 150%;
-        }
-
-        .login {
-            height: 90vh;
-        }
-
-        .logo {
-            border-radius: 50%;
-            height: 150px;
-            width: 150px;
-        }
-    </style>
-</head>
-
-<body data-bs-theme="dark" id="login" ng-app="myApp">
-    <div id="navbarDotnet">
-    </div>
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./Home.html#home">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Login</li>
-            </ol>
-        </nav>
-    </div>
-    <main class="container">
-        <div class="login text-center ">
-            <img class="logo mb-3" src="../assets/logo.svg" alt="logo">
-            <div class="row">
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./Home.html#home">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Login</li>
+        </ol>
+    </nav>
+</div>
+<main class="container">
+    <div class="login text-center ">
+        <img class="logo mb-3" src="../assets/logo.svg" alt="logo">
+        <div class="row">
+            <div class="col-sm-1 col-md-2 col-lg-4">
+            </div>
+            <div class="col-sm-10 col-md-8 col-lg-4">
+                <div class="row">
+                    <div class="mb-3">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control text-dark" id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-floating">
+                            <input type="password" class="form-control text-dark" id="floatingPassword"
+                                placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-sm-1 col-md-2 col-lg-4">
                 </div>
-                <div class="col-sm-10 col-md-8 col-lg-4">
-                    <div class="row">
-                        <div class="mb-3">
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control text-dark" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="form-floating">
-                                <input type="password" class="form-control text-dark" id="floatingPassword"
-                                    placeholder="Password">
-                                <label for="floatingPassword">Password</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-1 col-md-2 col-lg-4">
-                    </div>
-                </div>
             </div>
-            <div class="row">
-                <div class="mb-3">
-                    <!-- <a class="btn-link" href="#">Quên mật khẩu?</a> -->
-                    <a class="btn-link" href="#">Forgot your password?</a>
-                </div>
-                <div class="mb-3">
-                    <input class="btn btn-warning text-capitalize" type="button" value="Login to universe">
-                </div>
+        </div>
+        <div class="row">
+            <div class="mb-3">
+                <!-- <a class="btn-link" href="#">Quên mật khẩu?</a> -->
+                <a class="btn-link" href="#">Forgot your password?</a>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-warning text-capitalize" type="button" value="Login to universe">
+            </div>
 
-                <!-- <p>Chưa có tài khoản? <a href="#">Đăng ký ngay</a></p> -->
-                <p>Don't have an account yet? <a href="#">Sign up now</a></p>
-            </div>
-        </div>
-        </div>
-    </main>
-    <hr>
-    <div class="container">
-        <div id="footerDotnet">
+            <!-- <p>Chưa có tài khoản? <a href="#">Đăng ký ngay</a></p> -->
+            <p>Don't have an account yet? <a href="#">Sign up now</a></p>
         </div>
     </div>
-
-    <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/nav.js"></script>
-    <script src="../js/footer.js"></script>
-
-    <script>
-
-    </script>
-</body>
-
-</html>
+    </div>
+</main>

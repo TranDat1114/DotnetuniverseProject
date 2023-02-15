@@ -1,0 +1,23 @@
+.content {
+    height: 500px;
+}
+
+.heading-banner {
+    font-size: 64px;
+    line-height: 62px;
+    font-weight: 700;
+}
+
+
+
+.content-title {
+    height: 8rem;
+}
+
+.content-topic {
+    font-size: 0.75rem;
+}
+
+.content-content {
+    font-size: 0.8rem;
+}

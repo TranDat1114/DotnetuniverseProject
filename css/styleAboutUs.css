@@ -1,0 +1,24 @@
+.fpoly-pic {
+    height: 400px;
+    object-position: bottom;
+}
+
+.dotnet-color {
+    text-shadow: rgb(0, 0, 0) 1px 0 5px;
+    color: #6200ff;
+}
+
+.fpoly-color {
+    text-shadow: rgb(0, 0, 0) 1px 0 10px;
+    color: #fd7e14;
+}
+
+.text-big {
+    font-size: 32px;
+}
+
+.img-web {
+    width: 500px;
+    height: 250px;
+    object-position: top center;
+}

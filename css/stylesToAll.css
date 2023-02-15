@@ -1,17 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand:wght@500&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    /* font-family: 'Quicksand', sans-serif; */
+body::-webkit-scrollbar {
+    width: 0.25rem;
 }
 
-body {
-    scroll-behavior: smooth;
-    /* box-shadow: inset 0 0 5rem rgba(0, 0, 0, .9); */
+body::-webkit-scrollbar-track {
+    background: #222;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #E05A33;
+
 }
 
 /* 
@@ -45,4 +42,32 @@ body {
 
 .inner-content strong {
     font-weight: bolder;
+}
+
+.text-content {
+    max-width: 73ch;
+    line-height: 150%;
+}
+
+.overlay-1 {
+    max-width: 100vw;
+    height: 80vh;
+    max-height: 720px;
+    object-fit: cover;
+    object-position: right;
+    z-index: -1;
+}
+
+.bell-infor>p,
+.bell-infor>a {
+    font-size: smaller;
+}
+
+.authorHome {
+    width: 50px;
+    height: 50px;
+}
+
+.more-gray {
+    text-shadow: 1px 1px 2px #222;
 }
