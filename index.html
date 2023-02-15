@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - DotNetUniverse</title>
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
     <!-- my Style -->
@@ -33,10 +33,10 @@
             <nav class="navbar navbar-expand-lg" ng-controller="navBar">
                 <div class="container" id="normal-nav">
                     <a class="navbar-brand d-none d-lg-block" href="#!home#Home"><img class="rounded-circle" height="50"
-                            src="../assets/logo.svg" alt="logo">
+                            src="./assets/logo.svg" alt="logo">
                         NetUniverse</a>
                     <a class="navbar-brand d-lg-none" href="#!home#Home"><img class="rounded-circle" height="50"
-                            src="../assets/logo.svg" alt="logo"></a>
+                            src="./assets/logo.svg" alt="logo"></a>
                     <button title="logo" class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -237,11 +237,11 @@
                     <div class="col-6 col-md-2 mb-3">
                         <p class="h5">Section</p>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="../screen/Home.html#home"
+                            <li class="nav-item mb-2"><a href="./screen/Home.html#home"
                                     class="nav-link p-0 text-muted"><i class="fa-solid fa-house"></i> Home</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i
                                         class="fa-solid fa-clipboard-question"></i> FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="../screen/AboutUs.html#about-us"
+                            <li class="nav-item mb-2"><a href="./screen/AboutUs.html#about-us"
                                     class="nav-link p-0 text-muted"><i class="fa-solid fa-address-card"></i> About
                                     Us</a>
                             </li>
@@ -302,7 +302,7 @@
         <div class="toast-container bottom-0 end-0 p-3">
             <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
-                    <img src="../assets/logo.svg" height="32" class="rounded-circle me-2" alt="...">
+                    <img src="./assets/logo.svg" height="32" class="rounded-circle me-2" alt="Logo">
                     <strong class="me-auto">DotNetUniverse</strong>
                     <small class="text-muted">Just now</small>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"
@@ -323,7 +323,7 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- add tooltip -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <script src="./bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
 
     <!-- scrollprogress -->
     <script src="./js/scrollProgress.js"></script>
@@ -351,24 +351,24 @@
         })
         app.controller('navBar', function ($scope, $http) {
             $scope.language = "vn";
-            $scope.isLoginNow = true;
+            $scope.isLoginNow = false;
 
             $scope.listReadTime = [],
-                $http.get("../js/Data.json").then((response) => {
+                $http.get("./js/Data.json").then((response) => {
                     $scope.listReadTime = response.data.ListReadTime;
                 })
         });
 
         app.controller('topic', ($scope, $http) => {
             $scope.listTopic = [];
-            $http.get("../js/Data.json").then((response) => {
+            $http.get("./js/Data.json").then((response) => {
                 $scope.listTopic = response.data.Topics;
             })
         });
 
         app.controller('BlogReading', function ($scope, $http) {
             $scope.BlogReadings = [];
-            $http.get("../js/Data.json").then((response) => {
+            $http.get("./js/Data.json").then((response) => {
                 $scope.BlogReadings = response.data.Blogs;
             })
             $scope.pageSize = 4;
@@ -386,25 +386,25 @@
         app.config(function ($routeProvider) {
             $routeProvider
                 .when("/home", {
-                    templateUrl: "screen/Home.html"
+                    templateUrl: "./screen/Home.html"
                 })
                 .when("/faqs", {
-                    templateUrl: "screen/FAQs.html"
+                    templateUrl: "./screen/FAQs.html"
                 })
                 .when("/aboutus", {
-                    templateUrl: "screen/AboutUs.html"
+                    templateUrl: "./screen/AboutUs.html"
                 })
                 .when("/signup", {
-                    templateUrl: "screen/SignUp.html"
+                    templateUrl: "./screen/SignUp.html"
                 })
                 .when("/login", {
-                    templateUrl: "screen/Login.html"
+                    templateUrl: "./screen/Login.html"
                 })
                 .when("/Profile", {
-                    templateUrl: "screen/Profile.html"
+                    templateUrl: "./screen/Profile.html"
                 })
                 .when("/BlogReading", {
-                    templateUrl: "screen/BlogReading.html"
+                    templateUrl: "./screen/BlogReading.html"
                 })
                 .otherwise({
                     redirectTo: "/home"
