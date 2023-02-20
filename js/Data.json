@@ -1,6 +1,10 @@
 {
     "ListReadTime": [
         {
+            "value": 0,
+            "content": "Tất cả"
+        },
+        {
             "value": 3,
             "content": "Dưới 3 phút"
         },
@@ -26,6 +30,7 @@
         }
     ],
     "Topics": [
+        "Tất cả",
         "Sách",
         "Khoa học - Công nghệ",
         "Thể thao",
