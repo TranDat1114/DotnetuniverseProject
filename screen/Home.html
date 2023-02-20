@@ -23,11 +23,11 @@
             <div ng-controller="BlogReading">
                 <div class="row g-3">
                     <div class="col-lg-6 col-sm-12"
-                        ng-repeat="item in BlogReadings | startFrom:currentPage*pageSize | limitTo:pageSize">
+                        ng-repeat="item in BlogReadings | orderBy : ' -seen' | startFrom:currentPage*pageSize | limitTo:pageSize ">
                         <div class=" card">
                             <div class="row">
                                 <div class="col-sm-12 col-md-5 col-lg-4">
-                                    <a href="#!BlogReading#blogReadingContent">
+                                    <a href="#!BlogReading/{{item.content}}#blogReadingContent">
                                         <img loading="lazy" class="object-fit-cover w-100" height="250"
                                             src="{{item.img}}" alt="blog">
                                     </a>
@@ -42,7 +42,8 @@
                                                 <em class="content-topic">{{item.readingTime}}</em>
                                             </p>
                                             <div class="content-title">
-                                                <a class="h5 text-decoration-none" href="#">
+                                                <a class="h5 text-decoration-none"
+                                                    href="#!BlogReading/{{item.content}}#blogReadingContent">
                                                     {{item.blogName}}
                                                 </a>
                                                 <p class="content-content">{{item.asContent}}...</p>
@@ -51,22 +52,25 @@
                                                 <div class="col-8">
                                                     <div class="row">
                                                         <div class="col-3">
-                                                            <img loading="lazy"
-                                                                class="object-fit-cover rounded-circle authorHome"
-                                                                src="{{item.authorImg}}" alt="author">
+                                                            <a href="#!profile/{{item.idName}}">
+                                                                <img loading="lazy"
+                                                                    class="object-fit-cover rounded-circle authorHome"
+                                                                    src="{{item.authorImg}}" alt="author">
+                                                            </a>
                                                         </div>
                                                         <div class="col-9">
-                                                            <a href="#"
+                                                            <a href="#!profile/{{item.idName}}"
                                                                 class="content-topic text-decoration-none">{{item.authorName}}</a>
-                                                            <p class="content-topic">{{item.upLoadDate}}</p>
+                                                            <p class="content-topic">{{item.upLoadDate |
+                                                                date:'dd/MM/yyyy'}}</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="row text-center">
-                                                        <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                            data-bs-title="Up vote">
-                                                            <i class="fa-solid fa-chevron-up"></i>
+                                                        <div class="col-4 p-0">
+                                                            <i class="fa-solid fa-chevron-up" data-bs-toggle="tooltip"
+                                                                data-bs-title="Up vote"></i>
                                                             <p class="content-topic">{{item.upVote}}</p>
                                                         </div>
                                                         <div class="col-4 p-0" data-bs-toggle="tooltip"
@@ -210,8 +214,10 @@
                                     <div class="card">
                                         <div class="row">
                                             <div class="col-sm-12 col-md-5 col-lg-4">
-                                                <img loading="lazy" class="object-fit-cover w-100" height="250"
-                                                    src="{{item.img}}" alt="baiviet">
+                                                <a href="#!BlogReading/{{item.content}}#blogReadingContent">
+                                                    <img loading="lazy" class="object-fit-cover w-100" height="250"
+                                                        src="{{item.img}}" alt="baiviet">
+                                                </a>
                                             </div>
                                             <div class="col-sm-12 col-md-7 col-lg-8">
                                                 <div class="container">
@@ -222,7 +228,8 @@
                                                             <em class="content-topic">{{item.readingTime}}</em>
                                                         </p>
                                                         <div class="content-title">
-                                                            <a class="h5 text-decoration-none" href="#">
+                                                            <a class="h5 text-decoration-none"
+                                                                href="#!BlogReading/{{item.content}}#blogReadingContent">
                                                                 {{item.blogName}}
                                                             </a>
                                                             <p class="content-content">
@@ -233,12 +240,14 @@
                                                             <div class="col-8">
                                                                 <div class="row">
                                                                     <div class="col-3">
-                                                                        <img loading="lazy"
-                                                                            class="object-fit-cover rounded-circle authorHome"
-                                                                            src="{{item.authorImg}}" alt="author">
+                                                                        <a href="#!profile/{{item.idName}}">
+                                                                            <img loading="lazy"
+                                                                                class="object-fit-cover rounded-circle authorHome"
+                                                                                src="{{item.authorImg}}" alt="author">
+                                                                        </a>
                                                                     </div>
                                                                     <div class="col-9">
-                                                                        <a href="#"
+                                                                        <a href="#!profile/{{item.idName}}"
                                                                             class="content-topic text-decoration-none">
                                                                             {{item.authorName}}</a>
                                                                         <p class="content-topic">{{item.upLoadDate}}
@@ -275,7 +284,79 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="highlyappreciated">
-                            <p class=" card-text">Change Static Network settings.</p>
+                            <div class="row g-3" ng-controller="BlogReading">
+                                <div class="col-sm-12" ng-repeat="item in BlogReadings | orderBy : ' -upVote' ">
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5 col-lg-4">
+                                                <a href="#!BlogReading/{{item.content}}#blogReadingContent">
+                                                    <img loading="lazy" class="object-fit-cover w-100" height="250"
+                                                        src="{{item.img}}" alt="baiviet">
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-12 col-md-7 col-lg-8">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                                href="#">{{item.topic}}</a>
+                                                            |
+                                                            <em class="content-topic">{{item.readingTime}}</em>
+                                                        </p>
+                                                        <div class="content-title">
+                                                            <a class="h5 text-decoration-none"
+                                                                href="#!BlogReading/{{item.content}}#blogReadingContent">
+                                                                {{item.blogName}}
+                                                            </a>
+                                                            <p class="content-content">
+                                                                {{item.asContent}}
+                                                            </p>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-8">
+                                                                <div class="row">
+                                                                    <div class="col-3">
+                                                                        <a href="#!profile/{{item.idName}}">
+                                                                            <img loading="lazy"
+                                                                                class="object-fit-cover rounded-circle authorHome"
+                                                                                src="{{item.authorImg}}" alt="author">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-9">
+                                                                        <a href="#!profile/{{item.idName}}"
+                                                                            class="content-topic text-decoration-none">
+                                                                            {{item.authorName}}</a>
+                                                                        <p class="content-topic">{{item.upLoadDate}}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="row text-center">
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Up vote">
+                                                                        <i class="fa-solid fa-chevron-up"></i>
+                                                                        <p class="content-topic">{{item.upVote}}</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="View">
+                                                                        <i class="fa-solid fa-eye"></i>
+                                                                        <p class="content-topic">{{item.seen}}</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Comment">
+                                                                        <i class="fa-solid fa-message"></i>
+                                                                        <p class="content-topic">{{item.cmt}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

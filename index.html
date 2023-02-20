@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - DotNetUniverse</title>
+    <title>{{pageTitle}} - DotNetUniverse</title>
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/4552defb60.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
     <!-- my Style -->
     <link rel="stylesheet" href="./css/stylesToAll.css">
@@ -15,12 +16,13 @@
     <link rel="stylesheet" href="./css/styleBlogReading.css">
     <link rel="stylesheet" href="./css/styleLogin.css">
     <link rel="stylesheet" href="./css/styleHome.css">
+    <link rel="stylesheet" href="./css/styleProfile.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
 </head>
 
-<body ng-app="myApp" ng-controller="allElement" data-bs-theme="{{themes.theme}}">
+<body ng-controller="allElement" data-bs-theme="{{themes.theme}}">
     <div>
         <!-- progress -->
         <div class="progress sticky-top" role="progressbar" aria-label="Warning example" aria-valuenow="75"
@@ -29,286 +31,13 @@
                 style="width: 0%">
             </div>
         </div>
-        <header>
-            <nav class="navbar navbar-expand-lg" ng-controller="navBar">
-                <div class="container" id="normal-nav">
-                    <a class="navbar-brand d-none d-lg-block" href="#!home#Home"><img class="rounded-circle" height="50"
-                            src="./assets/logo.svg" alt="logo">
-                        NetUniverse</a>
-                    <a class="navbar-brand d-lg-none" href="#!home#Home"><img class="rounded-circle" height="50"
-                            src="./assets/logo.svg" alt="logo"></a>
-                    <button title="logo" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <ul class="navbar-nav me-2">
-                            <li class="nav-item d-lg-none">
-                                <button class="w-25 btn btn-outline-warning" data-bs-toggle="modal" type="button"
-                                    data-bs-target="#search-modal" title="open-search-modal"><i
-                                        class="fa-solid fa-magnifying-glass"></i></button>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#!home#Home"><i
-                                        class="fa-solid fa-house"></i>
-                                    Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#!faqs"><i class="fa-solid fa-clipboard-question"></i>
-                                    FAQs</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#!aboutus#about-us" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false"><i
-                                        class="fa-solid fa-address-card"></i>
-                                    About Us</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#!aboutus#about-us">Our Information</a></li>
-                                    <li><a class="dropdown-item" href="#!aboutus#our-misson">Our Mission</a></li>
-                                    <li><a class="dropdown-item" href="#!aboutus#community">Our Community</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="collapse navbar-collapse justify-content-end"
-                        ng-class="{'visually-hidden': isLoginNow}">
-                        <ul class="navbar-nav gap-2">
-                            <li class="nav-item">
-                                <a class="btn-warning btn text-decoration-none" href="#!login#login">
-                                    Login</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="btn-warning btn text-decoration-none" href="#!signup#signup">
-                                    Sign up</a>
-                            </li>
-                            <li class="nav-item">
-                                <button class="btn btn-outline-warning" data-bs-toggle="modal" type="button"
-                                    data-bs-target="#search-modal" title="open-search-modal"><i
-                                        class="fa-solid fa-magnifying-glass"></i></button>
-                            </li>
-                            <li class="nav-item dropdown dropstart">
-                                <button class="btn btn-outline-warning" title="popup-profile" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false"><i
-                                        class="fa-solid fa-gear"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#" class="dropdown-item disabled" title="dropdown">
-                                            <i class="fa-solid fa-language "></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <button title="language" class="dropdown-item" href="#">vi - Tiếng việt</button>
-                                        <button title="language" class="dropdown-item" href="#">en - English</button>
-                                    </li>
-                                    <li>
-                                        <hr>
-                                    </li>
-                                    <li>
-                                        <button title="change-theme" ng-click="changeTheme()" class="dropdown-item">
-                                            <em ng-show="themes.content">
-                                                <i class="fa-solid fa-sun"></i>
-                                                Giao diện - Sáng
-                                            </em>
-                                            <em ng-hide="themes.content">
-                                                <i class="fa-solid fa-moon"></i>
-                                                Giao diện - Tối
-                                            </em>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="collapse navbar-collapse justify-content-end"
-                        ng-class="{'visually-hidden': !isLoginNow}">
-                        <ul class="navbar-nav gap-3">
-                            <li class="nav-item">
-                                <button class="btn btn-outline-warning" data-bs-toggle="modal" type="button"
-                                    data-bs-target="#search-modal" title="open-search-modal"><i
-                                        class="fa-solid fa-magnifying-glass"></i></button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="btn btn-outline-warning" title="open-writeBlog"><i
-                                        class="fa-solid fa-pen"></i> Viết
-                                    bài</button>
-                            </li>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn text-white position-relative" title="offcanvas" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight">
-                                        <i class="fa-solid fa-bell">
-                                            <span
-                                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
-                                            </span>
-                                        </i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="dropdown">
-
-                                    <img class="rounded-circle dropdown" data-bs-toggle="dropdown" aria-expanded="false"
-                                        src="https://i.ibb.co/NW7CCfv/avatar.jpg" width="32" alt="user-picture">
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="#">Xem trang cá nhân</a>
-                                        </li>
-                                        <li>
-                                            <hr>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">Bài viết của tôi</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-sun"></i> Bản
-                                                nháp</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fa-solid fa-moon"></i>
-                                                Bài viết đã lưu</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fa-solid fa-moon"></i> Tùy chỉnh</a>
-                                        </li>
-                                        <li>
-                                            <hr>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fa-solid fa-moon"></i> Đăng xuất</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="search-modal" tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Search</h1>
-                                <button title="modal-search-close" type="button" class="btn-close"
-                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row g-3">
-                                    <div class="col-12 col-sm-12">
-                                        <label for="" class="form-label">Search</label>
-                                        <input class="form-control" type="text" placeholder="Search">
-                                    </div>
-                                    <div class="col-lg-6 col-12" ng-controller="topic">
-                                        <label for="" class="form-label">Topic</label>
-                                        <select class="form-select" name="" title="topic">
-                                            <option ng-repeat="item in listTopic">{{item}}</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <label for="" class="form-label">Read time</label>
-                                        <select class="form-select" name="" title="read-time">
-                                            <option ng-repeat="readtime in listReadTime" value={{readtime.value}}>
-                                                {{readtime.content}}</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                    title="modal-search-close">Close</button>
-                                <button type="button" class="btn btn-warning" title="search">Tìm kiếm</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <!-- nav -->
+        <div ng-include="'share/nav.html'"></div>
         <!-- loading -->
-        <div class="container vh-100" ng-show="loading">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-12 col-lg-6">
-                    <!-- <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_5bql9qg1/data.json"
-                        background="transparent" speed="1" loop autoplay></lottie-player> -->
-                    <lottie-player class="w-100" src="https://assets1.lottiefiles.com/packages/lf20_DMgKk1.json"
-                        background="transparent" speed="1" loop autoplay></lottie-player>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <p class="h1 animation-floating text-center">Đang tải</p>
-                    <p class="h2 animation-floating text-center">bạn chờ xíu nhé</p>
-                </div>
-            </div>
+        <div class="container vh-100" ng-show="loading" ng-include="'share/loading.html'">
         </div>
-        <div ng-show="!loading" ng-view id="Home">
-
-        </div>
-        <div class="container">
-            <footer class="py-3">
-                <div class="row justify-content-between">
-                    <div class="col-6 col-md-2 mb-3">
-                        <p class="h5">Section</p>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="./screen/Home.html#home"
-                                    class="nav-link p-0 text-muted"><i class="fa-solid fa-house"></i> Home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i
-                                        class="fa-solid fa-clipboard-question"></i> FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="./screen/AboutUs.html#about-us"
-                                    class="nav-link p-0 text-muted"><i class="fa-solid fa-address-card"></i> About
-                                    Us</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-2 mb-3">
-                        <p class="h5">Working Hours</p>
-                        <p><i class="fa-solid fa-business-time"></i> Monday to Friday </p>
-                        <p><i class="fa-solid fa-clock"></i> 9:00 - 17:00</p>
-                    </div>
-                    <div class="col-6 col-md-2 mb-3">
-                        <p class="h5">Contact Us</p>
-                        <p><i class="fa-solid fa-phone"></i> +84 0985950723</p>
-                    </div>
-                    <div class="col-md-5 offset-md-1 mb-3">
-                        <p class="h5">Subscribe to our newsletter</p>
-                        <p class="h6">Monthly digest of what's new and exciting from us.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                            <label for="useremail" class="visually-hidden">Your email address</label>
-                            <input id="useremail" type="text" class="form-control text-dark"
-                                placeholder="Your email address">
-                            <label for="useremail" class="visually-hidden">Your name</label>
-                            <input id="username" type="text" class="form-control text-dark" placeholder="Your name">
-                            <button class="btn btn-warning" type="button" title="Subscribe">Subscribe</button>
-                        </div>
-
-                        <div class="row mt-3">
-                            <div class="col-12 text-center"><i class="fa-solid fa-envelope"></i> Email:
-                                Jackandy249@gmail.com</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2022 DotNetUniverse Tran Phu Dat, Inc. All rights reserved.</p>
-                    <ul class="list-unstyled d-flex">
-                        <li class="ms-3">
-                            <a class="nav-link" href="#">
-                                <i class="fa-brands fa-twitter"></i> Twitter
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="nav-link" href="https://www.facebook.com/clbnetuniverse" target="_blank">
-                                <i class="fa-brands fa-facebook"></i> Facebook
-                            </a>
-                        </li>
-                        <li class="ms-3"><a class="nav-link" href="#">
-                                <i class="fa-brands fa-instagram"></i> Instagram
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
-        </div>
+        <div ng-show="!loading" ng-view id="Home"></div>
+        <div ng-include="'share/footer.html'"></div>
     </div>
 
     <!-- Toast -->
@@ -318,7 +47,7 @@
                 <div class="toast-header">
                     <img src="./assets/logo.svg" height="32" class="rounded-circle me-2" alt="Logo">
                     <strong class="me-auto">DotNetUniverse</strong>
-                    <small class="text-muted">Just now</small>
+                    <small class="text-muted" data-bs-toggle="tooltip" data-bs-title="Up vote">Just now</small>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"
                         title="toast-close"></button>
                 </div>
@@ -335,21 +64,19 @@
     </div>
     <!-- add lottiefiles -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- add tooltip -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="./bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-
     <!-- scrollprogress -->
     <script src="./js/scrollProgress.js"></script>
     <!-- tooltip -->
-    <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script>
+    <!-- <script src="./js/whenHrefChange.js"></script> -->
     <!-- AngularJs -->
     <script>
         var app = angular.module('myApp', ["ngRoute"]);
-        app.controller('allElement', function ($scope) {
+        app.controller('allElement', function ($scope, $rootScope) {
+            $rootScope.pageTitle = "Trang chủ";
+            $rootScope.isLoginNow = false;
+            $rootScope.language = "vn";
+
             $scope.themes = {
                 "theme": "dark", "content": false
             };
@@ -363,14 +90,21 @@
                 }
             }
         })
-        app.controller('navBar', function ($scope, $http) {
-            $scope.language = "vn";
-            $scope.isLoginNow = false;
-
+        app.controller('navBar', function ($scope, $http, $rootScope) {
             $scope.listReadTime = [],
                 $http.get("./js/Data.json").then((response) => {
                     $scope.listReadTime = response.data.ListReadTime;
                 })
+            $scope.SearchTitle;
+            $scope.SearchTopic;
+            $scope.SearchTime;
+            $scope.users;
+            $http.get("./js/users.json").then((response) => {
+                $scope.users = response.data.users;
+                if ($scope.users[0].email === "jackandy249@gmail.com") {
+                    $rootScope.isLoginNow = false;
+                }
+            })
         });
 
         app.controller('topic', ($scope, $http) => {
@@ -388,11 +122,86 @@
             $scope.pageSize = 4;
             $scope.currentPage = 0;
         });
+
+        app.controller('blogCtrl', function ($scope, $routeParams, $http, $sce) {
+            $scope.Blog;
+            $scope.htmlBlog;
+            $http.get("./js/Data.json").then((response) => {
+                $scope.Blog = response.data.Blogs.filter(blog => blog.content === $routeParams.name)[0];
+                $http.get("./ContentHTML/" + $scope.Blog.content + ".html").then((rp) => {
+                    $scope.htmlBlog = $sce.trustAsHtml(rp.data);
+                })
+            })
+        });
+
+        app.controller('pageTitleChange', function ($scope, $routeParams, $rootScope) {
+            // console.log($routeParams.title)
+            $rootScope.pageTitle = $routeParams.title;
+        });
+        app.controller('searchPage', function ($scope, $routeParams) {
+            // console.log($routeParams.title)
+            console.log($routeParams.title);
+            console.log($routeParams.topic);
+            console.log($routeParams.time);
+        });
+        app.controller('profileUser', ($scope, $http, $routeParams) => {
+            $scope.Blogs;
+            $http.get("./js/users.json").then((response) => {
+                $scope.Blogs = response.data.users.filter(user => user.userName === $routeParams.username);
+            })
+        })
+
         app.filter('startFrom', function () {
             return function (input, start) {
                 start = +start; //parse to int
                 return input.slice(start);
             }
+        });
+
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl: "./screen/Home.html?"
+                })
+                .when("/home/:title", {
+                    templateUrl: "./screen/Home.html?",
+                    controller: "pageTitleChange"
+                })
+                .when("/faqs/:title", {
+                    templateUrl: "./screen/FAQs.html?",
+                    controller: "pageTitleChange"
+                })
+                .when("/aboutus/:title", {
+                    templateUrl: "./screen/AboutUs.html?",
+                    controller: "pageTitleChange"
+                })
+                .when("/signup/:title", {
+                    templateUrl: "./screen/SignUp.html?",
+                    controller: "pageTitleChange"
+                })
+                .when("/login/:title", {
+                    templateUrl: "./screen/Login.html?",
+                    controller: "pageTitleChange"
+                })
+                .when("/profile/:username", {
+                    templateUrl: "./screen/Profile.html?",
+                    controller: "profileUser"
+                })
+                .when("/BlogReading/:name", {
+                    templateUrl: "./screen/BlogReading.html?",
+                    controller: "blogCtrl"
+                })
+                .when("/404notfound", {
+                    templateUrl: "./screen/404NotFound.html?"
+                })
+                .when("/search/:title/:topic/:time", {
+                    templateUrl: "./screen/SearchPage.html?",
+                    controller: "searchPage"
+                })
+                .otherwise({
+                    redirectTo: "/404notfound"
+                })
+                ;
         });
 
         // loading
@@ -403,6 +212,7 @@
             $rootScope.$on('$routeChangeSuccess', () => {
                 // $timeout(() => {
                 $rootScope.loading = false;
+
                 // }, 250);
             });
             $rootScope.$on('$routeChangeError', () => {
@@ -410,38 +220,9 @@
                     alert("Có vẻ kết nối của bạn không ổn định");
                     $rootScope.loading = false;
                 }, 1000);
-
             })
         });
 
-        app.config(function ($routeProvider) {
-            $routeProvider
-                .when("/home", {
-                    templateUrl: "./screen/Home.html"
-                })
-                .when("/faqs", {
-                    templateUrl: "./screen/FAQs.html"
-                })
-                .when("/aboutus", {
-                    templateUrl: "./screen/AboutUs.html"
-                })
-                .when("/signup", {
-                    templateUrl: "./screen/SignUp.html"
-                })
-                .when("/login", {
-                    templateUrl: "./screen/Login.html"
-                })
-                .when("/Profile", {
-                    templateUrl: "./screen/Profile.html"
-                })
-                .when("/BlogReading", {
-                    templateUrl: "./screen/BlogReading.html"
-                })
-                .otherwise({
-                    redirectTo: "/home"
-                })
-                ;
-        });
     </script>
 </body>
 
