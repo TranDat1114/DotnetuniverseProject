@@ -114,6 +114,14 @@
             })
         });
 
+        app.controller('searchCtrl', ($scope, $http) => {
+            $scope.search = {
+                "title": "",
+                "topic": "Tất cả",
+                "time": "0"
+            }
+        });
+
         app.controller('BlogReading', function ($scope, $http) {
             $scope.BlogReadings = [];
             $http.get("./js/Data.json").then((response) => {
@@ -140,13 +148,29 @@
         });
         app.controller('searchPage', function ($scope, $routeParams, $rootScope, $http) {
             // console.log($routeParams.title)
+            $rootScope.searchKey = $routeParams;
             $rootScope.pageTitle = "Search";
-            $scope.Blogs = [];
+            $rootScope.BlogInSearch = [];
             $http.get("./js/Data.json").then((response) => {
-                // search with title
-                $scope.Blogs = response.data.Blogs.filter((blog) => blog.blogName.toLowerCase().includes($routeParams.title.toLowerCase()));
-                console.log($scope.Blogs);
-                console.log($routeParams);
+                $rootScope.BlogInSearch = response.data.Blogs
+                if ($rootScope.searchKey.title.trim() != "") {
+                    $rootScope.BlogInSearch = $rootScope.BlogInSearch.filter((blog) => blog.blogName.toLowerCase().includes($rootScope.searchKey.title.toLowerCase()));
+                }
+                if ($rootScope.searchKey.topic != "Tất cả") {
+                    $rootScope.BlogInSearch = $rootScope.BlogInSearch.filter((blog) =>
+                        blog.topic === $rootScope.searchKey.topic
+                    );
+                }
+
+                // Đang làm việc ở đây
+                if ($rootScope.searchKey.time != 0) {
+                    $rootScope.BlogInSearch = $rootScope.BlogInSearch.filter((blog) => Number(blog.readingTime.split(" ")[0]) <= Number($rootScope.searchKey.time));
+                }
+                $rootScope.searchKey.time = response.data.ListReadTime.filter(p => p.value == $routeParams.time)[0].content
+
+
+
+                // search with title cần tối ưu (include từng phần tử trong keyword)
             })
         })
         app.controller('profileUser', ($scope, $http, $routeParams) => {

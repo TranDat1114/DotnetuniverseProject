@@ -6,26 +6,38 @@
         },
         {
             "value": 3,
+            "first": 0,
+            "last": 3,
             "content": "Dưới 3 phút"
         },
         {
             "value": 7,
+            "first": 3,
+            "last": 7,
             "content": "3 phút - 7 phút"
         },
         {
             "value": 15,
+            "first": 7,
+            "last": 15,
             "content": "7 phút - 15 phút"
         },
         {
             "value": 20,
+            "first": 15,
+            "last": 20,
             "content": "15 phút - 20 phút"
         },
         {
             "value": 30,
+            "first": 20,
+            "last": 30,
             "content": "20 phút - 30 phút"
         },
         {
             "value": 31,
+            "first": 30,
+            "last": 9999,
             "content": "Trên 30 phút"
         }
     ],
