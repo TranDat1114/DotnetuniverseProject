@@ -1,4 +1,6 @@
-<main>
+<link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
+
+<main ng-controller="profileUser">
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -10,7 +12,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12" id="wallpaper">
-                <img class="object-fit-cover img-fluid w-100" src="./assets/fpt-poly-3.jpg" alt="wallpaper">
+                <img class="object-fit-cover img-fluid w-100" src="{{Profile.wallpaper}}" alt="wallpaper">
             </div>
         </div>
     </div>
@@ -18,17 +20,18 @@
     <div class="container">
         <div class="row justify-content-evenly">
             <div class="col-2 d-sm-none"></div>
-            <div class="col-8 col-md-3 col-lg-2">
+            <div class="col-8 col-md-3">
                 <div class="row">
-                    <div class="col-auto">
-                        <img class="user-avatar rounded-circle img-thumbnail" src="https://i.ibb.co/NW7CCfv/avatar.jpg"
+                    <div class="col-12">
+                        <img class="user-avatar w-100 img-thumbnail object-fit-cover" src="{{Profile.avatar}}"
                             alt="avatar">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center">
-                            <p class="h4">Trần Phú Đạt</p>
+                            <p class="h4">{{Profile.fullName}}</p>
+                            <em>{{Profile.email}}</em>
                         </div>
                     </div>
                     <br>
@@ -38,29 +41,30 @@
                         </div>
                         <hr>
                         <div class="row justify-content-between">
-                            <div class="col-auto">99</div>
+                            <div class="col-auto">{{Profile.blog}}</div>
                             <div class="col-auto">Blog</div>
                         </div>
                         <div class="row justify-content-between">
-                            <div class="col-auto">99</div>
+                            <div class="col-auto">{{Profile.follower}}</div>
                             <div class="col-auto">Follower</div>
                         </div>
                         <div class="row justify-content-between">
-                            <div class="col-auto">99</div>
+                            <div class="col-auto">{{Profile.following}}</div>
                             <div class="col-auto">Following</div>
                         </div>
 
                         <hr>
                         <div class="row">
-                            Để có nhiều bạn bè, ta chỉ cần tốt bụng; nhưng để có nhiều kẻ thù, phải cần nhiều trí
-                            tuệ.
+                            <p class="h6">
+                                {{Profile.description}}
+                            </p>
                         </div>
                     </div>
                     <hr>
                 </div>
             </div>
             <div class="col-2 d-sm-none"></div>
-            <div class="col-12 col-md-9 col-lg-10">
+            <div class="col-12 col-md-9">
                 <br>
                 <div class="card">
                     <div class="card-header">
@@ -87,134 +91,58 @@
                         <div class="tab-pane active" id="blog">
                             <div class="row">
                                 <div class="col-12 col-md-3">
-                                    <select class="form-select bg-dark" aria-label="Default select example">
-                                        <option selected>Lọc</option>
-                                        <option value="1">Theo thời gian</option>
-                                        <option value="2">Theo độ nổi tiếng</option>
+                                    <select class="form-select bg-body">
+                                        <option value="1">Sớm nhất</option>
+                                        <option value="2">Cũ nhất</option>
+                                        <option value="3">Nổi bật nhất</option>
+                                        <option value="4">Phù hợp với bạn nhất</option>
                                     </select>
                                 </div>
                             </div>
                             <br>
+                            <!-- content here -->
                             <div class="row g-3">
-                                <div class="col-sm-12">
+                                <div class="col-sm-12" ng-repeat="item in BlogsInProfile | orderBy : ' -forYou' ">
                                     <div class="card">
                                         <div class="row">
                                             <div class="col-sm-12 col-md-5 col-lg-4">
-                                                <img loading="lazy" class="object-fit-cover w-100" height="250"
-                                                    src="./assets/moon.png" alt="baiviet">
-                                            </div>
-                                            <div class="col-sm-12 col-md-7 col-lg-8">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
-                                                                href="#">Phát triển bản thân</a>
-                                                            |
-                                                            <em class="content-topic">9 phút đọc</em>
-                                                        </p>
-                                                        <div class="content-title">
-                                                            <a class="h5 text-decoration-none" href="#">
-                                                                Nhật ký của một lập trình ziên zà...
-                                                            </a>
-                                                            <p class="content-content">Đọc sách được xem là cách tốt
-                                                                nhất để tập
-                                                                trung
-                                                                và
-                                                                thư...</p>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-8">
-                                                                <div class="row">
-                                                                    <div class="col-3">
-                                                                        <img loading="lazy"
-                                                                            class="object-fit-cover rounded-circle authorHome"
-                                                                            src="https://i.ibb.co/NW7CCfv/avatar.jpg"
-                                                                            alt="author">
-                                                                    </div>
-                                                                    <div class="col-9">
-                                                                        <a href="#"
-                                                                            class="content-topic text-decoration-none">
-                                                                            Trần Phú Đạt</a>
-                                                                        <p class="content-topic">24 tháng 1 2022</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <div class="row text-center">
-                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                        data-bs-title="Up vote">
-                                                                        <i class="fa-solid fa-chevron-up"></i>
-                                                                        <p class="content-topic">6</p>
-                                                                    </div>
-                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                        data-bs-title="View">
-                                                                        <i class="fa-solid fa-eye"></i>
-                                                                        <p class="content-topic">822</p>
-                                                                    </div>
-                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                        data-bs-title="Comment">
-                                                                        <i class="fa-solid fa-message"></i>
-                                                                        <p class="content-topic">0</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-5 col-lg-4">
-                                                <a href="./BlogReading.html">
+                                                <a href="#!BlogReading/{{item.content}}#blogReadingContent">
                                                     <img loading="lazy" class="object-fit-cover w-100" height="250"
-                                                        src="./assets/Library.jpg" alt="baiviet">
+                                                        src="{{item.img}}" alt="baiviet">
                                                 </a>
                                             </div>
                                             <div class="col-sm-12 col-md-7 col-lg-8">
                                                 <div class="container">
                                                     <div class="row">
                                                         <p><a class="content-topic btn-link text-uppercase text-decoration-none"
-                                                                href="#">Khoa
-                                                                học -
-                                                                Công
-                                                                nghệ</a>
+                                                                href="#">{{item.topic}}</a>
                                                             |
-                                                            <em class="content-topic">3 phút đọc</em>
+                                                            <em class="content-topic">{{item.readingTime}}</em>
                                                         </p>
                                                         <div class="content-title">
                                                             <a class="h5 text-decoration-none"
-                                                                href="./BlogReading.html">3 cuốn sách
-                                                                gối đầu giường
-                                                                nếu
-                                                                bạn
-                                                                muốn thành
-                                                                thạo SQL
+                                                                href="#!BlogReading/{{item.content}}#blogReadingContent">
+                                                                {{item.blogName}}
                                                             </a>
-                                                            <p class="content-content">Đọc sách được xem là cách tốt
-                                                                nhất để tập
-                                                                trung
-                                                                và
-                                                                thư...</p>
+                                                            <p class="content-content">
+                                                                {{item.asContent}}
+                                                            </p>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-8">
                                                                 <div class="row">
                                                                     <div class="col-3">
-                                                                        <img loading="lazy"
-                                                                            class="object-fit-cover rounded-circle authorHome"
-                                                                            src="https://images.spiderum.com/sp-avatar/c04305404b0911ed96af779465d662a5.jpeg"
-                                                                            alt="author">
+                                                                        <a href="#!profile/{{item.idName}}">
+                                                                            <img loading="lazy"
+                                                                                class="object-fit-cover rounded-circle authorHome"
+                                                                                src="{{item.avatar}}" alt="author">
+                                                                        </a>
                                                                     </div>
                                                                     <div class="col-9">
-                                                                        <a href="#"
+                                                                        <a href="#!profile/{{item.idName}}"
                                                                             class="content-topic text-decoration-none">
-                                                                            Ngô Vinh
-                                                                            Data
-                                                                            Coach</a>
-                                                                        <p class="content-topic">30 tháng 11 2022
+                                                                            {{item.authorName}}</a>
+                                                                        <p class="content-topic">{{item.upLoadDate}}
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -224,87 +152,17 @@
                                                                     <div class="col-4 p-0" data-bs-toggle="tooltip"
                                                                         data-bs-title="Up vote">
                                                                         <i class="fa-solid fa-chevron-up"></i>
-                                                                        <p class="content-topic">6</p>
+                                                                        <p class="content-topic">{{item.upVote}}</p>
                                                                     </div>
                                                                     <div class="col-4 p-0" data-bs-toggle="tooltip"
                                                                         data-bs-title="View">
                                                                         <i class="fa-solid fa-eye"></i>
-                                                                        <p class="content-topic">822</p>
+                                                                        <p class="content-topic">{{item.seen}}</p>
                                                                     </div>
                                                                     <div class="col-4 p-0" data-bs-toggle="tooltip"
                                                                         data-bs-title="Comment">
                                                                         <i class="fa-solid fa-message"></i>
-                                                                        <p class="content-topic">0</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-5 col-lg-4">
-                                                <img loading="lazy" class="object-fit-cover w-100" height="250"
-                                                    src="https://images.spiderum.com/sp-images/94813e707f2f11eaa9dcb3364a58500c.jpg"
-                                                    alt="baiviet">
-                                            </div>
-                                            <div class="col-sm-12 col-md-7 col-lg-8">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
-                                                                href="#">Quan điểm - Tranh luận</a>
-                                                            |
-                                                            <em class="content-topic">6 phút đọc</em>
-                                                        </p>
-                                                        <div class="content-title">
-                                                            <a class="h5 text-decoration-none" href="#">Làm gì khi
-                                                                người khác tổn
-                                                                thương mình?
-                                                            </a>
-                                                            <p class="content-content">Dạo gần đây mình trở nên nhạy
-                                                                cảm hơn bình
-                                                                thường. Đặc biệt là khi nghe những lời phán xét, chê
-                                                                bai vô ý tứ của
-                                                                người khác. Tại sao...</p>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-8">
-                                                                <div class="row">
-                                                                    <div class="col-3">
-                                                                        <img loading="lazy"
-                                                                            class="object-fit-cover rounded-circle authorHome"
-                                                                            src="https://images.spiderum.com/sp-avatar/20396b2096ab11eba08adf903d8ec612.jpg"
-                                                                            alt="author">
-                                                                    </div>
-                                                                    <div class="col-9">
-                                                                        <a href="#"
-                                                                            class="content-topic text-decoration-none">
-                                                                            Mục đồng</a>
-                                                                        <p class="content-topic">15 tháng 4 2020</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <div class="row text-center">
-                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                        data-bs-title="Up vote">
-                                                                        <i class="fa-solid fa-chevron-up"></i>
-                                                                        <p class="content-topic">6</p>
-                                                                    </div>
-                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                        data-bs-title="View">
-                                                                        <i class="fa-solid fa-eye"></i>
-                                                                        <p class="content-topic">822</p>
-                                                                    </div>
-                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
-                                                                        data-bs-title="Comment">
-                                                                        <i class="fa-solid fa-message"></i>
-                                                                        <p class="content-topic">0</p>
+                                                                        <p class="content-topic">{{item.cmt}}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -319,12 +177,12 @@
                         </div>
                         <div class="tab-pane" id="readlist">
                             <div class="row justify-content-between">
-                                <div class="col-10">
+                                <div class="col-9">
                                     <p class="h2">
                                         You had nothing here :_(
                                     </p>
                                 </div>
-                                <div class="col-2"><button class="btn btn-success">Tạo danh sách</button></div>
+                                <div class="col-3"><button class="btn btn-success">Tạo danh sách</button></div>
                             </div>
                         </div>
                         <div class="tab-pane" id="saved">
@@ -337,75 +195,5 @@
     </div>
 </main>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Thông báo</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <p>Thông báo ngày hôm nay</p>
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                    viết</strong> của bạn đạt 999
-                like</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
-                trả lời bình
-                luận của bạn</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
-                40 người khác đã
-                like bình luận của bạn</a>
-        </div>
-        <br>
-        <p>Thông báo ngày hôm qua</p>
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                    viết</strong> của bạn đạt 999
-                like</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
-                trả lời bình
-                luận của bạn</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
-                40 người khác đã
-                like bình luận của bạn</a>
-        </div>
-        <br>
-        <p>Thông báo ngày 2/3/2023</p>
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                    viết</strong> của bạn đạt 999
-                like</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
-                trả lời bình
-                luận của bạn</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
-                40 người khác đã
-                like bình luận của bạn</a>
-        </div>
-        <br>
-        <p>Thông báo ngày 1/3/2023</p>
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                    viết</strong> của bạn đạt 999
-                like</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
-                trả lời bình
-                luận của bạn</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
-                40 người khác đã
-                like bình luận của bạn</a>
-        </div>
-        <br>
-        <p>Thông báo ngày 29/2/2023</p>
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">Bài
-                    viết</strong> của bạn đạt 999
-                like</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> đã
-                trả lời bình
-                luận của bạn</a>
-            <a href="#" class="list-group-item list-group-item-action"><strong class="text-success">HuyHuynh</strong> và
-                40 người khác đã
-                like bình luận của bạn</a>
-        </div>
-    </div>
-</div>
+
+<script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>

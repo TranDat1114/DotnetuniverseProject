@@ -23,7 +23,7 @@
             <div ng-controller="BlogReading">
                 <div class="row g-3">
                     <div class="col-lg-6 col-sm-12"
-                        ng-repeat="item in BlogReadings | orderBy : ' -seen' | startFrom:currentPage*pageSize | limitTo:pageSize ">
+                        ng-repeat="item in DataFile.Blogs | orderBy : ' -seen' | startFrom:currentPage*pageSize | limitTo:pageSize ">
                         <div class=" card">
                             <div class="row">
                                 <div class="col-sm-12 col-md-5 col-lg-4">
@@ -52,14 +52,14 @@
                                                 <div class="col-8">
                                                     <div class="row">
                                                         <div class="col-3">
-                                                            <a href="#!profile/{{item.idName}}">
+                                                            <a href="#!profile/{{item.userName}}">
                                                                 <img loading="lazy"
                                                                     class="object-fit-cover rounded-circle authorHome"
-                                                                    src="{{item.authorImg}}" alt="author">
+                                                                    src="{{item.avatar}}" alt="author">
                                                             </a>
                                                         </div>
                                                         <div class="col-9">
-                                                            <a href="#!profile/{{item.idName}}"
+                                                            <a href="#!profile/{{item.userName}}"
                                                                 class="content-topic text-decoration-none">{{item.authorName}}</a>
                                                             <p class="content-topic">{{item.upLoadDate |
                                                                 date:'dd/MM/yyyy'}}</p>
@@ -152,9 +152,9 @@
             <div class="col-sm-12 col-lg-4">
                 <p class="card-title h5">Topic</p>
                 <hr>
-                <div class="container" ng-controller="topic">
+                <div class="container">
                     <div class="row gap-3 row-cols-auto">
-                        <a href="#" class="btn btn-outline-warning " ng-repeat="topic in listTopic">{{topic}}</a>
+                        <a href="#" class="btn btn-outline-warning " ng-repeat="topic in DataFile.Topics">{{topic}}</a>
                     </div>
                 </div>
                 <hr>
@@ -174,12 +174,12 @@
                                 <p class="h6">Subscribe today to get news helpful information every weekend</p>
                                 <div class=" mb-3">
                                     <label for="form-control">Your email address</label>
-                                    <input type="email" class="form-control  text-dark" id="floatingInput"
+                                    <input type="email" class="form-control bg-body" id="floatingInput"
                                         placeholder="gia.han@example.com">
                                 </div>
                                 <div class="mb-3">
                                     <label for="floatingPassword">What can we call you?</label>
-                                    <input type="text" class="form-control text-dark" id="floatingPassword"
+                                    <input type="text" class="form-control bg-body" id="floatingPassword"
                                         placeholder="Nguyễn Huỳnh Gia Hân?">
                                 </div>
                             </div>
@@ -209,8 +209,9 @@
                     </div>
                     <div class="card-body tab-content">
                         <div class="tab-pane active" id="foryou">
-                            <div class="row g-3" ng-controller="BlogReading">
-                                <div class="col-sm-12" ng-repeat="item in BlogReadings | orderBy : ' -forYou' ">
+                            <div class="row g-3">
+                                <div class="col-sm-12"
+                                    ng-repeat="item in DataFile.Blogs | limitTo: 5 | orderBy : ' -forYou' ">
                                     <div class="card">
                                         <div class="row">
                                             <div class="col-sm-12 col-md-5 col-lg-4">
@@ -240,14 +241,14 @@
                                                             <div class="col-8">
                                                                 <div class="row">
                                                                     <div class="col-3">
-                                                                        <a href="#!profile/{{item.idName}}">
+                                                                        <a href="#!profile/{{item.userName}}">
                                                                             <img loading="lazy"
                                                                                 class="object-fit-cover rounded-circle authorHome"
-                                                                                src="{{item.authorImg}}" alt="author">
+                                                                                src="{{item.avatar}}" alt="author">
                                                                         </a>
                                                                     </div>
                                                                     <div class="col-9">
-                                                                        <a href="#!profile/{{item.idName}}"
+                                                                        <a href="#!profile/{{item.userName}}"
                                                                             class="content-topic text-decoration-none">
                                                                             {{item.authorName}}</a>
                                                                         <p class="content-topic">{{item.upLoadDate}}
@@ -284,8 +285,8 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="highlyappreciated">
-                            <div class="row g-3" ng-controller="BlogReading">
-                                <div class="col-sm-12" ng-repeat="item in BlogReadings | orderBy : ' -upVote' ">
+                            <div class="row g-3">
+                                <div class="col-sm-12" ng-repeat="item in DataFile.Blogs | orderBy : ' -upVote' ">
                                     <div class="card">
                                         <div class="row">
                                             <div class="col-sm-12 col-md-5 col-lg-4">
@@ -315,14 +316,14 @@
                                                             <div class="col-8">
                                                                 <div class="row">
                                                                     <div class="col-3">
-                                                                        <a href="#!profile/{{item.idName}}">
+                                                                        <a href="#!profile/{{item.userName}}">
                                                                             <img loading="lazy"
                                                                                 class="object-fit-cover rounded-circle authorHome"
-                                                                                src="{{item.authorImg}}" alt="author">
+                                                                                src="{{item.avatar}}" alt="author">
                                                                         </a>
                                                                     </div>
                                                                     <div class="col-9">
-                                                                        <a href="#!profile/{{item.idName}}"
+                                                                        <a href="#!profile/{{item.userName}}"
                                                                             class="content-topic text-decoration-none">
                                                                             {{item.authorName}}</a>
                                                                         <p class="content-topic">{{item.upLoadDate}}

@@ -166,18 +166,18 @@
                         <div class="row g-3">
                             <div class="col-12 col-sm-12">
                                 <label for="" class="form-label">Search</label>
-                                <input class="form-control" required type="text" placeholder="Search"
+                                <input class="form-control bg-body" required type="text" placeholder="Search"
                                     ng-model="search.title">
                             </div>
-                            <div class="col-lg-6 col-12" ng-controller="topic">
+                            <div class="col-lg-6 col-12">
                                 <label for="" class="form-label">Topic</label>
-                                <select class="form-select" title="topic" ng-model="search.topic">
-                                    <option ng-repeat="item in listTopic">{{item}}</option>
+                                <select class="form-select bg-body" title="topic" ng-model="search.topic">
+                                    <option ng-repeat="item in DataFile.Topics">{{item}}</option>
                                 </select>
                             </div>
                             <div class="col-lg-6 col-12">
                                 <label for="" class="form-label">Read time</label>
-                                <select class="form-select" title="read-time" ng-model="search.time">
+                                <select class="form-select bg-body" title="read-time" ng-model="search.time">
                                     <option ng-repeat="readtime in listReadTime" value={{readtime.value}}>
                                         {{readtime.content}}</option>
                                 </select>

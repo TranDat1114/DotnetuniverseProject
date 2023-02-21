@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="./css/stylesToAll.css">
     <link rel="stylesheet" href="./css/styleAboutUs.css">
     <link rel="stylesheet" href="./css/styleBlogReading.css">
-    <link rel="stylesheet" href="./css/styleLogin.css">
     <link rel="stylesheet" href="./css/styleHome.css">
     <link rel="stylesheet" href="./css/styleProfile.css">
 
@@ -72,9 +71,10 @@
     <!-- AngularJs -->
     <script>
         var app = angular.module('myApp', ["ngRoute"]);
-        app.controller('allElement', function ($scope, $rootScope) {
+        app.controller('allElement', function ($scope, $http, $rootScope) {
             $rootScope.pageTitle = "Trang chủ";
             $rootScope.isLoginNow = false;
+            $rootScope.UserNow = [];
             $rootScope.language = "vn";
 
             $scope.themes = {
@@ -89,29 +89,23 @@
                     $scope.themes.content = true;
                 }
             }
+            $rootScope.DataFile = [];
+            // data
+            $http.get("./js/Data.json").then((response) => {
+                $rootScope.DataFile = response.data;
+            })
+
+
         })
-        app.controller('navBar', function ($scope, $http, $rootScope) {
-            $scope.listReadTime = [],
-                $http.get("./js/Data.json").then((response) => {
-                    $scope.listReadTime = response.data.ListReadTime;
-                })
+        app.controller('navBar', function ($scope, $rootScope) {
+            $scope.listReadTime = $rootScope.DataFile.ListReadTime;
+
             $scope.SearchTitle;
             $scope.SearchTopic;
             $scope.SearchTime;
-            $scope.users;
-            $http.get("./js/users.json").then((response) => {
-                $scope.users = response.data.users;
-                if ($scope.users[0].email === "jackandy249@gmail.com") {
-                    $rootScope.isLoginNow = false;
-                }
-            })
         });
+        app.controller('loginCtrl', function ($scope, $rootScope) {
 
-        app.controller('topic', ($scope, $http) => {
-            $scope.listTopic = [];
-            $http.get("./js/Data.json").then((response) => {
-                $scope.listTopic = response.data.Topics;
-            })
         });
 
         app.controller('searchCtrl', ($scope, $http) => {
@@ -122,24 +116,19 @@
             }
         });
 
-        app.controller('BlogReading', function ($scope, $http) {
-            $scope.BlogReadings = [];
-            $http.get("./js/Data.json").then((response) => {
-                $scope.BlogReadings = response.data.Blogs;
-            })
+        app.controller('BlogReading', function ($scope, $rootScope) {
+            // $scope.BlogReadings = $rootScope.DataFile.Blogs;
             $scope.pageSize = 4;
             $scope.currentPage = 0;
         });
 
-        app.controller('blogCtrl', function ($scope, $routeParams, $http, $sce) {
-            $scope.Blog;
+        app.controller('blogCtrl', function ($scope, $routeParams, $http, $sce, $rootScope) {
+            $scope.Blog = $rootScope.DataFile.Blogs.filter(blog => blog.content === $routeParams.name)[0];
+            $http.get("./ContentHTML/" + $scope.Blog.content + ".html").then((rp) => {
+                $scope.htmlBlog = $sce.trustAsHtml(rp.data);
+            });
             $scope.htmlBlog;
-            $http.get("./js/Data.json").then((response) => {
-                $scope.Blog = response.data.Blogs.filter(blog => blog.content === $routeParams.name)[0];
-                $http.get("./ContentHTML/" + $scope.Blog.content + ".html").then((rp) => {
-                    $scope.htmlBlog = $sce.trustAsHtml(rp.data);
-                })
-            })
+
         });
 
         app.controller('pageTitleChange', function ($scope, $routeParams, $rootScope) {
@@ -150,7 +139,7 @@
             // console.log($routeParams.title)
             $rootScope.searchKey = $routeParams;
             $rootScope.pageTitle = "Search";
-            $rootScope.BlogInSearch = [];
+            $rootScope.BlogInSearch;
             $http.get("./js/Data.json").then((response) => {
                 $rootScope.BlogInSearch = response.data.Blogs
                 if ($rootScope.searchKey.title.trim() != "") {
@@ -168,17 +157,14 @@
                 }
                 $rootScope.searchKey.time = response.data.ListReadTime.filter(p => p.value == $routeParams.time)[0].content
 
-
-
                 // search with title cần tối ưu (include từng phần tử trong keyword)
             })
         })
-        app.controller('profileUser', ($scope, $http, $routeParams) => {
-            $scope.Blogs;
-            $http.get("./js/users.json").then((response) => {
-                $scope.Blogs = response.data.users.filter(user => user.userName === $routeParams.username);
-            })
-        })
+
+        app.controller('profileUser', function ($scope, $routeParams, $rootScope) {
+            $scope.Profile = $rootScope.DataFile.Users.filter(user => user.userName === $routeParams.username)[0];
+            $scope.BlogsInProfile = $rootScope.DataFile.Blogs.filter(blog => blog.userName === $routeParams.username)
+        });
 
         app.filter('startFrom', function () {
             return function (input, start) {
@@ -213,8 +199,8 @@
                     controller: "pageTitleChange"
                 })
                 .when("/profile/:username", {
-                    templateUrl: "./screen/Profile.html?",
-                    controller: "profileUser"
+                    templateUrl: "./screen/Profile.html?"
+                    // controller: "profileUser"
                 })
                 .when("/BlogReading/:name", {
                     templateUrl: "./screen/BlogReading.html?",
