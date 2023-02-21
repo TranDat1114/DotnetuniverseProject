@@ -138,12 +138,17 @@
             // console.log($routeParams.title)
             $rootScope.pageTitle = $routeParams.title;
         });
-        app.controller('searchPage', function ($scope, $routeParams) {
+        app.controller('searchPage', function ($scope, $routeParams, $rootScope, $http) {
             // console.log($routeParams.title)
-            console.log($routeParams.title);
-            console.log($routeParams.topic);
-            console.log($routeParams.time);
-        });
+            $rootScope.pageTitle = "Search";
+            $scope.Blogs = [];
+            $http.get("./js/Data.json").then((response) => {
+                // search with title
+                $scope.Blogs = response.data.Blogs.filter((blog) => blog.blogName.toLowerCase().includes($routeParams.title.toLowerCase()));
+                console.log($scope.Blogs);
+                console.log($routeParams);
+            })
+        })
         app.controller('profileUser', ($scope, $http, $routeParams) => {
             $scope.Blogs;
             $http.get("./js/users.json").then((response) => {
