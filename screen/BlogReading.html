@@ -2,8 +2,8 @@
     <div class="container" id="blogReadingContent">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#!home#Home">Home</a></li>
-                <li class="breadcrumb-item" aria-current="page"><a href="#!home#Home">Blog</a></li>
+                <li class="breadcrumb-item"><a href="#!home/Home">Home</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="#!home/Home">Blog</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{Blog.blogName}}</li>
             </ol>
         </nav>
@@ -18,22 +18,27 @@
                         <em class="">{{Blog.readingTime}}</em>
                     </p>
                     <div class="content-title">
-                        <a class="h1 text-decoration-none" href="#blogReadingContent">{{Blog.blogName}}
-                        </a>
-                        <p class="content-content">{{Blog.asContent}}...</p>
+                        <p class="h1 text-decoration-none">
+                            {{Blog.blogName}}
+                        </p>
+                        <p class="h6">{{Blog.asContent}}...</p>
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="row">
                                 <div class="col-6 col-lg-6">
-                                    <img loading="lazy"
-                                        class="img-thumbnail object-fit-cover rounded-circle authorBlogReading"
-                                        src="{{Blog.avatar}}" alt="author">
+                                    <a href="#!profile/{{Blog.userName}}">
+
+                                        <img loading="lazy"
+                                            class="img-thumbnail object-fit-cover rounded-circle authorBlogReading"
+                                            src="{{Blog.avatar}}" alt="author">
+                                    </a>
                                 </div>
                                 <div class="col-6 col-lg-6">
                                     <div class="container text-center">
                                         <div class="row">
-                                            <a href="#" class="col-12 h4 text-info text-decoration-none">
+                                            <a href="#!profile/{{Blog.userName}}"
+                                                class="col-12 h4 text-info text-decoration-none">
                                                 {{Blog.authorName}}</a>
                                             <!-- <button class="btn btn-outline-primary col-12 col-md-6">Follow</button> -->
                                         </div>

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
 
-<div class="container" ng-controller="loginCtrl">
+<div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#!home#Home">Home</a></li>
@@ -18,23 +18,23 @@
                 <div class="row">
                     <div class="col-sm-1 col-md-2 col-lg-4">
                     </div>
-                    <div class="col-sm-10 col-md-8 col-lg-4">
-                        <form class="row g-2">
-                            <div class="form-floating">
-                                <input type="email" required class="form-control bg-body" id="floatingInput"
+                    <div class="col-sm-10 col-md-8 col-lg-4" ng-controller="loginCtrl">
+                        <form class="row g-2 " ng-submit="login()" name="LoginForm">
+                            <div class=" form-floating">
+                                <input ng-model="email" required class="form-control bg-body"
                                     placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <label>Email address</label>
                             </div>
                             <div class="form-floating">
-                                <input type="password" required class="form-control bg-body" id="floatingPassword"
+                                <input type="password" ng-model="password" required class="form-control bg-body"
                                     placeholder="Password">
-                                <label for="floatingPassword">Password</label>
+                                <label>Password</label>
                             </div>
-                            <input class="btn btn-warning text-capitalize" type="submit" value="Login to universe">
-
+                            <button class="btn btn-warning text-capitalize" type="submit">Login to
+                                universe</button>
                         </form>
-                        <div class="col-sm-1 col-md-2 col-lg-4">
-                        </div>
+                    </div>
+                    <div class="col-sm-1 col-md-2 col-lg-4">
                     </div>
                 </div>
             </div>

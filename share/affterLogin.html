@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
+<script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+
+<ul class="navbar-nav gap-3">
+    <li class="nav-item">
+        <button class="btn btn-outline-warning" data-bs-toggle="modal" type="button" data-bs-target="#search-modal"
+            title="open-search-modal"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </li>
+    <li class="nav-item">
+        <button class="btn btn-warning" title="open-writeBlog"><i class="fa-solid fa-pen"></i>
+            Viết
+            bài</button>
+    </li>
+    <li class="nav-item">
+        <div class="dropdown">
+            <button class="btn text-body position-relative title=" offcanvas type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <i class="fa-solid fa-bell">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
+                    </span>
+                </i>
+            </button>
+        </div>
+    </li>
+    <li class="nav-item dropdown dropstart">
+        <img class="rounded-circle dropdown img-thumbnail" data-bs-toggle="dropdown" aria-expanded="false"
+            src="{{UserNow[0].avatar}}" width="40" alt="user-picture">
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#!profile/{{UserNow[0].userName}}"><i class="fa-solid fa-user"></i> Xem
+                    trang cá nhân</a>
+            </li>
+            <li>
+                <hr>
+            </li>
+            <li>
+                <button title="language" class="dropdown-item" href="#"><i class="fa-solid fa-language "></i> vi - Tiếng
+                    việt</button>
+                <button title="language" class="dropdown-item" href="#"><i class="fa-solid fa-language "></i> en -
+                    English</button>
+            </li>
+            <li>
+                <hr>
+            </li>
+            <li>
+                <button title="change-theme" ng-click="changeTheme()" class="dropdown-item">
+                    <em ng-show="themes.content">
+                        <i class="fa-solid fa-sun"></i>
+                        Giao diện - Sáng
+                    </em>
+                    <em ng-hide="themes.content">
+                        <i class="fa-solid fa-moon"></i>
+                        Giao diện - Tối
+                    </em>
+                </button>
+            </li>
+            <li>
+                <hr>
+            </li>
+            <li>
+                <button class="dropdown-item" ng-click="logOut()">
+                    <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</button>
+            </li>
+        </ul>
+    </li>
+</ul>

@@ -74,9 +74,11 @@
         app.controller('allElement', function ($scope, $http, $rootScope) {
             $rootScope.pageTitle = "Trang chủ";
             $rootScope.isLoginNow = false;
+            // nhớ đổi lại cái này
+            $rootScope.NavLink = "share/beforeLogin.html"
             $rootScope.UserNow = [];
-            $rootScope.language = "vn";
 
+            $rootScope.language = "vn";
             $scope.themes = {
                 "theme": "dark", "content": false
             };
@@ -98,17 +100,58 @@
 
         })
         app.controller('navBar', function ($scope, $rootScope) {
-            $scope.listReadTime = $rootScope.DataFile.ListReadTime;
-
             $scope.SearchTitle;
             $scope.SearchTopic;
             $scope.SearchTime;
+            $scope.logOut = () => {
+                $rootScope.NavLink = "share/beforeLogin.html"
+                $rootScope.isLoginNow = false;
+            }
         });
-        app.controller('loginCtrl', function ($scope, $rootScope) {
 
+        app.controller('loginCtrl', function ($scope, $rootScope, $location) {
+            $scope.login = function () {
+                // Lấy dữ liệu từ form
+                $rootScope.UserNow = $rootScope.DataFile.Users.filter(user => user.email === $scope.email && user.password === $scope.password)
+                if ($rootScope.UserNow.length === 0) {
+                    console.log(0)
+                } else {
+                    $rootScope.isLoginNow = true;
+                    $rootScope.NavLink = "share/affterLogin.html"
+                    $location.path('/')
+                }
+            };
+        });
+        app.controller('signUpCtrl', function ($scope, $rootScope, $location) {
+            $scope.alreadyExist = false;
+            $scope.newEmail = [];
+            $scope.signUp = function () {
+                // Lấy dữ liệu từ form
+                $scope.newEmail = $rootScope.DataFile.Users.filter(user => user.email === $scope.signUpEmail)
+                if ($scope.newEmail.length === 0) {
+                    //   Đăng ký thành công
+                    $rootScope.DataFile.Users.push(
+                        {
+                            "userName": '@' + $scope.signUpEmail.split('@')[0],
+                            "fullName": $scope.signUpEmail.split('@')[0],
+                            "password": "jackandy249",
+                            "avatar": "https://i.ibb.co/jbbm5zd/Logo.png",
+                            "wallpaper": "../assets/fpt-poly-3.jpg",
+                            "email": $scope.signUpEmail,
+                            "blog": 0,
+                            "follower": 0,
+                            "following": 0,
+                            "description": "Hãy cứ vô tư và lạc lạc lạc,..."
+                        })
+                    $location.path('/login/Login')
+                } else {
+                    $scope.alreadyExist = true;
+                    // Đã tồn tại rồi
+                }
+            };
         });
 
-        app.controller('searchCtrl', ($scope, $http) => {
+        app.controller('searchCtrl', ($scope) => {
             $scope.search = {
                 "title": "",
                 "topic": "Tất cả",
@@ -156,12 +199,12 @@
                     $rootScope.BlogInSearch = $rootScope.BlogInSearch.filter((blog) => Number(blog.readingTime.split(" ")[0]) <= Number($rootScope.searchKey.time));
                 }
                 $rootScope.searchKey.time = response.data.ListReadTime.filter(p => p.value == $routeParams.time)[0].content
-
                 // search with title cần tối ưu (include từng phần tử trong keyword)
             })
         })
 
         app.controller('profileUser', function ($scope, $routeParams, $rootScope) {
+            $rootScope.pageTitle = "Profile"
             $scope.Profile = $rootScope.DataFile.Users.filter(user => user.userName === $routeParams.username)[0];
             $scope.BlogsInProfile = $rootScope.DataFile.Blogs.filter(blog => blog.userName === $routeParams.username)
         });
