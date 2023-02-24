@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
+<script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
 <main class="container-fluid">
     <div class="row position-relative">
         <img class=" overlay-1 position-absolute top-0" src="./assets/banner.png" alt="banner">
@@ -46,7 +48,7 @@
                                                     href="#!BlogReading/{{item.content}}#blogReadingContent">
                                                     {{item.blogName}}
                                                 </a>
-                                                <p class="content-content">{{item.asContent}}...</p>
+                                                <p class="content-content" ng-bind="item.asContent | limitTo: 80"></p>
                                             </div>
                                             <div class="row">
                                                 <div class="col-8">
@@ -100,26 +102,26 @@
                             <ul class="pagination">
                                 <li class="page-item">
                                     <button class="btn page-link" title="to-page-0" ng-click="currentPage=0"
-                                        ng-disabled="currentPage == 0">
+                                        ng-disabled="currentPage <= 0">
                                         <i class="fa-solid fa-angles-left"></i>
                                     </button>
                                 </li>
                                 <li class="page-item">
                                     <button title="prev-page" class="btn page-link" ng-click="currentPage=currentPage-1"
-                                        ng-disabled="currentPage == 0">
+                                        ng-disabled="currentPage <= 0">
                                         <i class="fa-solid fa-angle-left"></i>
                                     </button>
                                 </li>
                                 <li class="page-item">
                                     <button title="next-page" class="btn page-link" ng-click="currentPage=currentPage+1"
-                                        ng-disabled="currentPage >= BlogReadings.length/pageSize - 1">
+                                        ng-disabled="currentPage >= DataFile.Blogs.length/pageSize - 1">
                                         <i class="fa-solid fa-angle-right"></i>
                                     </button>
                                 </li>
                                 <li class="page-item">
                                     <button title="to-last-page" class="btn page-link"
-                                        ng-click="currentPage=BlogReadings.length/pageSize - 1"
-                                        ng-disabled="currentPage >= BlogReadings.length/pageSize - 1">
+                                        ng-click="currentPage = DataFile.Blogs.length/pageSize - 1"
+                                        ng-disabled="currentPage >= DataFile.Blogs.length/pageSize - 1">
                                         <i class="fa-solid fa-angles-right"></i>
                                     </button>
                                 </li>
@@ -140,14 +142,86 @@
             <div class="col-12">
                 <p class="h4 text-capitalize">Trending in month</p>
             </div>
+            <div class="row g-3">
+                <div class="col-12 col-md-3" ng-repeat="item in DataFile.Blogs | limitTo: 4 | orderBy : ' -seen' ">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="#!BlogReading/{{item.content}}#blogReadingContent">
+                                    <img loading="lazy" class="object-fit-cover w-100" height="250" src="{{item.img}}"
+                                        alt="baiviet">
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <div class="container">
+                                    <div class="row">
+                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                href="#">{{item.topic}}</a>
+                                            |
+                                            <em class="content-topic">{{item.readingTime}}</em>
+                                        </p>
+                                        <div class="content-title">
+                                            <a class="h5 text-decoration-none"
+                                                href="#!BlogReading/{{item.content}}#blogReadingContent"
+                                                ng-bind="item.blogName | limitTo: 60">
+                                            </a>
+                                            <p class="content-content" ng-bind="item.asContent | limitTo: 60 ">
+                                            </p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <a href="#!profile/{{item.userName}}">
+                                                            <img loading="lazy"
+                                                                class="object-fit-cover rounded-circle w-100 authorHome"
+                                                                src="{{item.avatar}}" alt="author">
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <a href="#!profile/{{item.userName}}"
+                                                            class="content-topic text-decoration-none">
+                                                            {{item.authorName}}</a>
+                                                        <p class="content-topic">{{item.upLoadDate}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row text-center">
+                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                        data-bs-title="Up vote">
+                                                        <i class="fa-solid fa-chevron-up"></i>
+                                                        <p class="content-topic">{{item.upVote}}</p>
+                                                    </div>
+                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                        data-bs-title="View">
+                                                        <i class="fa-solid fa-eye"></i>
+                                                        <p class="content-topic">{{item.seen}}</p>
+                                                    </div>
+                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                        data-bs-title="Comment">
+                                                        <i class="fa-solid fa-message"></i>
+                                                        <p class="content-topic">{{item.cmt}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <hr>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <p class="h4 text-capitalize">DotNet-Universe Topic</p>
             </div>
         </div>
-        <hr>
+        <hr> -->
         <div class="row g-5 flex-lg-row-reverse">
             <div class="col-sm-12 col-lg-4">
                 <p class="card-title h5">Topic</p>
@@ -189,7 +263,6 @@
                         </div>
                     </div>
                     <hr>
-
                 </div>
             </div>
             <div class="col-sm-12 col-lg-8">
@@ -233,8 +306,8 @@
                                                                 href="#!BlogReading/{{item.content}}#blogReadingContent">
                                                                 {{item.blogName}}
                                                             </a>
-                                                            <p class="content-content">
-                                                                {{item.asContent}}
+                                                            <p class="content-content"
+                                                                ng-bind="item.asContent | limitTo: 120">
                                                             </p>
                                                         </div>
                                                         <div class="row">
@@ -308,8 +381,8 @@
                                                                 href="#!BlogReading/{{item.content}}#blogReadingContent">
                                                                 {{item.blogName}}
                                                             </a>
-                                                            <p class="content-content">
-                                                                {{item.asContent}}
+                                                            <p class="content-content"
+                                                                ng-bind="item.asContent | limitTo: 80">
                                                             </p>
                                                         </div>
                                                         <div class="row">

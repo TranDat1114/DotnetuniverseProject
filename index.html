@@ -36,7 +36,7 @@
         <div class="container vh-100" ng-show="loading" ng-include="'share/loading.html'">
         </div>
         <div ng-show="!loading" ng-view id="Home"></div>
-        <div ng-include="'share/footer.html'"></div>
+        <div ng-hide="Writing" ng-include="'share/footer.html'"></div>
     </div>
 
     <!-- Toast -->
@@ -74,6 +74,7 @@
         app.controller('allElement', function ($scope, $http, $rootScope) {
             $rootScope.pageTitle = "Trang chủ";
             $rootScope.isLoginNow = false;
+            $rootScope.Writing = false;
             // nhớ đổi lại cái này
             $rootScope.NavLink = "share/beforeLogin.html"
             $rootScope.UserNow = [];
@@ -171,12 +172,12 @@
                 $scope.htmlBlog = $sce.trustAsHtml(rp.data);
             });
             $scope.htmlBlog;
-
         });
 
         app.controller('pageTitleChange', function ($scope, $routeParams, $rootScope) {
             // console.log($routeParams.title)
             $rootScope.pageTitle = $routeParams.title;
+            $rootScope.Writing = false;
         });
         app.controller('searchPage', function ($scope, $routeParams, $rootScope, $http) {
             // console.log($routeParams.title)
@@ -216,6 +217,23 @@
             }
         });
 
+        app.controller('writeBlogCtrl', function ($scope, $rootScope, $document) {
+            $rootScope.Writing = true;
+            $scope.setBold = function () {
+                $document[0].execCommand('bold', false, null);
+            };
+
+            $scope.setItalic = function () {
+                $document[0].execCommand('italic', false, null);
+            };
+            $scope.setUnderline = function () {
+                $document[0].execCommand('underline', false, null);
+            };
+
+            $scope.setFontSize = function (fontSize) {
+                $document[0].execCommand('fontSize', false, fontSize);
+            };
+        });
         app.config(function ($routeProvider) {
             $routeProvider
                 .when("/", {
@@ -256,6 +274,9 @@
                     templateUrl: "./screen/SearchPage.html?",
                     controller: "searchPage"
                 })
+                .when("/writeBlog", {
+                    templateUrl: "./screen/WriteBlog.html?"
+                })
                 .otherwise({
                     redirectTo: "/404notfound"
                 })
@@ -280,6 +301,11 @@
                 }, 1000);
             })
         });
+
+    </script>
+
+
+    <script>
 
     </script>
 </body>

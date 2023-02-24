@@ -18,12 +18,17 @@
                     </div>
                     <div class="col-sm-10 col-md-8 col-lg-4" ng-controller="signUpCtrl">
                         <form class="row g-2" ng-submit="signUp()" name="SignUpForm">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating">
                                 <input type="email" ng-model="signUpEmail" required class="form-control bg-body"
                                     id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Sign up by your email</label>
                             </div>
-                            <input class="btn btn-warning text-capitalize" type="submit" value="Send it to me">
+                            <div class="form-floating">
+                                <input type="password" ng-model="signUpPassword" required class="form-control bg-body"
+                                    id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Sign up by your email</label>
+                            </div>
+                            <button class="btn btn-warning text-capitalize" type="submit">Send it to me</button>
                         </form>
 
                         <div class="col-sm-1 col-md-2 col-lg-4">
