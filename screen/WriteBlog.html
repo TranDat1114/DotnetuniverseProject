@@ -1,12 +1,17 @@
 <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1/css/bootstrap.min.css">
 <script src="../bootstrap-5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
 
+<script>
+    var trichDan = ``;
+</script>
+
+
 <style>
     [contenteditable] {
         padding: 12px;
     }
 
-    [contenteditable]:focus {
+    .outLine-none:focus {
         outline: 0px solid transparent;
     }
 
@@ -30,21 +35,37 @@
         <div class="toolbar">
             <input type="checkbox" class="btn-check" id="btn-check-outlined-1">
             <label class="btn btn-outline-warning" for="btn-check-outlined-1" ng-click="setBold()"><b>B</b></label>
-            <input type="checkbox" class="btn-check" id="btn-check-outlined">
-            <label class="btn btn-outline-warning" for="btn-check-outlined" ng-click="setItalic()"><i>I</i></label>
-            <input type="checkbox" class="btn-check" id="btn-check-outlined">
-            <label class="btn btn-outline-warning" for="btn-check-outlined" ng-click="setUnderline()"><u>U</u></label>
-            <input type="checkbox" class="btn-check" id="btn-check-outlined">
-            <label class="btn btn-outline-warning" for="btn-check-outlined" ng-click="setFontSize(15)">15</label>
 
+            <input type="checkbox" class="btn-check" id="btn-check-outlined-2">
+            <label class="btn btn-outline-warning" for="btn-check-outlined-2" ng-click="setItalic()"><i>I</i></label>
+
+            <input type="checkbox" class="btn-check" id="btn-check-outlined-3">
+            <label class="btn btn-outline-warning" for="btn-check-outlined-3" ng-click="setUnderline()"><u>U</u></label>
+
+            <input type="checkbox" class="btn-check" id="btn-check-outlined-4">
+            <label class="btn btn-outline-warning" for="btn-check-outlined-4" ng-click="setFontSize(15)">15</label>
+
+            <input type="checkbox" class="btn-check" id="btn-check-outlined-5">
+            <label class="btn btn-outline-warning" for="btn-check-outlined-5" ng-click="setFontSize(4)">4</label>
         </div>
     </div>
     <div class="container min-vh-100">
-        <div class="h1" contenteditable spellcheck="false" data-placeholder="Tiêu đề bài viết..."></div>
-        <div class="h5" spellcheck="false" contenteditable data-placeholder="Nội dung bài viết..."></div>
+        <div class="h1 outLine-none" contenteditable spellcheck="false" data-placeholder="Tiêu đề bài viết..."></div>
+        <div class="h5 outLine-none" spellcheck="false" contenteditable data-placeholder="Nội dung bài viết..."></div>
+
+
+        <blockquote class="blockquote border-start border-warning p-4 border-3">
+            <em class="outLine-none" contenteditable>
+                HELlo
+            </em>
+        </blockquote>
+
+        <div class="m-3">
+            <input type="image" contenteditable class="w-100 max-img-size"
+                src="https://images.spiderum.com/sp-images/a7f94250ab4f11ed8919abd421f2b240.jpeg" alt="logo">
+        </div>
 
         <div class="m-5"></div>
-
         <div class="container position-fixed bottom-0">
             <div class="row my-5">
                 <div class="col-12 col-md-3">
@@ -52,14 +73,42 @@
                 <div class="col-12 col-md-6">
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
-                            <button class="btn btn-outline-warning w-100">Lưu nháp</button>
+                            <button class="btn btn-outline-warning w-100" ng-click="addSaved()">Lưu nháp</button>
                         </div>
                         <div class="col-12 col-md-6">
-                            <button class="btn btn-outline-warning w-100">Bước kế tiếp</button>
+                            <button class="btn btn-outline-warning w-100" data-bs-toggle="modal"
+                                data-bs-target="#NextStep">Bước kế tiếp</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="NextStep" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Tạo bài viết</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label"><b>Mô tả bài viết</b><em>(không bắt buộc)</em></label>
+                    <textarea class="mb-2 form-control bg-body" placeholder="Mô tả bài viết..." spellcheck="false"
+                        data-placeholder="Mô tả bài viết..."></textarea>
+                    <label class="form-label"><b>Chọn chủ đề cho bài viết</b></label>
+                    <select class="form-select bg-body mb-2" title="topic">
+                        <option ng-repeat="item in DataFile.Topics">{{item}}</option>
+                    </select>
+                    <label class="form-label"><b>Thumbail cho bài viết</b></label>
+                    <input type="file" class="form-control mb-2">
+
+                    <img class="w-100 my-3 img-thumbnail" src="../assets/logo.svg" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
+                    <button type="button" class="btn btn-warning" ng-click="addBlog()">Tạo bài viết</button>
+                </div>
             </div>
         </div>
     </div>

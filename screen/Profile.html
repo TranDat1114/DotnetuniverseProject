@@ -188,6 +188,80 @@
                         </div>
                         <div class="tab-pane" id="saved">
                             <p class="h2">You had nothing here :_(</p>
+
+                            <div class="row g-3">
+                                <div class="col-sm-12" ng-repeat="item in DataFile.Demo | orderBy : ' -forYou' ">
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5 col-lg-4">
+                                                <a href="#!BlogReading/{{item.content}}#blogReadingContent">
+                                                    <img loading="lazy" class="object-fit-cover w-100" height="250"
+                                                        src="{{item.img}}" alt="baiviet">
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-12 col-md-7 col-lg-8">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <p><a class="content-topic btn-link text-uppercase text-decoration-none"
+                                                                href="#">{{item.topic}}</a>
+                                                            |
+                                                            <em class="content-topic">{{item.readingTime}}</em>
+                                                        </p>
+                                                        <div class="content-title">
+                                                            <a class="h5 text-decoration-none"
+                                                                href="#!BlogReading/{{item.content}}#blogReadingContent">
+                                                                {{item.blogName}}
+                                                            </a>
+                                                            <p class="content-content">
+                                                                {{item.asContent}}
+                                                            </p>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-8">
+                                                                <div class="row">
+                                                                    <div class="col-3">
+                                                                        <a href="#!profile/{{item.idName}}">
+                                                                            <img loading="lazy"
+                                                                                class="object-fit-cover  img-thumbnail rounded-circle authorHome"
+                                                                                src="{{item.avatar}}" alt="author">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-9">
+                                                                        <a href="#!profile/{{item.idName}}"
+                                                                            class="content-topic text-decoration-none">
+                                                                            {{item.authorName}}</a>
+                                                                        <p class="content-topic">{{item.upLoadDate}}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="row text-center">
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Up vote">
+                                                                        <i class="fa-solid fa-chevron-up"></i>
+                                                                        <p class="content-topic">{{item.upVote}}</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="View">
+                                                                        <i class="fa-solid fa-eye"></i>
+                                                                        <p class="content-topic">{{item.seen}}</p>
+                                                                    </div>
+                                                                    <div class="col-4 p-0" data-bs-toggle="tooltip"
+                                                                        data-bs-title="Comment">
+                                                                        <i class="fa-solid fa-message"></i>
+                                                                        <p class="content-topic">{{item.cmt}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

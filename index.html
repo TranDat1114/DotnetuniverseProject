@@ -127,6 +127,7 @@
             $scope.alreadyExist = false;
             $scope.newEmail = [];
             $scope.signUp = function () {
+
                 // Lấy dữ liệu từ form
                 $scope.newEmail = $rootScope.DataFile.Users.filter(user => user.email === $scope.signUpEmail)
                 if ($scope.newEmail.length === 0) {
@@ -135,7 +136,7 @@
                         {
                             "userName": '@' + $scope.signUpEmail.split('@')[0],
                             "fullName": $scope.signUpEmail.split('@')[0],
-                            "password": "jackandy249",
+                            "password": $scope.signUpPassword,
                             "avatar": "https://i.ibb.co/jbbm5zd/Logo.png",
                             "wallpaper": "../assets/fpt-poly-3.jpg",
                             "email": $scope.signUpEmail,
@@ -144,6 +145,7 @@
                             "following": 0,
                             "description": "Hãy cứ vô tư và lạc lạc lạc,..."
                         })
+                    console.assert($scope.signUpPassword)
                     $location.path('/login/Login')
                 } else {
                     $scope.alreadyExist = true;
@@ -217,8 +219,51 @@
             }
         });
 
-        app.controller('writeBlogCtrl', function ($scope, $rootScope, $document) {
+        app.controller('writeBlogCtrl', function ($scope, $rootScope, $document, $location) {
             $rootScope.Writing = true;
+            $scope.addSaved = function () {
+                $rootScope.DataFile.Demo.push({
+                    "img": "../assets/logo.svg",
+                    "topic": "Phim ảnh",
+                    "blogName": "Demo",
+                    "readingTime": "5 phút đọc",
+                    "asContent": "Mẫu",
+                    "avatar": "https://i.ibb.co/NW7CCfv/avatar.jpg",
+                    "authorName": "Trần Phú Đạt",
+                    "userName": "@tranphudat",
+                    "upLoadDate": "2023-02-12",
+                    "upVote": 0,
+                    "seen": 0,
+                    "cmt": 0,
+                    "forYou": 0,
+                    "content": "Nhung-bo-phim-tinh-cam-cho-Valentine-mot-minh-12-thang-2-2023"
+                })
+                alert("Đã lưu nháp")
+            }
+            $scope.addBlog = function () {
+                $rootScope.DataFile.Blogs.push({
+                    "img": "../assets/logo.svg",
+                    "topic": "Phim ảnh",
+                    "blogName": "Demo",
+                    "readingTime": "5 phút đọc",
+                    "asContent": "Mẫu",
+                    "avatar": "https://i.ibb.co/NW7CCfv/avatar.jpg",
+                    "authorName": "Trần Phú Đạt",
+                    "userName": "@tranphudat",
+                    "upLoadDate": "2023-02-12",
+                    "upVote": 0,
+                    "seen": 0,
+                    "cmt": 0,
+                    "forYou": 0,
+                    "content": "Nhung-bo-phim-tinh-cam-cho-Valentine-mot-minh-12-thang-2-2023"
+                })
+
+                alert($scope.Blogtitle)
+                alert("Tạo bài viết thành công")
+
+            }
+            // Đang làm việc ở đây
+
             $scope.setBold = function () {
                 $document[0].execCommand('bold', false, null);
             };
@@ -226,6 +271,7 @@
             $scope.setItalic = function () {
                 $document[0].execCommand('italic', false, null);
             };
+
             $scope.setUnderline = function () {
                 $document[0].execCommand('underline', false, null);
             };

@@ -42,7 +42,6 @@
         }
     ],
     "Topics": [
-        "Tất cả",
         "Sách",
         "Khoa học - Công nghệ",
         "Thể thao",
@@ -58,7 +57,9 @@
         "Nhiếp ảnh",
         "Thời trang",
         "Phim ảnh",
-        "THINKING OUT LOUD"
+        "THINKING OUT LOUD",
+        "WTF",
+        "Tất cả"
     ],
     "Users": [
         {
@@ -153,6 +154,24 @@
             "follower": 79,
             "following": 12,
             "description": "Tình chỉ đẹp khi còn dang dỡ, cưới nhau rồi tình bổng thương đau."
+        }
+    ],
+    "Demo": [
+        {
+            "img": "../assets/logo.svg",
+            "topic": "Phim ảnh",
+            "blogName": "Bài viết mẫu thêm vào có thể dùng angularJS để thay",
+            "readingTime": "5 phút đọc",
+            "asContent": "Mẫu",
+            "avatar": "https://i.ibb.co/NW7CCfv/avatar.jpg",
+            "authorName": "Trần Phú Đạt",
+            "userName": "@tranphudat",
+            "upLoadDate": "2023-02-12",
+            "upVote": 22,
+            "seen": 100,
+            "cmt": 12,
+            "forYou": 95,
+            "content": "Nhung-bo-phim-tinh-cam-cho-Valentine-mot-minh-12-thang-2-2023"
         }
     ],
     "Blogs": [
